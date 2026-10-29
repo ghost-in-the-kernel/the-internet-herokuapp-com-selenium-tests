@@ -1,0 +1,747 @@
+{
+  "tool": "suite-builder",
+  "ledgerVersion": 1,
+  "entities": [
+    {
+      "id": "type:/",
+      "kind": "page-type",
+      "introducedAt": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f",
+      "cls": "HomePage",
+      "patterns": [
+        "/"
+      ],
+      "lifecycle": {
+        "state": "present",
+        "lastSeenIn": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f"
+      }
+    },
+    {
+      "id": "type:/tinymce",
+      "kind": "page-type",
+      "introducedAt": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f",
+      "cls": "TinymcePage",
+      "patterns": [
+        "/tinymce"
+      ],
+      "lifecycle": {
+        "state": "present",
+        "lastSeenIn": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f"
+      }
+    },
+    {
+      "id": "type:/hovers",
+      "kind": "page-type",
+      "introducedAt": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f",
+      "cls": "HoversPage",
+      "patterns": [
+        "/hovers"
+      ],
+      "lifecycle": {
+        "state": "present",
+        "lastSeenIn": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f"
+      }
+    },
+    {
+      "id": "type:/dropdown",
+      "kind": "page-type",
+      "introducedAt": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f",
+      "cls": "DropdownPage",
+      "patterns": [
+        "/dropdown"
+      ],
+      "lifecycle": {
+        "state": "present",
+        "lastSeenIn": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f"
+      }
+    },
+    {
+      "id": "type:/radio_buttons",
+      "kind": "page-type",
+      "introducedAt": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f",
+      "cls": "RadioButtonsPage",
+      "patterns": [
+        "/radio_buttons"
+      ],
+      "lifecycle": {
+        "state": "present",
+        "lastSeenIn": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f"
+      }
+    },
+    {
+      "id": "type:/challenging_dom",
+      "kind": "page-type",
+      "introducedAt": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f",
+      "cls": "ChallengingDomPage",
+      "patterns": [
+        "/challenging_dom"
+      ],
+      "lifecycle": {
+        "state": "present",
+        "lastSeenIn": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f"
+      }
+    },
+    {
+      "id": "type:/large",
+      "kind": "page-type",
+      "introducedAt": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f",
+      "cls": "LargePage",
+      "patterns": [
+        "/large"
+      ],
+      "lifecycle": {
+        "state": "present",
+        "lastSeenIn": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f"
+      }
+    },
+    {
+      "id": "type:/upload",
+      "kind": "page-type",
+      "introducedAt": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f",
+      "cls": "UploadPage",
+      "patterns": [
+        "/upload"
+      ],
+      "lifecycle": {
+        "state": "present",
+        "lastSeenIn": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f"
+      }
+    },
+    {
+      "id": "type:/slow",
+      "kind": "page-type",
+      "introducedAt": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f",
+      "cls": "SlowPage",
+      "patterns": [
+        "/slow"
+      ],
+      "lifecycle": {
+        "state": "present",
+        "lastSeenIn": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f"
+      }
+    },
+    {
+      "id": "type:/javascript_alerts",
+      "kind": "page-type",
+      "introducedAt": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f",
+      "cls": "JavascriptAlertsPage",
+      "patterns": [
+        "/javascript_alerts"
+      ],
+      "lifecycle": {
+        "state": "present",
+        "lastSeenIn": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f"
+      }
+    },
+    {
+      "id": "type:/entry_ad",
+      "kind": "page-type",
+      "introducedAt": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f",
+      "cls": "EntryAdPage",
+      "patterns": [
+        "/entry_ad"
+      ],
+      "lifecycle": {
+        "state": "present",
+        "lastSeenIn": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f"
+      }
+    },
+    {
+      "id": "type:/windows",
+      "kind": "page-type",
+      "introducedAt": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f",
+      "cls": "WindowsPage",
+      "patterns": [
+        "/windows"
+      ],
+      "lifecycle": {
+        "state": "present",
+        "lastSeenIn": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f"
+      }
+    },
+    {
+      "id": "type:/frames",
+      "kind": "page-type",
+      "introducedAt": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f",
+      "cls": "FramesPage",
+      "patterns": [
+        "/frames"
+      ],
+      "lifecycle": {
+        "state": "present",
+        "lastSeenIn": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f"
+      }
+    },
+    {
+      "id": "type:/two_factor",
+      "kind": "page-type",
+      "introducedAt": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f",
+      "cls": "TwoFactorPage",
+      "patterns": [
+        "/two_factor"
+      ],
+      "lifecycle": {
+        "state": "present",
+        "lastSeenIn": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f"
+      }
+    },
+    {
+      "id": "type:/add_remove_elements/",
+      "kind": "page-type",
+      "introducedAt": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f",
+      "cls": "AddRemoveElementsPage",
+      "patterns": [
+        "/add_remove_elements/"
+      ],
+      "lifecycle": {
+        "state": "present",
+        "lastSeenIn": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f"
+      }
+    },
+    {
+      "id": "type:/inputs",
+      "kind": "page-type",
+      "introducedAt": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f",
+      "cls": "InputsPage",
+      "patterns": [
+        "/inputs"
+      ],
+      "lifecycle": {
+        "state": "present",
+        "lastSeenIn": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f"
+      }
+    },
+    {
+      "id": "type:/dynamic_loading",
+      "kind": "page-type",
+      "introducedAt": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f",
+      "cls": "DynamicLoadingListPage",
+      "patterns": [
+        "/dynamic_loading"
+      ],
+      "lifecycle": {
+        "state": "present",
+        "lastSeenIn": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f"
+      }
+    },
+    {
+      "id": "type:/shadowdom",
+      "kind": "page-type",
+      "introducedAt": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f",
+      "cls": "ShadowdomPage",
+      "patterns": [
+        "/shadowdom"
+      ],
+      "lifecycle": {
+        "state": "present",
+        "lastSeenIn": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f"
+      }
+    },
+    {
+      "id": "type:/context_menu",
+      "kind": "page-type",
+      "introducedAt": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f",
+      "cls": "ContextMenuPage",
+      "patterns": [
+        "/context_menu"
+      ],
+      "lifecycle": {
+        "state": "present",
+        "lastSeenIn": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f"
+      }
+    },
+    {
+      "id": "type:/nested_frames",
+      "kind": "page-type",
+      "introducedAt": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f",
+      "cls": "NestedFramesPage",
+      "patterns": [
+        "/nested_frames"
+      ],
+      "lifecycle": {
+        "state": "present",
+        "lastSeenIn": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f"
+      }
+    },
+    {
+      "id": "type:/forgot_password",
+      "kind": "page-type",
+      "introducedAt": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f",
+      "cls": "ForgotPasswordPage",
+      "patterns": [
+        "/forgot_password"
+      ],
+      "lifecycle": {
+        "state": "present",
+        "lastSeenIn": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f"
+      }
+    },
+    {
+      "id": "type:/subdirectories",
+      "kind": "page-type",
+      "introducedAt": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f",
+      "cls": "SubdirectoriesPage",
+      "patterns": [
+        "/subdirectories"
+      ],
+      "lifecycle": {
+        "state": "present",
+        "lastSeenIn": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f"
+      }
+    },
+    {
+      "id": "type:/dynamic_loading/*",
+      "kind": "page-type",
+      "introducedAt": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f",
+      "cls": "DynamicLoadingPage",
+      "patterns": [
+        "/dynamic_loading/*"
+      ],
+      "lifecycle": {
+        "state": "present",
+        "lastSeenIn": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f"
+      }
+    },
+    {
+      "id": "type:/subdirectories/*",
+      "kind": "page-type",
+      "introducedAt": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f",
+      "cls": "SubdirectoryPage",
+      "patterns": [
+        "/subdirectories/*"
+      ],
+      "lifecycle": {
+        "state": "present",
+        "lastSeenIn": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f"
+      }
+    },
+    {
+      "id": "type:/jqueryui/menu",
+      "kind": "page-type",
+      "introducedAt": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f",
+      "cls": "JqueryuiMenuPage",
+      "patterns": [
+        "/jqueryui/menu"
+      ],
+      "lifecycle": {
+        "state": "present",
+        "lastSeenIn": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f"
+      }
+    },
+    {
+      "id": "type:/windows/new",
+      "kind": "page-type",
+      "introducedAt": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f",
+      "cls": "WindowsNewPage",
+      "patterns": [
+        "/windows/new"
+      ],
+      "lifecycle": {
+        "state": "present",
+        "lastSeenIn": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f"
+      }
+    },
+    {
+      "id": "type:/canvas",
+      "kind": "page-type",
+      "introducedAt": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f",
+      "cls": "CanvasPage",
+      "patterns": [
+        "/canvas"
+      ],
+      "lifecycle": {
+        "state": "present",
+        "lastSeenIn": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f"
+      }
+    },
+    {
+      "id": "type:/large_form",
+      "kind": "page-type",
+      "introducedAt": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f",
+      "cls": "LargeFormPage",
+      "patterns": [
+        "/large_form"
+      ],
+      "lifecycle": {
+        "state": "present",
+        "lastSeenIn": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f"
+      }
+    },
+    {
+      "id": "type:/download",
+      "kind": "page-type",
+      "introducedAt": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f",
+      "cls": "DownloadPage",
+      "patterns": [
+        "/download"
+      ],
+      "lifecycle": {
+        "state": "present",
+        "lastSeenIn": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f"
+      }
+    },
+    {
+      "id": "type:/status_codes",
+      "kind": "page-type",
+      "introducedAt": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f",
+      "cls": "StatusCodesPage",
+      "patterns": [
+        "/status_codes"
+      ],
+      "lifecycle": {
+        "state": "present",
+        "lastSeenIn": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f"
+      }
+    },
+    {
+      "id": "type:/status_codes/*",
+      "kind": "page-type",
+      "introducedAt": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f",
+      "cls": "StatusCodePage",
+      "patterns": [
+        "/status_codes/*"
+      ],
+      "lifecycle": {
+        "state": "present",
+        "lastSeenIn": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f"
+      }
+    },
+    {
+      "id": "type:/dynamic_content",
+      "kind": "page-type",
+      "introducedAt": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f",
+      "cls": "DynamicContentPage",
+      "patterns": [
+        "/dynamic_content"
+      ],
+      "lifecycle": {
+        "state": "present",
+        "lastSeenIn": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f"
+      }
+    },
+    {
+      "id": "type:/readonly",
+      "kind": "page-type",
+      "introducedAt": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f",
+      "cls": "ReadonlyPage",
+      "patterns": [
+        "/readonly"
+      ],
+      "lifecycle": {
+        "state": "present",
+        "lastSeenIn": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f"
+      }
+    },
+    {
+      "id": "type:/horizontal_slider",
+      "kind": "page-type",
+      "introducedAt": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f",
+      "cls": "HorizontalSliderPage",
+      "patterns": [
+        "/horizontal_slider"
+      ],
+      "lifecycle": {
+        "state": "present",
+        "lastSeenIn": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f"
+      }
+    },
+    {
+      "id": "type:/jqueryui",
+      "kind": "page-type",
+      "introducedAt": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f",
+      "cls": "JqueryuiPage",
+      "patterns": [
+        "/jqueryui"
+      ],
+      "lifecycle": {
+        "state": "present",
+        "lastSeenIn": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f"
+      }
+    },
+    {
+      "id": "type:/abtest",
+      "kind": "page-type",
+      "introducedAt": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f",
+      "cls": "AbtestPage",
+      "patterns": [
+        "/abtest"
+      ],
+      "lifecycle": {
+        "state": "present",
+        "lastSeenIn": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f"
+      }
+    },
+    {
+      "id": "type:/javascript_error",
+      "kind": "page-type",
+      "introducedAt": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f",
+      "cls": "JavascriptErrorPage",
+      "patterns": [
+        "/javascript_error"
+      ],
+      "lifecycle": {
+        "state": "present",
+        "lastSeenIn": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f"
+      }
+    },
+    {
+      "id": "type:/dynamic_controls",
+      "kind": "page-type",
+      "introducedAt": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f",
+      "cls": "DynamicControlsPage",
+      "patterns": [
+        "/dynamic_controls"
+      ],
+      "lifecycle": {
+        "state": "present",
+        "lastSeenIn": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f"
+      }
+    },
+    {
+      "id": "type:/shifting_content",
+      "kind": "page-type",
+      "introducedAt": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f",
+      "cls": "ShiftingContentListPage",
+      "patterns": [
+        "/shifting_content"
+      ],
+      "lifecycle": {
+        "state": "present",
+        "lastSeenIn": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f"
+      }
+    },
+    {
+      "id": "type:/shifting_content/*",
+      "kind": "page-type",
+      "introducedAt": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f",
+      "cls": "ShiftingContentPage",
+      "patterns": [
+        "/shifting_content/*"
+      ],
+      "lifecycle": {
+        "state": "present",
+        "lastSeenIn": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f"
+      }
+    },
+    {
+      "id": "type:/shifting_content/menu",
+      "kind": "page-type",
+      "introducedAt": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f",
+      "cls": "ShiftingContentMenuPage",
+      "patterns": [
+        "/shifting_content/menu"
+      ],
+      "lifecycle": {
+        "state": "present",
+        "lastSeenIn": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f"
+      }
+    },
+    {
+      "id": "type:/disappearing_elements",
+      "kind": "page-type",
+      "introducedAt": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f",
+      "cls": "DisappearingElementsPage",
+      "patterns": [
+        "/disappearing_elements"
+      ],
+      "lifecycle": {
+        "state": "present",
+        "lastSeenIn": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f"
+      }
+    },
+    {
+      "id": "type:/tables",
+      "kind": "page-type",
+      "introducedAt": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f",
+      "cls": "TablesPage",
+      "patterns": [
+        "/tables"
+      ],
+      "lifecycle": {
+        "state": "present",
+        "lastSeenIn": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f"
+      }
+    },
+    {
+      "id": "type:/infinite_scroll",
+      "kind": "page-type",
+      "introducedAt": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f",
+      "cls": "InfiniteScrollListPage",
+      "patterns": [
+        "/infinite_scroll"
+      ],
+      "lifecycle": {
+        "state": "present",
+        "lastSeenIn": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f"
+      }
+    },
+    {
+      "id": "type:/infinite_scroll/*",
+      "kind": "page-type",
+      "introducedAt": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f",
+      "cls": "InfiniteScrollPage",
+      "patterns": [
+        "/infinite_scroll/*"
+      ],
+      "lifecycle": {
+        "state": "present",
+        "lastSeenIn": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f"
+      }
+    },
+    {
+      "id": "type:/checkboxes",
+      "kind": "page-type",
+      "introducedAt": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f",
+      "cls": "CheckboxesPage",
+      "patterns": [
+        "/checkboxes"
+      ],
+      "lifecycle": {
+        "state": "present",
+        "lastSeenIn": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f"
+      }
+    },
+    {
+      "id": "type:/redirector",
+      "kind": "page-type",
+      "introducedAt": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f",
+      "cls": "RedirectorPage",
+      "patterns": [
+        "/redirector"
+      ],
+      "lifecycle": {
+        "state": "present",
+        "lastSeenIn": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f"
+      }
+    },
+    {
+      "id": "type:/geolocation",
+      "kind": "page-type",
+      "introducedAt": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f",
+      "cls": "GeolocationPage",
+      "patterns": [
+        "/geolocation"
+      ],
+      "lifecycle": {
+        "state": "present",
+        "lastSeenIn": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f"
+      }
+    },
+    {
+      "id": "type:/exit_intent",
+      "kind": "page-type",
+      "introducedAt": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f",
+      "cls": "ExitIntentPage",
+      "patterns": [
+        "/exit_intent"
+      ],
+      "lifecycle": {
+        "state": "present",
+        "lastSeenIn": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f"
+      }
+    },
+    {
+      "id": "type:/iframe",
+      "kind": "page-type",
+      "introducedAt": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f",
+      "cls": "IframePage",
+      "patterns": [
+        "/iframe"
+      ],
+      "lifecycle": {
+        "state": "present",
+        "lastSeenIn": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f"
+      }
+    },
+    {
+      "id": "type:/multiple_dropdown",
+      "kind": "page-type",
+      "introducedAt": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f",
+      "cls": "MultipleDropdownPage",
+      "patterns": [
+        "/multiple_dropdown"
+      ],
+      "lifecycle": {
+        "state": "present",
+        "lastSeenIn": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f"
+      }
+    },
+    {
+      "id": "type:/broken_images",
+      "kind": "page-type",
+      "introducedAt": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f",
+      "cls": "BrokenImagesPage",
+      "patterns": [
+        "/broken_images"
+      ],
+      "lifecycle": {
+        "state": "present",
+        "lastSeenIn": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f"
+      }
+    },
+    {
+      "id": "type:/notification_message_rendered",
+      "kind": "page-type",
+      "introducedAt": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f",
+      "cls": "NotificationMessageRenderedPage",
+      "patterns": [
+        "/notification_message_rendered"
+      ],
+      "lifecycle": {
+        "state": "present",
+        "lastSeenIn": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f"
+      }
+    },
+    {
+      "id": "type:/floating_menu",
+      "kind": "page-type",
+      "introducedAt": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f",
+      "cls": "FloatingMenuPage",
+      "patterns": [
+        "/floating_menu"
+      ],
+      "lifecycle": {
+        "state": "present",
+        "lastSeenIn": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f"
+      }
+    },
+    {
+      "id": "type:/drag_and_drop",
+      "kind": "page-type",
+      "introducedAt": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f",
+      "cls": "DragAndDropPage",
+      "patterns": [
+        "/drag_and_drop"
+      ],
+      "lifecycle": {
+        "state": "present",
+        "lastSeenIn": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f"
+      }
+    },
+    {
+      "id": "type:/key_presses",
+      "kind": "page-type",
+      "introducedAt": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f",
+      "cls": "KeyPressesPage",
+      "patterns": [
+        "/key_presses"
+      ],
+      "lifecycle": {
+        "state": "present",
+        "lastSeenIn": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f"
+      }
+    },
+    {
+      "id": "type:/typos",
+      "kind": "page-type",
+      "introducedAt": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f",
+      "cls": "TyposPage",
+      "patterns": [
+        "/typos"
+      ],
+      "lifecycle": {
+        "state": "present",
+        "lastSeenIn": "eee39b403e50c0db7c87f0b6476e79f6131ac0857382feb6252b876140eb3b2f"
+      }
+    }
+  ]
+}
