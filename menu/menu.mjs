@@ -69,7 +69,7 @@ function state() {
     fresh: stories.filter((t) => !waits(t)).length,
     waiting: stories.filter(waits).length,
     done: files('stories/done').length,
-    problems: (issues.match(/^### (MAJOR|MINOR|INFO) SITE-/gm) ?? []).length,
+    problems: (issues.match(/^### (MAJOR|MINOR) SITE-/gm) ?? []).length,
     major: (issues.match(/^### MAJOR SITE-/gm) ?? []).length,
     jira: jiraState(),
   };

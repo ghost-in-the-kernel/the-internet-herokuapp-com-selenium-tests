@@ -2,15 +2,16 @@
   "tool": "suite-builder",
   "version": "1.39.0",
   "build": {
-    "commit": "75e5668b316ed702c3a6265739213099e2ff1192",
-    "branch": "main"
+    "commit": "c14becc14b12615451d4215610550e38374ce089",
+    "branch": "main",
+    "dirty": true
   },
   "framework": "selenium",
-  "generatedAt": "2026-10-29T23:27:25.191Z",
-  "command": "suite-builder generate the-internet.herokuapp.com.templates.json --selenium --out the-internet-herokuapp-com-selenium-tests",
+  "generatedAt": "2026-11-03T18:35:52.422Z",
+  "command": "suite-builder build the-internet-herokuapp-com-selenium-tests",
   "templates": "crawl/the-internet.herokuapp.com.templates.json",
   "crawl": "crawl/the-internet.herokuapp.com.crawl.json",
-  "crawlFileSaved": "2026-10-29T23:27:22.501Z",
+  "crawlFileSaved": "2026-10-29T18:55:11.154Z",
   "accounts": [
     {
       "role": "user",

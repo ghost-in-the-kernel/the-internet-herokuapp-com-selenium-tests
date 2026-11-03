@@ -537,11 +537,11 @@
         }
       ]
     },
-    "link:/:FORGOT_PASSWORD_LINK": {
+    "link:/:ELEMENT_LINK": {
       "kind": "link",
       "why": "seen on /: \"Forgot Password\" (/forgot_password); found by its address",
       "facts": [
-        "page HomePage link FORGOT_PASSWORD_LINK xpath //a[@href='/forgot_password']"
+        "page HomePage link ELEMENT_LINK xpath //a[@href='/forgot_password']"
       ],
       "evidence": [
         {
@@ -553,7 +553,7 @@
         {
           "file": "src/main/java/com/herokuapp/theinternet/tests/pages/home/HomeElements.java",
           "line": 67,
-          "fact": "page HomePage link FORGOT_PASSWORD_LINK xpath //a[@href='/forgot_password']",
+          "fact": "page HomePage link ELEMENT_LINK xpath //a[@href='/forgot_password']",
           "why": "seen on /: \"Forgot Password\" (/forgot_password); found by its address"
         }
       ]
@@ -1528,7 +1528,7 @@
       "kind": "link",
       "why": "seen on /: \"Forgot Password\" (/forgot_password)",
       "facts": [
-        "page HomePage links-to ForgotPasswordPage clicking FORGOT_PASSWORD_LINK"
+        "page HomePage links-to ForgotPasswordPage clicking ELEMENT_LINK"
       ],
       "evidence": [
         {
@@ -1540,7 +1540,7 @@
         {
           "file": "src/main/java/com/herokuapp/theinternet/tests/pages/home/actions/HomeClickActions.java",
           "line": 183,
-          "fact": "page HomePage links-to ForgotPasswordPage clicking FORGOT_PASSWORD_LINK",
+          "fact": "page HomePage links-to ForgotPasswordPage clicking ELEMENT_LINK",
           "why": "seen on /: \"Forgot Password\" (/forgot_password)"
         }
       ]
@@ -4475,8 +4475,8 @@
       "kind": "form",
       "why": "the \"Log in with tomsmith and SuperSecretPassword!. Then enter th\" form the crawl saw; filled, never sent",
       "facts": [
-        "page TwoFactorPage task fillLogInWithTomsmithAndSuperSecretPa1iaczzvForm takes LogInWithTomsmithAndSuperSecretPa1iaczzv enters username",
-        "page TwoFactorPage record LogInWithTomsmithAndSuperSecretPa1iaczzv username=\"Test Username\""
+        "page TwoFactorPage task fillThenEnterThForm takes ThenEnterTh enters username",
+        "page TwoFactorPage record ThenEnterTh username=\"Test Username\""
       ],
       "evidence": [
         {
@@ -4487,14 +4487,14 @@
       "generated": [
         {
           "file": "src/main/java/com/herokuapp/theinternet/tests/pages/twofactor/TwoFactorTasks.java",
-          "line": 29,
-          "fact": "page TwoFactorPage task fillLogInWithTomsmithAndSuperSecretPa1iaczzvForm takes LogInWithTomsmithAndSuperSecretPa1iaczzv enters username",
+          "line": 28,
+          "fact": "page TwoFactorPage task fillThenEnterThForm takes ThenEnterTh enters username",
           "why": "the \"Log in with tomsmith and SuperSecretPassword!. Then enter th\" form the crawl saw; filled, never sent"
         },
         {
-          "file": "src/main/java/com/herokuapp/theinternet/tests/pages/twofactor/LogInWithTomsmithAndSuperSecretPa1iaczzv.java",
-          "line": 17,
-          "fact": "page TwoFactorPage record LogInWithTomsmithAndSuperSecretPa1iaczzv username=\"Test Username\"",
+          "file": "src/main/java/com/herokuapp/theinternet/tests/pages/twofactor/ThenEnterTh.java",
+          "line": 16,
+          "fact": "page TwoFactorPage record ThenEnterTh username=\"Test Username\"",
           "why": "the \"Log in with tomsmith and SuperSecretPassword!. Then enter th\" form's fields in page order, each sample plausible for its kind"
         }
       ]
@@ -10279,37 +10279,37 @@
       ],
       "generated": [
         {
-          "file": "src/main/java/com/herokuapp/theinternet/tests/pages/notificationmessa0e9eek4/NotificationMessageRenderedPage.java",
+          "file": "src/main/java/com/herokuapp/theinternet/tests/pages/notificationmessage/NotificationMessageRenderedPage.java",
           "line": 36,
           "fact": "page NotificationMessageRenderedPage",
           "why": "laid out like /javascript_alerts, /context_menu, /status_codes and 9 more, but no title or heading says they are one kind of page, and their addresses share no part: each is its own [rules: layout-only]"
         },
         {
-          "file": "src/main/java/com/herokuapp/theinternet/tests/pages/notificationmessa0e9eek4/NotificationMessageRenderedPage.java",
+          "file": "src/main/java/com/herokuapp/theinternet/tests/pages/notificationmessage/NotificationMessageRenderedPage.java",
           "line": 55,
           "fact": "page NotificationMessageRenderedPage opens ()",
           "why": "laid out like /javascript_alerts, /context_menu, /status_codes and 9 more, but no title or heading says they are one kind of page, and their addresses share no part: each is its own [rules: layout-only]"
         },
         {
-          "file": "src/main/java/com/herokuapp/theinternet/tests/pages/notificationmessa0e9eek4/NotificationMessageRenderedPage.java",
+          "file": "src/main/java/com/herokuapp/theinternet/tests/pages/notificationmessage/NotificationMessageRenderedPage.java",
           "line": 62,
           "fact": "page NotificationMessageRenderedPage url-shapes /notification_message_rendered",
           "why": "laid out like /javascript_alerts, /context_menu, /status_codes and 9 more, but no title or heading says they are one kind of page, and their addresses share no part: each is its own [rules: layout-only]"
         },
         {
-          "file": "src/main/java/com/herokuapp/theinternet/tests/pages/notificationmessa0e9eek4/NotificationMessageRenderedPage.java",
+          "file": "src/main/java/com/herokuapp/theinternet/tests/pages/notificationmessage/NotificationMessageRenderedPage.java",
           "line": 36,
           "fact": "page NotificationMessageRenderedPage doors read, verify",
           "why": "the doors its controls, links and forms give it, read and verify always, and any a person filled"
         },
         {
-          "file": "src/main/java/com/herokuapp/theinternet/tests/pages/notificationmessa0e9eek4/NotificationMessageRenderedPage.java",
+          "file": "src/main/java/com/herokuapp/theinternet/tests/pages/notificationmessage/NotificationMessageRenderedPage.java",
           "line": 93,
           "fact": "page NotificationMessageRenderedPage settles 0",
           "why": "the median of its pages read, after their load event, the crawl's quiet windows taken out"
         },
         {
-          "file": "src/main/java/com/herokuapp/theinternet/tests/pages/notificationmessa0e9eek4/NotificationMessageRenderedPage.java",
+          "file": "src/main/java/com/herokuapp/theinternet/tests/pages/notificationmessage/NotificationMessageRenderedPage.java",
           "line": 42,
           "fact": "page NotificationMessageRenderedPage title is \"The Internet\"",
           "why": "every page read of it had this title"
@@ -10331,13 +10331,13 @@
       ],
       "generated": [
         {
-          "file": "src/main/java/com/herokuapp/theinternet/tests/pages/notificationmessa0e9eek4/NotificationMessageRenderedPage.java",
+          "file": "src/main/java/com/herokuapp/theinternet/tests/pages/notificationmessage/NotificationMessageRenderedPage.java",
           "line": 46,
           "fact": "page NotificationMessageRenderedPage loaded-when \"Notification Message\"",
           "why": "every page of NotificationMessageRenderedPage the crawl read showed it (1 page); isLoaded() waits for the first 1 checks"
         },
         {
-          "file": "src/main/java/com/herokuapp/theinternet/tests/pages/notificationmessa0e9eek4/NotificationMessageRenderedElements.java",
+          "file": "src/main/java/com/herokuapp/theinternet/tests/pages/notificationmessage/NotificationMessageRenderedElements.java",
           "line": 19,
           "fact": "page NotificationMessageRenderedPage check \"Notification Message\" spelled \"Notification Message\"",
           "why": "every page of NotificationMessageRenderedPage the crawl read showed it (1 page)"
@@ -13407,7 +13407,7 @@
       "kind": "test",
       "why": "the worked example: its form has the fewest fields of any page's; a plain test written as a person would, nothing sent",
       "facts": [
-        "test example TwoFactorPage() refuses none fills fillLogInWithTomsmithAndSuperSecretPa1iaczzvForm with LogInWithTomsmithAndSuperSecretPa1iaczzv.sample() holds USERNAME_INPUT"
+        "test example TwoFactorPage() refuses none fills fillThenEnterThForm with ThenEnterTh.sample() holds USERNAME_INPUT"
       ],
       "evidence": [
         {
@@ -13418,8 +13418,8 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/TwoFactorFormTest.java",
-          "line": 32,
-          "fact": "test example TwoFactorPage() refuses none fills fillLogInWithTomsmithAndSuperSecretPa1iaczzvForm with LogInWithTomsmithAndSuperSecretPa1iaczzv.sample() holds USERNAME_INPUT",
+          "line": 31,
+          "fact": "test example TwoFactorPage() refuses none fills fillThenEnterThForm with ThenEnterTh.sample() holds USERNAME_INPUT",
           "why": "the worked example: its form has the fewest fields of any page's; a plain test written as a person would, nothing sent"
         }
       ]
@@ -13570,7 +13570,7 @@
       "generated": [
         {
           "file": ".gitlab-ci.yml",
-          "line": 19,
+          "line": 20,
           "fact": "ci gitlab quick http,smoke in chromium",
           "why": "on every push and pull request: the link report and every page type opening, in one browser"
         }
@@ -13586,7 +13586,7 @@
       "generated": [
         {
           "file": ".gitlab-ci.yml",
-          "line": 43,
+          "line": 45,
           "fact": "ci gitlab full chromium,firefox nightly never",
           "why": "when started by hand: every test, in each browser (no nightly run)"
         }

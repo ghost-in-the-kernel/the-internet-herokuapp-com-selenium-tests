@@ -7,7 +7,7 @@ package com.herokuapp.theinternet.tests.cases;
 import com.herokuapp.theinternet.tests.BaseTest;
 import com.herokuapp.theinternet.tests.pages.twofactor.TwoFactorElements;
 import com.herokuapp.theinternet.tests.pages.twofactor.TwoFactorPage;
-import com.herokuapp.theinternet.tests.pages.twofactor.LogInWithTomsmithAndSuperSecretPa1iaczzv;
+import com.herokuapp.theinternet.tests.pages.twofactor.ThenEnterTh;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 // ==== YOURS (imports): safe to edit; regenerating keeps what is between these lines ====
@@ -25,12 +25,11 @@ class TwoFactorFormTest extends BaseTest {
     @Test
     @DisplayName("The form on TwoFactorPage takes what a visitor types (nothing is sent)")
     void theFormTakesWhatAVisitorTypes() {
-        // Test data: the form's sample (LogInWithTomsmithAndSuperSecretPa1iaczzv.java); change one with a copy,
-        // LogInWithTomsmithAndSuperSecretPa1iaczzv.sample().with...(...),
+        // Test data: the form's sample (ThenEnterTh.java); change one with a copy, ThenEnterTh.sample().with...(...),
         // or for one run on the command line (-Dusername=...).
-        LogInWithTomsmithAndSuperSecretPa1iaczzv form = LogInWithTomsmithAndSuperSecretPa1iaczzv.sample();
+        ThenEnterTh form = ThenEnterTh.sample();
         TwoFactorPage here = new TwoFactorPage(driver).open();
-        here.execute().fillLogInWithTomsmithAndSuperSecretPa1iaczzvForm(form)
+        here.execute().fillThenEnterThForm(form)
                 .verify()
                 .holds(TwoFactorElements.USERNAME_INPUT, form.username());
     }

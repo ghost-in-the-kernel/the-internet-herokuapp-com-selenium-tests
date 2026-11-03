@@ -4,9 +4,23 @@
 What is wrong with the site, not the suite. A test that fails for one of these is doing its job: do
 not change the test to make it pass. Report it, and note it here.
 
+## Links that need a look (9)
+
+Each of these links answered an error or did not answer. A person is to look at every one, whatever the site means by it: nothing here is cleared by a rule. A link leaves this list only when the team lists it, with the status it answers, in the suite's expected-links block.
+
+- /users/3: answered 404; linked from /hovers; broken (SITE-02)
+- /users/2: answered 404; linked from /hovers; broken (SITE-02)
+- /users/1: answered 404; linked from /hovers; broken (SITE-02)
+- /portfolio/: answered 404; linked from /shifting_content/menu, /disappearing_elements; broken (SITE-02)
+- /contact-us/: answered 404; linked from /shifting_content/menu, /disappearing_elements; broken (SITE-02)
+- /about/: answered 404; linked from /shifting_content/menu, /disappearing_elements; broken (SITE-02)
+- /gallery/: answered 404; linked from /shifting_content/menu, /disappearing_elements; broken (SITE-02)
+- /status_codes/500: answered 500; linked from /status_codes; its address names the status it answers (500 in /status_codes/500) (SITE-34)
+- /status_codes/404: answered 404; linked from /status_codes; its address names the status it answers (404 in /status_codes/404) (SITE-34)
+
 ## Found by the crawl
 
-### MAJOR SITE-02: 9 broken links: the site links to addresses that answer an error
+### MAJOR SITE-02: 7 broken links: the site links to addresses that answer an error
 
 **Why it matters:** A visitor who follows one of these links reaches an error instead of the page promised.
 
@@ -17,12 +31,10 @@ not change the test to make it pass. Report it, and note it here.
 - /users/3: answered 404; linked from /hovers
 - /users/2: answered 404; linked from /hovers
 - /users/1: answered 404; linked from /hovers
-- /status_codes/500: answered 500; linked from /status_codes
 - /portfolio/: answered 404; linked from /shifting_content/menu, /disappearing_elements
 - /contact-us/: answered 404; linked from /shifting_content/menu, /disappearing_elements
 - /about/: answered 404; linked from /shifting_content/menu, /disappearing_elements
 - /gallery/: answered 404; linked from /shifting_content/menu, /disappearing_elements
-- /status_codes/404: answered 404; linked from /status_codes
 
 ### MAJOR SITE-08: 26 form fields on 11 pages have no label
 
@@ -535,6 +547,17 @@ not change the test to make it pass. Report it, and note it here.
 **Likely fix:** Publish /.well-known/security.txt with a Contact line (an email address or a form) and an Expires line.
 
 - /.well-known/security.txt: answered 404
+
+### INFO SITE-34: 2 links answer an error on purpose: their own words or address name the status
+
+**Why it matters:** A link that names the error it leads to (a page showing what a 404 or a 500 looks like) is the site working as designed, so it is listed apart and counts against the site in nothing.
+
+**Likely fix:** Nothing, unless a link is not meant to fail: then point it at a page that exists.
+
+**In this suite:** the link report lists each as known, and does not fail it. A team lists the links it expects to fail, each with its status, in the YOURS block of src/test/resources/link-report/expected.tsv: the link report then fails when one of them answers anything else.
+
+- /status_codes/500: answered 500, expected: its address names the status it answers (500 in /status_codes/500); linked from /status_codes
+- /status_codes/404: answered 404, expected: its address names the status it answers (404 in /status_codes/404); linked from /status_codes
 
 ### Also from the crawl
 

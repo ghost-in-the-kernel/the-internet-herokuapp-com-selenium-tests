@@ -49,7 +49,7 @@ import com.herokuapp.theinternet.tests.pages.largeform.LargeFormElements;
 import com.herokuapp.theinternet.tests.pages.largeform.LargeFormPage;
 import com.herokuapp.theinternet.tests.pages.multipledropdown.MultipleDropdownPage;
 import com.herokuapp.theinternet.tests.pages.nestedframes.NestedFramesPage;
-import com.herokuapp.theinternet.tests.pages.notificationmessa0e9eek4.NotificationMessageRenderedPage;
+import com.herokuapp.theinternet.tests.pages.notificationmessage.NotificationMessageRenderedPage;
 import com.herokuapp.theinternet.tests.pages.radiobuttons.RadioButtonsPage;
 import com.herokuapp.theinternet.tests.pages.readonly.ReadonlyElements;
 import com.herokuapp.theinternet.tests.pages.readonly.ReadonlyPage;
@@ -458,7 +458,7 @@ abstract class GeneratedSmokeTest extends BaseTest {
     @DisplayName(
             "TwoFactorPage: the \"Log in with tomsmith and SuperSecretPassword!. Then enter th\" form is there and "
             + "empty (nothing is sent)")
-    void twoFactorLogInWithTomsmithAndSuperSecretPa1iaczzvForm() {
+    void twoFactorThenEnterThForm() {
         new TwoFactorPage(driver).open().verify()
                 .isEmpty(TwoFactorElements.USERNAME_INPUT)
                 .isEmpty(TwoFactorElements.PASSWORD_INPUT)

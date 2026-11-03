@@ -4,10 +4,11 @@
 #   docker run --rm --ipc=host suite                      every test
 #   docker run --rm --ipc=host suite -Dgroups=smoke       (Java) or --spec ... (Cypress): options pass through
 #   docker run --rm --ipc=host -e BASE_URL=https://staging.example.com suite
-# Java, Maven and every system library a browser needs (Playwright's image); Selenium Manager fetches Chrome or Firefox, and its driver, at the run's start.
-FROM mcr.microsoft.com/playwright/java:v1.56.0-noble
+# Docker's official Maven image on Java 21; the libraries Chrome and Firefox need are installed in it, and Selenium Manager fetches the browser and its driver at the run's start.
+FROM maven:3.9-eclipse-temurin-21-noble@sha256:99e61abcff91a9b1333463bd8451fb18495d6eba9250ac66a338b518f8278320
 WORKDIR /suite
 COPY . .
+RUN apt-get update -qq && apt-get install -y -qq --no-install-recommends ca-certificates fonts-liberation libasound2t64 libatk-bridge2.0-0t64 libatk1.0-0t64 libcairo2 libcups2t64 libdbus-1-3 libdbus-glib-1-2 libdrm2 libgbm1 libglib2.0-0t64 libgtk-3-0t64 libnspr4 libnss3 libpango-1.0-0 libx11-6 libxcomposite1 libxdamage1 libxext6 libxfixes3 libxkbcommon0 libxrandr2 libxt6t64 xdg-utils > /dev/null && rm -rf /var/lib/apt/lists/*
 RUN mvn -B -q test-compile
 # ==== YOURS (image): safe to edit; regenerating keeps what is between these lines ====
 # ==== END YOURS (image) ====

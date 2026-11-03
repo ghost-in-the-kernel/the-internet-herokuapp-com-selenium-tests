@@ -61,7 +61,13 @@ fi
 # Unsure: the crew reads the checkout and the tools through the runner's folders (PATH, JAVA_HOME): a runner whose home folder
 # is closed to other users stops the run, saying so; and a Maven mirror or login kept in the runner's own ~/.m2 is not the crew's.
 # Unsure: that ps can see the crew's processes (a runner mounted with hidepid cannot); the kill itself needs no sight of them.
-SUITE_CREW='npx --yes @anthropic-ai/claude-code@2.1.296 -p "/stories {key}" --permission-mode acceptEdits --allowedTools "Read,Glob,Grep,Edit,Write,Bash(mvn -o:*),Bash(node jira-loop/agents.mjs need:*)"'
+# Claude Code is not fetched by name when the crew runs: a folder of the job's own holds the package, fetched and checked below
+# against the hash this suite was built with, and the crew runs that copy. The folder is made now, outside the checkout; the
+# crew can read and run it, not change it.
+crew_tool_dir=$(mktemp -d)
+chmod 755 "$crew_tool_dir"
+trap 'rm -rf "$crew_tool_dir"' EXIT
+SUITE_CREW='node "'"$crew_tool_dir"'/node_modules/@anthropic-ai/claude-code/cli-wrapper.cjs" -p "/stories {key}" --permission-mode acceptEdits --allowedTools "Read,Glob,Grep,Edit,Write,Bash(mvn -o:*),Bash(node jira-loop/agents.mjs need:*)"'
 # The crew was told to run these; each story's are run again, so nothing it reports is unchecked.
 SUITE_CHECKS='mvn -B -q -o test-compile
 mvn -B -o test -Dtest=SuiteRulesTest'
@@ -107,6 +113,7 @@ give_back() {
   else
     collect_bundles
   fi
+  rm -rf "$crew_tool_dir"
 }
 if [ "${SUITE_CREW_SAME_USER:-}" = "1" ]; then
   echo "SUITE_CREW_SAME_USER=1: the crew runs as this job's user, with this job's environment. It can read what this user can read,"
@@ -226,4 +233,50 @@ SUITE_PREPARE_END
 chmod 644 "$prepare_dir/prepare.sh"
 as_crew bash -euo pipefail "$prepare_dir/prepare.sh"
 rm -rf "$prepare_dir"
+
+# Claude Code, the exact bytes this suite was built with: each package (the launcher, and the native build for this machine)
+# is fetched by npm, hashed here, and compared with the hash recorded below (the integrity the npm registry published for it,
+# as a package-lock.json holds it). A package that differs is never unpacked or run; one that matches is unpacked, with no
+# install script, into the folder the crew runs it from. The fetch is the job's user's, and the last step before the crew starts.
+# --- the crew's tool, checked: begin
+crew_tool_version='2.1.296'
+crew_tool_hashes=$(cat <<'SUITE_HASHES_END'
+@anthropic-ai/claude-code@2.1.296 sha512-OX/k/rpcthMqnFKOWcpNcbiLsMKtAjLOpQNJHlYiDCFUznWCIwdRTyl/p9SdHVrsrzZuPMCNqZjnpakIni6upw==
+@anthropic-ai/claude-code-darwin-arm64@2.1.296 sha512-vqtx3kS3r1hNLMk+N8JMG5J4kcLHIbI3t/NSIdcFQZrRVCFA6NtcxJyn/B+Sf3GxJaFJOCEfoBQXsFo10+Oj9A==
+@anthropic-ai/claude-code-darwin-x64@2.1.296 sha512-yCJe1vp7juHg3xVyk0Ts8b+mcEylCo6aINg7yC7r1eI8BKfm1DT15htxl1riz3y+B1FV25emIK90d7rH+zFjLA==
+@anthropic-ai/claude-code-linux-x64@2.1.296 sha512-+m01urgelnI+VJxPaKPEK0wixgq42uZ8PeCaUk5tX/8YoDBvSmC/REVQG2jQfJAr8dxunpjJ600FvLrcj1WWTw==
+@anthropic-ai/claude-code-linux-arm64@2.1.296 sha512-Q6Qh6qFmwuBG9rQFiDR6bY3XkFnwTN9AAPrnnDgBvr9sbg1Ql5wrf0lfoCDiV369EUHOzxI4i5OdHW9Vf2/oeA==
+@anthropic-ai/claude-code-linux-x64-musl@2.1.296 sha512-mbFZ0QENsyWzmDo2eWc8MxGCAWFXc2w1v2rLavu0JYd2pY7+0S8pJSB6RV9mzJ10FVXT09bXWt0sHM6fgeAz5w==
+@anthropic-ai/claude-code-linux-arm64-musl@2.1.296 sha512-c6lZRVkvuHIHgo4SzF2yQp+RWwPDLLLjXuM6SNtJkR8EGcOR5FhLK7cmsrjDcC/t5ACP4N4pCRfRDzjC31cYQA==
+@anthropic-ai/claude-code-win32-x64@2.1.296 sha512-g2aYBzYM5YTDio0ulAoGIGgtGRMa08WAecer4wuOUrKPwVPRfyRdmoZI01BNS8jF9yupDmQycBMuBcVui/VGNw==
+@anthropic-ai/claude-code-win32-arm64@2.1.296 sha512-m/PZ8nO0Fi6FB7DpTFeHVln1useFjEEDXF1wVylxl34+Kf78s2KJVCNKozF/b/MO6jjVkewFQl+1hW5xZkaV7A==
+SUITE_HASHES_END
+)
+crew_tool_fetch() {
+  local spec=$1 want got packed file
+  want=$(printf '%s\n' "$crew_tool_hashes" | awk -v spec="$spec" '$1 == spec { print $2 }')
+  if [ -z "$want" ]; then
+    echo "Claude Code has no recorded hash for $spec (no build of it for this machine, or this suite was built without one): it is not run."
+    exit 1
+  fi
+  packed=$(mktemp -d "$crew_tool_dir/pack.XXXXXX")
+  if ! (cd "$crew_tool_dir" && npm pack "$spec" --pack-destination "$packed" --ignore-scripts --silent > /dev/null); then
+    echo "Claude Code ($spec) could not be fetched from the npm registry: check the network and the registry setting (npm config get registry)."
+    exit 1
+  fi
+  file=$(find "$packed" -maxdepth 1 -type f -name '*.tgz' | head -n 1)
+  got=$(node -e 'process.stdout.write("sha512-" + require("crypto").createHash("sha512").update(require("fs").readFileSync(process.argv[1])).digest("base64"))' "$file")
+  if [ "$got" != "$want" ]; then
+    echo "Claude Code ($spec) from the registry is not the package this suite was built with: its hash is $got, the recorded one is $want. It is not run. If the registry changed it, that is the finding; if you update Claude Code on purpose, rebuild the suite."
+    exit 1
+  fi
+  mkdir -p "$crew_tool_dir/node_modules/${spec%@*}"
+  tar -xzf "$file" -C "$crew_tool_dir/node_modules/${spec%@*}" --strip-components=1 --no-same-owner
+}
+crew_tool_platform=$(node -e 'const os = require("os"); const musl = process.platform === "linux" && process.report.getReport().header.glibcVersionRuntime === undefined; process.stdout.write(process.platform + "-" + os.arch() + (musl ? "-musl" : ""))')
+crew_tool_fetch "@anthropic-ai/claude-code@$crew_tool_version"
+crew_tool_fetch "@anthropic-ai/claude-code-$crew_tool_platform@$crew_tool_version"
+chmod -R go-w "$crew_tool_dir"
+chmod -R a+rX "$crew_tool_dir"
+# --- the crew's tool, checked: end
 as_crew node jira-loop/agents.mjs crew

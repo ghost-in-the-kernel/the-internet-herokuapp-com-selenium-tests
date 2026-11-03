@@ -62,17 +62,17 @@ public class ForgotPasswordPage extends LoadablePage<ForgotPasswordPage> impleme
 
     /** Goes to /forgot_password and waits until it has fully loaded. */
     public ForgotPasswordPage open() {
-        navigate(UrlPaths.FORGOT_PASSWORD);
+        navigate(UrlPaths.ELEMENT);
         return get();
     }
 
     @Override
     protected void isLoaded() throws Error {
-        boolean urlIsCorrect = WaitActions.waitForUrl(driver, UrlPaths.FORGOT_PASSWORD);
+        boolean urlIsCorrect = WaitActions.waitForUrl(driver, UrlPaths.ELEMENT);
         // Wrong page: fail now rather than wait for it to load.
         if (!urlIsCorrect) {
             throw new AssertionError(name() + " did not load! URL was " + driver.getCurrentUrl() + ", expected "
-                    + UrlPaths.FORGOT_PASSWORD);
+                    + UrlPaths.ELEMENT);
         }
         boolean pageLoaded = WaitActions.waitForPageLoad(driver);
 

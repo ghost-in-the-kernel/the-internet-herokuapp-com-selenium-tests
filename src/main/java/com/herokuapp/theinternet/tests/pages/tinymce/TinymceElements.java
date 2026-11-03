@@ -16,7 +16,7 @@ import org.openqa.selenium.By;
 public enum TinymceElements implements PageElement {
     // Section headings the crawled pages of this type share. One a test does not use is harmless.
     /** Heading "An iFrame containing the TinyMCE WYSIWYG Editor": every crawled page of this type showed it. */
-    AN_I_FRAME_CONTAINING_THE_TINY_M_1S3A4GM_HEADING(Headings.named("An iFrame containing the TinyMCE WYSIWYG Editor")),
+    AN_I_FRAME_CONTAINING_THE_TINY_MCE_HEADING(Headings.named("An iFrame containing the TinyMCE WYSIWYG Editor")),
 
     // In the page (from the crawl: nothing was typed, clicked or sent).
     /** menuitem "File": seen by the crawl on /tinymce. */

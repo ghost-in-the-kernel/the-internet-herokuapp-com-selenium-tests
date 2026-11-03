@@ -3227,13 +3227,6 @@
       ]
     },
     {
-      "url": "https://the-internet.herokuapp.com/status_codes/500",
-      "status": 500,
-      "linkedFrom": [
-        "https://the-internet.herokuapp.com/status_codes"
-      ]
-    },
-    {
       "url": "https://the-internet.herokuapp.com/portfolio/",
       "status": 404,
       "linkedFrom": [
@@ -3264,56 +3257,129 @@
         "https://the-internet.herokuapp.com/shifting_content/menu",
         "https://the-internet.herokuapp.com/disappearing_elements"
       ]
-    },
-    {
-      "url": "https://the-internet.herokuapp.com/status_codes/404",
-      "status": 404,
-      "linkedFrom": [
-        "https://the-internet.herokuapp.com/status_codes"
-      ]
     }
   ],
   "findings": [
     {
       "code": "SITE-02",
       "severity": "major",
-      "title": "9 broken links: the site links to addresses that answer an error",
+      "title": "7 broken links: the site links to addresses that answer an error",
       "where": [
         {
           "url": "https://the-internet.herokuapp.com/users/3",
-          "says": "answered 404; linked from /hovers"
+          "says": "answered 404; linked from /hovers",
+          "link": {
+            "paths": [
+              "/users/3"
+            ],
+            "status": 404,
+            "answer": "answered 404",
+            "from": [
+              "/hovers"
+            ],
+            "more": 0,
+            "why": "broken"
+          }
         },
         {
           "url": "https://the-internet.herokuapp.com/users/2",
-          "says": "answered 404; linked from /hovers"
+          "says": "answered 404; linked from /hovers",
+          "link": {
+            "paths": [
+              "/users/2"
+            ],
+            "status": 404,
+            "answer": "answered 404",
+            "from": [
+              "/hovers"
+            ],
+            "more": 0,
+            "why": "broken"
+          }
         },
         {
           "url": "https://the-internet.herokuapp.com/users/1",
-          "says": "answered 404; linked from /hovers"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/status_codes/500",
-          "says": "answered 500; linked from /status_codes"
+          "says": "answered 404; linked from /hovers",
+          "link": {
+            "paths": [
+              "/users/1"
+            ],
+            "status": 404,
+            "answer": "answered 404",
+            "from": [
+              "/hovers"
+            ],
+            "more": 0,
+            "why": "broken"
+          }
         },
         {
           "url": "https://the-internet.herokuapp.com/portfolio/",
-          "says": "answered 404; linked from /shifting_content/menu, /disappearing_elements"
+          "says": "answered 404; linked from /shifting_content/menu, /disappearing_elements",
+          "link": {
+            "paths": [
+              "/portfolio/"
+            ],
+            "status": 404,
+            "answer": "answered 404",
+            "from": [
+              "/shifting_content/menu",
+              "/disappearing_elements"
+            ],
+            "more": 0,
+            "why": "broken"
+          }
         },
         {
           "url": "https://the-internet.herokuapp.com/contact-us/",
-          "says": "answered 404; linked from /shifting_content/menu, /disappearing_elements"
+          "says": "answered 404; linked from /shifting_content/menu, /disappearing_elements",
+          "link": {
+            "paths": [
+              "/contact-us/"
+            ],
+            "status": 404,
+            "answer": "answered 404",
+            "from": [
+              "/shifting_content/menu",
+              "/disappearing_elements"
+            ],
+            "more": 0,
+            "why": "broken"
+          }
         },
         {
           "url": "https://the-internet.herokuapp.com/about/",
-          "says": "answered 404; linked from /shifting_content/menu, /disappearing_elements"
+          "says": "answered 404; linked from /shifting_content/menu, /disappearing_elements",
+          "link": {
+            "paths": [
+              "/about/"
+            ],
+            "status": 404,
+            "answer": "answered 404",
+            "from": [
+              "/shifting_content/menu",
+              "/disappearing_elements"
+            ],
+            "more": 0,
+            "why": "broken"
+          }
         },
         {
           "url": "https://the-internet.herokuapp.com/gallery/",
-          "says": "answered 404; linked from /shifting_content/menu, /disappearing_elements"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/status_codes/404",
-          "says": "answered 404; linked from /status_codes"
+          "says": "answered 404; linked from /shifting_content/menu, /disappearing_elements",
+          "link": {
+            "paths": [
+              "/gallery/"
+            ],
+            "status": 404,
+            "answer": "answered 404",
+            "from": [
+              "/shifting_content/menu",
+              "/disappearing_elements"
+            ],
+            "more": 0,
+            "why": "broken"
+          }
         }
       ],
       "why": "A visitor who follows one of these links reaches an error instead of the page promised.",
@@ -5081,6 +5147,47 @@
       ],
       "why": "Researchers who find a security problem look for /.well-known/security.txt to know whom to tell (RFC 9116); without it they may not report it, or report it publicly.",
       "fix": "Publish /.well-known/security.txt with a Contact line (an email address or a form) and an Expires line."
+    },
+    {
+      "code": "SITE-34",
+      "severity": "info",
+      "title": "2 links answer an error on purpose: their own words or address name the status",
+      "where": [
+        {
+          "url": "https://the-internet.herokuapp.com/status_codes/500",
+          "says": "answered 500, expected: its address names the status it answers (500 in /status_codes/500); linked from /status_codes",
+          "link": {
+            "paths": [
+              "/status_codes/500"
+            ],
+            "status": 500,
+            "answer": "answered 500",
+            "from": [
+              "/status_codes"
+            ],
+            "more": 0,
+            "why": "its address names the status it answers (500 in /status_codes/500)"
+          }
+        },
+        {
+          "url": "https://the-internet.herokuapp.com/status_codes/404",
+          "says": "answered 404, expected: its address names the status it answers (404 in /status_codes/404); linked from /status_codes",
+          "link": {
+            "paths": [
+              "/status_codes/404"
+            ],
+            "status": 404,
+            "answer": "answered 404",
+            "from": [
+              "/status_codes"
+            ],
+            "more": 0,
+            "why": "its address names the status it answers (404 in /status_codes/404)"
+          }
+        }
+      ],
+      "why": "A link that names the error it leads to (a page showing what a 404 or a 500 looks like) is the site working as designed, so it is listed apart and counts against the site in nothing.",
+      "fix": "Nothing, unless a link is not meant to fail: then point it at a page that exists."
     }
   ],
   "nearCopies": [

@@ -16,7 +16,9 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.function.Function;
 import java.util.function.ToIntFunction;
 
@@ -24,7 +26,9 @@ import java.util.function.ToIntFunction;
  * The link report: every address the crawl requested, asked once more by HTTP, what it
  * answers now beside what it answered then, in target/link-report.md. One that answered 2xx in the
  * crawl and does not now is broken since: LinkReportTest fails on it. One already broken in the
- * crawl is listed as known, never failed again; the rest are listed as fine.
+ * crawl is listed as known, never failed again; the rest are listed as fine. A link the team lists as
+ * expected to fail (expected.tsv, its YOURS block: path and status) is held to that status instead:
+ * it fails only when it answers anything else.
  */
 public final class LinkReport {
     public static final Path REPORT = Path.of("target", "link-report.md");
@@ -32,6 +36,11 @@ public final class LinkReport {
      * The addresses, written by Suite Builder from the crawl: path, status then ("-": no answer), pages linking to it.
      */
     private static final String LINKS = "/link-report/links.tsv";
+    /**
+     * The links the team expects to fail, in the YOURS block of expected.tsv: a path and the status it answers, a link
+     * a line.
+     */
+    private static final String EXPECTED = "/link-report/expected.tsv";
 
     private LinkReport() {}
 
@@ -47,6 +56,7 @@ public final class LinkReport {
      */
     public static List<String> check(ToIntFunction<String> statusOf) {
         List<String[]> links = read();
+        Map<String, Integer> expected = expectedLinks();
         Addresses.Found site = Addresses.of(SiteConfig.baseUrl());
         if (site != null) {
             StepLog.step("Try each address " + site.host() + " points to ("
@@ -94,19 +104,77 @@ public final class LinkReport {
                 now = 0;
             }
             int then = link[1].equals("-") ? 0 : Integer.parseInt(link[1]);
+            Integer want = expected.remove(link[0]);
+            if (want != null) {
+                expectedRow(rows, since, link[0], said(then), want, now, link[2]);
+                continue;
+            }
             rows.add(ok(then) && !ok(now) ? 0 : ok(then) ? 2 : 1, link[0], said(then), said(now), link[2]);
             if (ok(then) && !ok(now)) since.add(link[0] + " answered " + said(now) + " (" + then + " in the crawl)");
+        }
+        // A link the team lists that the crawl did not request is asked too.
+        for (Map.Entry<String, Integer> link : expected.entrySet()) {
+            Pace.betweenRequests();
+            int now;
+            try {
+                now = statusOf.applyAsInt(link.getKey());
+            } catch (RuntimeException | AssertionError e) {
+                now = 0;
+            }
+            expectedRow(rows, since, link.getKey(), "not in the crawl", link.getValue(), now, "");
         }
         rows.write(REPORT, INTRO);
         return since;
     }
 
+    /**
+     * A link the team expects to fail: listed as expected while it answers that status, failed when it answers anything
+     * else.
+     */
+    private static void expectedRow(Rows rows, List<String> since, String address, String then, int want, int now,
+            String from) {
+        rows.add(want == now ? 4 : 3, address, then, said(now), from);
+        if (want != now) since.add(address + " answered " + said(now) + " (the team expects " + want
+                + ", expected.tsv)");
+    }
+
+    /**
+     * The links the team expects to fail (expected.tsv, YOURS block): none when the file is not there; a line that is
+     * no path and status is refused.
+     */
+    private static Map<String, Integer> expectedLinks() {
+        Map<String, Integer> out = new LinkedHashMap<>();
+        InputStream in = LinkReport.class.getResourceAsStream(EXPECTED);
+        if (in == null) return out;
+        try (BufferedReader lines = new BufferedReader(new InputStreamReader(in, StandardCharsets.UTF_8))) {
+            for (String line = lines.readLine(); line != null; line = lines.readLine()) {
+                if (line.isBlank() || line.trim().startsWith("#")) continue;
+                String[] cells = line.trim().split("\\s+");
+                if (cells.length != 2 || !cells[1].matches("[1-5][0-9][0-9]"))
+                    throw new IllegalStateException(EXPECTED + ": \"" + line.trim()
+                            + "\" is not a path and a status (like /status_codes/404 404)");
+                if (!cells[0].startsWith("/"))
+                    throw new IllegalStateException(EXPECTED + ": \"" + line.trim()
+                            + "\" lists a path that does not start with \"/\": a link is listed by its path on the "
+                            + "site, like /status_codes/404");
+                out.put(cells[0], Integer.parseInt(cells[1]));
+            }
+        } catch (IOException e) {
+            throw new IllegalStateException("could not read " + EXPECTED + ": " + e.getMessage(), e);
+        }
+        return out;
+    }
+
     private static final String[] INTERNAL = {"Broken since the crawl", "Broken in the crawl, still listed",
-            "Answering as in the crawl"};
+            "Answering as in the crawl",
+            "Not answering as the team expected (expected.tsv)",
+                    "Expected by the team, answering as listed (expected.tsv)"};
     private static final String INTRO =
             "# Link report\n\nEvery address the crawl requested, asked again by this run. One that answered in the "
             + "crawl\n"
-            + "and does not now fails LinkReportTest; one already broken in the crawl is listed as known.\n";
+            + "and does not now fails LinkReportTest; one already broken in the crawl is listed as known. One the team "
+                    + "lists\n"
+            + "in expected.tsv is held to the status listed.\n";
     /**
      * The links to other sites, written by Suite Builder from the crawl: address, status then, how it was judged
      * (alive, barred, broken), pages linking to it.

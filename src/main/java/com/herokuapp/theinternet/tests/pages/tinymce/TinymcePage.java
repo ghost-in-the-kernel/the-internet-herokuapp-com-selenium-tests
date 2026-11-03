@@ -45,9 +45,9 @@ public class TinymcePage extends LoadablePage<TinymcePage> implements
     public static final String TITLE = "The Internet";
 
     /** What must be visible before the page counts as loaded. Remove any that come and go. */
-    // ==== YOURS (load-proof): safe to edit; kept once you change it, updated until then ==== default 4f73cfb3
+    // ==== YOURS (load-proof): safe to edit; kept once you change it, updated until then ==== default 62e438fc
     static final List<TinymceElements> PROVES_LOADED = List.of(
-            TinymceElements.AN_I_FRAME_CONTAINING_THE_TINY_M_1S3A4GM_HEADING);
+            TinymceElements.AN_I_FRAME_CONTAINING_THE_TINY_MCE_HEADING);
     // ==== END YOURS (load-proof) ====
 
     public TinymcePage(WebDriver driver) {

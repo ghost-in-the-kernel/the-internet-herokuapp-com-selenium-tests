@@ -48,7 +48,7 @@ public final class UrlPaths {
 
     public static final String NESTED_FRAMES = "/nested_frames";
 
-    public static final String FORGOT_PASSWORD = "/forgot_password";
+    public static final String ELEMENT = "/forgot_password";
 
     public static final String SUBDIRECTORIES = "/subdirectories";
 

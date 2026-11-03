@@ -38,7 +38,7 @@ import com.herokuapp.theinternet.tests.pages.large.LargePage;
 import com.herokuapp.theinternet.tests.pages.largeform.LargeFormPage;
 import com.herokuapp.theinternet.tests.pages.multipledropdown.MultipleDropdownPage;
 import com.herokuapp.theinternet.tests.pages.nestedframes.NestedFramesPage;
-import com.herokuapp.theinternet.tests.pages.notificationmessa0e9eek4.NotificationMessageRenderedPage;
+import com.herokuapp.theinternet.tests.pages.notificationmessage.NotificationMessageRenderedPage;
 import com.herokuapp.theinternet.tests.pages.radiobuttons.RadioButtonsPage;
 import com.herokuapp.theinternet.tests.pages.readonly.ReadonlyPage;
 import com.herokuapp.theinternet.tests.pages.redirector.RedirectorPage;
@@ -181,7 +181,7 @@ public class HomeClickActions {
 
     /** Clicks the link to ForgotPasswordPage (Forgot Password) and waits for it. */
     public ForgotPasswordPage goToForgotPassword() {
-        UserActions.click(driver, HomeElements.FORGOT_PASSWORD_LINK);
+        UserActions.click(driver, HomeElements.ELEMENT_LINK);
         return new ForgotPasswordPage(driver).get();
     }
 

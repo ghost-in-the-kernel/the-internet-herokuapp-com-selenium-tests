@@ -64,7 +64,7 @@ public enum HomeElements implements PageElement {
     /** Link "Nested Frames" (href /nested_frames) to NestedFramesPage, seen by the crawl on /. */
     NESTED_FRAMES_LINK(By.xpath("//a[@href='/nested_frames']"), "\"Nested Frames\""),
     /** Link "Forgot Password" (href /forgot_password) to ForgotPasswordPage, seen by the crawl on /. */
-    FORGOT_PASSWORD_LINK(By.xpath("//a[@href='/forgot_password']"), "\"Forgot Password\""),
+    ELEMENT_LINK(By.xpath("//a[@href='/forgot_password']"), "\"Forgot Password\""),
     /** Link "Subdirectories" (href /subdirectories) to SubdirectoriesPage, seen by the crawl on /. */
     SUBDIRECTORIES_LINK(By.xpath("//a[@href='/subdirectories']"), "\"Subdirectories\""),
     /** Link "JQuery UI Menus" (href /jqueryui/menu) to JqueryuiMenuPage, seen by the crawl on /. */
