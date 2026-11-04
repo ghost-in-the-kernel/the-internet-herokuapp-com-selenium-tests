@@ -44,8 +44,16 @@ function settings(needs) {
   if (process.env.JIRA_SITE)
     Object.assign(s, { site: process.env.JIRA_SITE, edition: process.env.JIRA_EDITION || s.edition });
   // Not set up at all: what a pipeline runs (pull, report, queue, pending) has nothing to do, and says so, ending 0; check says what to fill in.
-  if (!s.site && !s.project && ['pull', 'report', 'queue', 'pending'].includes(process.argv[2]))
-    throw new Idle('Jira is not set up (jira-loop/jira.properties): nothing to do.');
+  // But a suite that was connected once and is blank now has lost its settings (a fresh suite handed back in its place): it
+  // fails, so the pipeline goes red instead of idle.
+  if (!s.site && !s.project && ['pull', 'report', 'queue', 'pending'].includes(process.argv[2])) {
+    const was = /^true$/i.test(s.required ?? '') ? 'jira-loop/jira.properties says required = true' : connectedBefore();
+    if (was)
+      throw new Stop(
+        `Jira is not set up (jira-loop/jira.properties names no site or project), but this suite was connected to it: ${was}. Its settings were lost (a fresh suite in its place, or the file emptied): type jira login in the suite's folder, or fill in site and project in jira-loop/jira.properties, and commit it.`,
+      );
+    throw new Idle(`Jira is not set up (jira-loop/jira.properties): nothing to do.\n${idleWarning()}`);
+  }
   const missing = needs.filter((k) => !s[k]);
   if (missing.length)
     throw new Stop(
@@ -56,6 +64,48 @@ function settings(needs) {
   s.max = Math.max(1, Number.parseInt(s.max, 10) || 5);
   s.site = s.site.replace(/\/+$/, '');
   return s;
+}
+
+/**
+ * The warning a pipeline shows when its Jira job does nothing: loud where a green run would hide it, in the CI's own form
+ * where it has one (a GitHub Actions annotation, an Azure Pipelines issue), a plain WARNING line elsewhere (GitLab), and
+ * with the one line that makes blank settings fail instead.
+ */
+function idleWarning() {
+  const said =
+    "Jira is not set up, so this job does nothing and the pipeline stays green. If this suite uses Jira, its settings are missing: type jira login in the suite's folder, or fill in site and project in jira-loop/jira.properties. To make blank settings fail the pipeline instead, set required = true in jira-loop/jira.properties and commit it.";
+  // Unsure: GitHub and Azure read their commands on stdout; this goes to stderr, as pending's stdout must stay a JSON list.
+  if (process.env.GITHUB_ACTIONS === 'true') return `::warning title=Jira not set up::${said}`;
+  if (process.env.TF_BUILD) return `##vso[task.logissue type=warning]${said}`;
+  return `WARNING: ${said}`;
+}
+
+/**
+ * What shows this suite is meant to be connected to Jira, or null for one never connected: a Jira token in the environment,
+ * what this computer reported to it, or a
+ * story file this script pulled, named as it names them (the key, then the summary's words in lower case, .txt) and opening
+ * with that key. A story a person wrote and named otherwise is not one.
+ */
+function connectedBefore() {
+  // A pipeline given a Jira token expects Jira: the one sign a fresh suite handed back in place of the team's still carries,
+  // as the token lives in the pipeline's secrets, not in the suite. A secret the pipeline does not define comes as nothing,
+  // or (Azure) as its own name, $(JIRA_API_TOKEN): neither is a token.
+  const token = (process.env.JIRA_API_TOKEN ?? '').trim();
+  if (token && !/^\$[({]?\w+[)}]?$/.test(token)) return 'the pipeline gives it a Jira token (JIRA_API_TOKEN)';
+  if (existsSync(REPORTED)) return 'jira-loop/reported.json is here';
+  for (const [dir, where] of [
+    [NEW, 'stories/new'],
+    [DONE, 'stories/done'],
+  ]) {
+    if (!existsSync(dir)) continue;
+    for (const file of readdirSync(dir).sort()) {
+      const key = /^([A-Z][A-Z0-9]*-\d+)(?: [a-z0-9]+(?: [a-z0-9]+)*)?\.txt$/.exec(file)?.[1];
+      if (!key) continue;
+      const first = readFileSync(join(dir, file), 'utf8').split(/\r?\n/, 1)[0];
+      if (first === key || first.startsWith(`${key} `)) return `${where}/${file} was pulled from it`;
+    }
+  }
+  return null;
 }
 
 /** The Jira account: the environment's (a pipeline's secrets), else secrets/jira.login's (a person's computer). */

@@ -29,7 +29,7 @@ after a form is sent; ask for a saved page of that.
 - **`interests[]`**: `checkbox`. In `LargeFormElements` as `INTERESTS_CHECKBOX`: `check().interests()`.
 - **`interests[]`**: `checkbox`. In `LargeFormElements` as `INTERESTS_CHECKBOX_2`: `check().interests2()`.
 - **`interests[]`**: `checkbox`. In `LargeFormElements` as `INTERESTS_CHECKBOX_3`: `check().interests3()`.
-- **`Years of experience: 5` / `experience`**: `range field`. In `LargeFormElements` as `YEARS_OF_EXPERIENCE_5_INPUT`: `enter().yearsOfExperience5(...)`.
+- **`Years of experience: 5` / `experience`**: `range field`. In `LargeFormElements` as `YEARS_OF_EXPERIENCE_INPUT`: `enter().yearsOfExperience(...)`.
 - **`color`**: `color field`. In `LargeFormElements` as `COLOR_INPUT`: `enter().color(...)`.
 - **`I accept the terms` / `terms`**: `checkbox`. In `LargeFormElements` as `I_ACCEPT_THE_TERMS_CHECKBOX`: `check().iAcceptTheTerms()`.
 - **`Submit`**: `button`. In `LargeFormElements` as `SUBMIT_BUTTON`: `click().submit()`.

@@ -6552,13 +6552,13 @@
         }
       ]
     },
-    "control:/large_form:YEARS_OF_EXPERIENCE_5_INPUT": {
+    "control:/large_form:YEARS_OF_EXPERIENCE_INPUT": {
       "kind": "control",
       "why": "seen on /large_form: range field \"Years of experience: 5\"; the crawl trusts its locator (range field)",
       "facts": [
-        "page LargeFormPage element YEARS_OF_EXPERIENCE_5_INPUT xpath //input[@id='experience']",
-        "page LargeFormPage enter yearsOfExperience5 on YEARS_OF_EXPERIENCE_5_INPUT",
-        "page LargeFormPage clear clearYearsOfExperience5 on YEARS_OF_EXPERIENCE_5_INPUT"
+        "page LargeFormPage element YEARS_OF_EXPERIENCE_INPUT xpath //input[@id='experience']",
+        "page LargeFormPage enter yearsOfExperience on YEARS_OF_EXPERIENCE_INPUT",
+        "page LargeFormPage clear clearYearsOfExperience on YEARS_OF_EXPERIENCE_INPUT"
       ],
       "evidence": [
         {
@@ -6570,19 +6570,19 @@
         {
           "file": "src/main/java/com/herokuapp/theinternet/tests/pages/largeform/LargeFormElements.java",
           "line": 68,
-          "fact": "page LargeFormPage element YEARS_OF_EXPERIENCE_5_INPUT xpath //input[@id='experience']",
+          "fact": "page LargeFormPage element YEARS_OF_EXPERIENCE_INPUT xpath //input[@id='experience']",
           "why": "seen on /large_form: range field \"Years of experience: 5\"; the crawl trusts its locator (range field)"
         },
         {
           "file": "src/main/java/com/herokuapp/theinternet/tests/pages/largeform/actions/LargeFormEnterActions.java",
           "line": 136,
-          "fact": "page LargeFormPage enter yearsOfExperience5 on YEARS_OF_EXPERIENCE_5_INPUT",
+          "fact": "page LargeFormPage enter yearsOfExperience on YEARS_OF_EXPERIENCE_INPUT",
           "why": "seen on /large_form: range field \"Years of experience: 5\""
         },
         {
           "file": "src/main/java/com/herokuapp/theinternet/tests/pages/largeform/actions/LargeFormEnterActions.java",
           "line": 142,
-          "fact": "page LargeFormPage clear clearYearsOfExperience5 on YEARS_OF_EXPERIENCE_5_INPUT",
+          "fact": "page LargeFormPage clear clearYearsOfExperience on YEARS_OF_EXPERIENCE_INPUT",
           "why": "seen on /large_form: range field \"Years of experience: 5\""
         }
       ]
@@ -6710,8 +6710,8 @@
       "kind": "form",
       "why": "the \"Account\" form the crawl saw; filled, never sent",
       "facts": [
-        "page LargeFormPage task fillAccountForm takes Account enters firstName, lastName, email, nicknameOptional, birthday, age, country, languages, aboutYou, yearsOfExperience5, color",
-        "page LargeFormPage record Account firstName=\"Test First name\" lastName=\"Test Last name\" email=\"test@example.com\" nicknameOptional=\"Test Nickname (optional)\" birthday=\"Test Birthday\" age=\"1\" country=\"Argentina\" languages=\"English\" aboutYou=\"A test from the suite: please ignore.\" yearsOfExperience5=\"Test Years of experience: 5\" color=\"Test color\""
+        "page LargeFormPage task fillAccountForm takes Account enters firstName, lastName, email, nicknameOptional, birthday, age, country, languages, aboutYou, yearsOfExperience, color",
+        "page LargeFormPage record Account firstName=\"Test First name\" lastName=\"Test Last name\" email=\"test@example.com\" nicknameOptional=\"Test Nickname (optional)\" birthday=\"Test Birthday\" age=\"1\" country=\"Argentina\" languages=\"English\" aboutYou=\"A test from the suite: please ignore.\" yearsOfExperience=\"Test Years of experience: 5\" color=\"Test color\""
       ],
       "evidence": [
         {
@@ -6723,13 +6723,13 @@
         {
           "file": "src/main/java/com/herokuapp/theinternet/tests/pages/largeform/LargeFormTasks.java",
           "line": 27,
-          "fact": "page LargeFormPage task fillAccountForm takes Account enters firstName, lastName, email, nicknameOptional, birthday, age, country, languages, aboutYou, yearsOfExperience5, color",
+          "fact": "page LargeFormPage task fillAccountForm takes Account enters firstName, lastName, email, nicknameOptional, birthday, age, country, languages, aboutYou, yearsOfExperience, color",
           "why": "the \"Account\" form the crawl saw; filled, never sent"
         },
         {
           "file": "src/main/java/com/herokuapp/theinternet/tests/pages/largeform/Account.java",
           "line": 14,
-          "fact": "page LargeFormPage record Account firstName=\"Test First name\" lastName=\"Test Last name\" email=\"test@example.com\" nicknameOptional=\"Test Nickname (optional)\" birthday=\"Test Birthday\" age=\"1\" country=\"Argentina\" languages=\"English\" aboutYou=\"A test from the suite: please ignore.\" yearsOfExperience5=\"Test Years of experience: 5\" color=\"Test color\"",
+          "fact": "page LargeFormPage record Account firstName=\"Test First name\" lastName=\"Test Last name\" email=\"test@example.com\" nicknameOptional=\"Test Nickname (optional)\" birthday=\"Test Birthday\" age=\"1\" country=\"Argentina\" languages=\"English\" aboutYou=\"A test from the suite: please ignore.\" yearsOfExperience=\"Test Years of experience: 5\" color=\"Test color\"",
           "why": "the \"Account\" form's fields in page order, each sample plausible for its kind"
         }
       ]
@@ -7428,13 +7428,13 @@
         }
       ]
     },
-    "control:/readonly:DISABLED_NOT_THE_SAME_AS_INPUT": {
+    "control:/readonly:DISABLED_NOT_THE_SAME_INPUT": {
       "kind": "control",
       "why": "seen on /readonly: text field \"Disabled (not the same as read-only)\"; the crawl trusts its locator (text field)",
       "facts": [
-        "page ReadonlyPage element DISABLED_NOT_THE_SAME_AS_INPUT xpath //input[@id='disabled']",
-        "page ReadonlyPage enter disabledNotTheSameAs on DISABLED_NOT_THE_SAME_AS_INPUT",
-        "page ReadonlyPage clear clearDisabledNotTheSameAs on DISABLED_NOT_THE_SAME_AS_INPUT"
+        "page ReadonlyPage element DISABLED_NOT_THE_SAME_INPUT xpath //input[@id='disabled']",
+        "page ReadonlyPage enter disabledNotTheSame on DISABLED_NOT_THE_SAME_INPUT",
+        "page ReadonlyPage clear clearDisabledNotTheSame on DISABLED_NOT_THE_SAME_INPUT"
       ],
       "evidence": [
         {
@@ -7446,19 +7446,19 @@
         {
           "file": "src/main/java/com/herokuapp/theinternet/tests/pages/readonly/ReadonlyElements.java",
           "line": 29,
-          "fact": "page ReadonlyPage element DISABLED_NOT_THE_SAME_AS_INPUT xpath //input[@id='disabled']",
+          "fact": "page ReadonlyPage element DISABLED_NOT_THE_SAME_INPUT xpath //input[@id='disabled']",
           "why": "seen on /readonly: text field \"Disabled (not the same as read-only)\"; the crawl trusts its locator (text field)"
         },
         {
           "file": "src/main/java/com/herokuapp/theinternet/tests/pages/readonly/actions/ReadonlyEnterActions.java",
           "line": 49,
-          "fact": "page ReadonlyPage enter disabledNotTheSameAs on DISABLED_NOT_THE_SAME_AS_INPUT",
+          "fact": "page ReadonlyPage enter disabledNotTheSame on DISABLED_NOT_THE_SAME_INPUT",
           "why": "seen on /readonly: text field \"Disabled (not the same as read-only)\""
         },
         {
           "file": "src/main/java/com/herokuapp/theinternet/tests/pages/readonly/actions/ReadonlyEnterActions.java",
           "line": 55,
-          "fact": "page ReadonlyPage clear clearDisabledNotTheSameAs on DISABLED_NOT_THE_SAME_AS_INPUT",
+          "fact": "page ReadonlyPage clear clearDisabledNotTheSame on DISABLED_NOT_THE_SAME_INPUT",
           "why": "seen on /readonly: text field \"Disabled (not the same as read-only)\""
         }
       ]
@@ -13077,7 +13077,7 @@
       "kind": "test",
       "why": "the \"Account\" form the crawl saw: shown and each field as the page loaded it (empty, or holding what the crawl saw; a value the crawl saw change is not checked); nothing typed or sent",
       "facts": [
-        "test form LargeFormPage() empty FIRST_NAME_INPUT, LAST_NAME_INPUT, EMAIL_INPUT, PASSWORD_INPUT, NICKNAME_OPTIONAL_INPUT, BIRTHDAY_INPUT, AGE_INPUT, ABOUT_YOU_INPUT holds YEARS_OF_EXPERIENCE_5_INPUT=\"5\" shows SUBMIT_BUTTON"
+        "test form LargeFormPage() empty FIRST_NAME_INPUT, LAST_NAME_INPUT, EMAIL_INPUT, PASSWORD_INPUT, NICKNAME_OPTIONAL_INPUT, BIRTHDAY_INPUT, AGE_INPUT, ABOUT_YOU_INPUT holds YEARS_OF_EXPERIENCE_INPUT=\"5\" shows SUBMIT_BUTTON"
       ],
       "evidence": [
         {
@@ -13089,7 +13089,7 @@
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/GeneratedSmokeTest.java",
           "line": 467,
-          "fact": "test form LargeFormPage() empty FIRST_NAME_INPUT, LAST_NAME_INPUT, EMAIL_INPUT, PASSWORD_INPUT, NICKNAME_OPTIONAL_INPUT, BIRTHDAY_INPUT, AGE_INPUT, ABOUT_YOU_INPUT holds YEARS_OF_EXPERIENCE_5_INPUT=\"5\" shows SUBMIT_BUTTON",
+          "fact": "test form LargeFormPage() empty FIRST_NAME_INPUT, LAST_NAME_INPUT, EMAIL_INPUT, PASSWORD_INPUT, NICKNAME_OPTIONAL_INPUT, BIRTHDAY_INPUT, AGE_INPUT, ABOUT_YOU_INPUT holds YEARS_OF_EXPERIENCE_INPUT=\"5\" shows SUBMIT_BUTTON",
           "why": "the \"Account\" form the crawl saw: shown and each field as the page loaded it (empty, or holding what the crawl saw; a value the crawl saw change is not checked); nothing typed or sent"
         }
       ]
@@ -13098,7 +13098,7 @@
       "kind": "test",
       "why": "the \"Read-only Inputs\" form the crawl saw: shown and each field as the page loaded it (empty, or holding what the crawl saw; a value the crawl saw change is not checked); nothing typed or sent",
       "facts": [
-        "test form ReadonlyPage() empty none holds TEXT_FIELD_INPUT=\"I am editable\", ALWAYS_READ_ONLY_INPUT=\"You cannot change me\", DISABLED_NOT_THE_SAME_AS_INPUT=\"I am disabled\""
+        "test form ReadonlyPage() empty none holds TEXT_FIELD_INPUT=\"I am editable\", ALWAYS_READ_ONLY_INPUT=\"You cannot change me\", DISABLED_NOT_THE_SAME_INPUT=\"I am disabled\""
       ],
       "evidence": [
         {
@@ -13110,7 +13110,7 @@
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/GeneratedSmokeTest.java",
           "line": 483,
-          "fact": "test form ReadonlyPage() empty none holds TEXT_FIELD_INPUT=\"I am editable\", ALWAYS_READ_ONLY_INPUT=\"You cannot change me\", DISABLED_NOT_THE_SAME_AS_INPUT=\"I am disabled\"",
+          "fact": "test form ReadonlyPage() empty none holds TEXT_FIELD_INPUT=\"I am editable\", ALWAYS_READ_ONLY_INPUT=\"You cannot change me\", DISABLED_NOT_THE_SAME_INPUT=\"I am disabled\"",
           "why": "the \"Read-only Inputs\" form the crawl saw: shown and each field as the page loaded it (empty, or holding what the crawl saw; a value the crawl saw change is not checked); nothing typed or sent"
         }
       ]

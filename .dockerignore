@@ -6,6 +6,8 @@ crawl/pages/
 .git/
 secrets/*.login
 jira-loop/reported.json
+secrets/**/*.login
+jira-loop/run/
 .claude/
 .idea/
 .vscode/

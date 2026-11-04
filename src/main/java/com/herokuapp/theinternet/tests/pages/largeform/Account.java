@@ -12,7 +12,7 @@ import com.herokuapp.theinternet.tests.core.SiteConfig;
  * send; change one with a copy: {@code Account.sample().withFirstName("...")}.
  */
 public record Account(String firstName, String lastName, String email, String nicknameOptional, String birthday,
-        String age, String country, String languages, String aboutYou, String yearsOfExperience5, String color) {
+        String age, String country, String languages, String aboutYou, String yearsOfExperience, String color) {
 
     /**
      * Values any copy of the site takes, each plausible for its field; one can be set for a run on the
@@ -29,73 +29,73 @@ public record Account(String firstName, String lastName, String email, String ni
                 SiteConfig.value("country", "Argentina"),
                 SiteConfig.value("languages", "English"),
                 SiteConfig.value("aboutYou", "A test from the suite: please ignore."),
-                SiteConfig.value("yearsOfExperience5", "Test Years of experience: 5"),
+                SiteConfig.value("yearsOfExperience", "Test Years of experience: 5"),
                 SiteConfig.value("color", "Test color"));
     }
 
     /** This Account with firstName in place of its own. */
     public Account withFirstName(String firstName) {
         return new Account(firstName, lastName, email, nicknameOptional, birthday, age, country, languages, aboutYou,
-                yearsOfExperience5, color);
+                yearsOfExperience, color);
     }
 
     /** This Account with lastName in place of its own. */
     public Account withLastName(String lastName) {
         return new Account(firstName, lastName, email, nicknameOptional, birthday, age, country, languages, aboutYou,
-                yearsOfExperience5, color);
+                yearsOfExperience, color);
     }
 
     /** This Account with email in place of its own. */
     public Account withEmail(String email) {
         return new Account(firstName, lastName, email, nicknameOptional, birthday, age, country, languages, aboutYou,
-                yearsOfExperience5, color);
+                yearsOfExperience, color);
     }
 
     /** This Account with nicknameOptional in place of its own. */
     public Account withNicknameOptional(String nicknameOptional) {
         return new Account(firstName, lastName, email, nicknameOptional, birthday, age, country, languages, aboutYou,
-                yearsOfExperience5, color);
+                yearsOfExperience, color);
     }
 
     /** This Account with birthday in place of its own. */
     public Account withBirthday(String birthday) {
         return new Account(firstName, lastName, email, nicknameOptional, birthday, age, country, languages, aboutYou,
-                yearsOfExperience5, color);
+                yearsOfExperience, color);
     }
 
     /** This Account with age in place of its own. */
     public Account withAge(String age) {
         return new Account(firstName, lastName, email, nicknameOptional, birthday, age, country, languages, aboutYou,
-                yearsOfExperience5, color);
+                yearsOfExperience, color);
     }
 
     /** This Account with country in place of its own. */
     public Account withCountry(String country) {
         return new Account(firstName, lastName, email, nicknameOptional, birthday, age, country, languages, aboutYou,
-                yearsOfExperience5, color);
+                yearsOfExperience, color);
     }
 
     /** This Account with languages in place of its own. */
     public Account withLanguages(String languages) {
         return new Account(firstName, lastName, email, nicknameOptional, birthday, age, country, languages, aboutYou,
-                yearsOfExperience5, color);
+                yearsOfExperience, color);
     }
 
     /** This Account with aboutYou in place of its own. */
     public Account withAboutYou(String aboutYou) {
         return new Account(firstName, lastName, email, nicknameOptional, birthday, age, country, languages, aboutYou,
-                yearsOfExperience5, color);
+                yearsOfExperience, color);
     }
 
-    /** This Account with yearsOfExperience5 in place of its own. */
-    public Account withYearsOfExperience5(String yearsOfExperience5) {
+    /** This Account with yearsOfExperience in place of its own. */
+    public Account withYearsOfExperience(String yearsOfExperience) {
         return new Account(firstName, lastName, email, nicknameOptional, birthday, age, country, languages, aboutYou,
-                yearsOfExperience5, color);
+                yearsOfExperience, color);
     }
 
     /** This Account with color in place of its own. */
     public Account withColor(String color) {
         return new Account(firstName, lastName, email, nicknameOptional, birthday, age, country, languages, aboutYou,
-                yearsOfExperience5, color);
+                yearsOfExperience, color);
     }
 }

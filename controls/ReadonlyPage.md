@@ -16,4 +16,4 @@ after a form is sent; ask for a saved page of that.
 - **`Text field is read-only`**: `checkbox`. In `ReadonlyElements` as `TEXT_FIELD_IS_READ_ONLY_CHECKBOX`: `check().textFieldIsReadOnly()`.
 - **(no words: an icon)**: `text field`. In `ReadonlyElements` as `TEXT_FIELD_INPUT`: `enter().textField(...)`.
 - **`Always read-only`**: `text field`. In `ReadonlyElements` as `ALWAYS_READ_ONLY_INPUT`: `enter().alwaysReadOnly(...)`.
-- **`Disabled (not the same as read-only)`**: `text field`. In `ReadonlyElements` as `DISABLED_NOT_THE_SAME_AS_INPUT`: `enter().disabledNotTheSameAs(...)`.
+- **`Disabled (not the same as read-only)`**: `text field`. In `ReadonlyElements` as `DISABLED_NOT_THE_SAME_INPUT`: `enter().disabledNotTheSame(...)`.

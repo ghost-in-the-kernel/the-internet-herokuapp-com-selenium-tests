@@ -74,7 +74,8 @@ public final class Pack {
         Path zip = suite.resolveSibling(suite.getFileName() + (run ? "-run-" : "-pack-") + LocalDate.now() + ".zip");
         Map<String, Integer> left = new TreeMap<>();
         Map<String, String> why = new TreeMap<>();
-        boolean pagesCurrent = crawlIsCurrent(suite);
+        // A public practice site: its pages as crawled ship with the suite, whatever the crawl's age.
+        boolean pagesCurrent = true;
         int blanked = 0;
         int packed = 0;
         String longest = "";

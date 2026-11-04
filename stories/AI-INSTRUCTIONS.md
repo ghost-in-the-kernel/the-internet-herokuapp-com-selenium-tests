@@ -82,6 +82,15 @@ no snapshot: use the story's locator only if it gives one, and write "unverified
 IMPLEMENTED note; with none, push back and ask for a saved page. An element the story names without a
 locator: find it in the page's snapshot, and check the locator you write the same way.
 
+**When crawl/pages/ is not here, and how old the crawl is.** crawl/pages/ (each page's HTML as the crawl
+saw it) is kept only on the computer that crawled, for a day after the crawl; it is never in a pipeline's checkout,
+where the crew works, nor in a copy cloned from git. Look before you rely on it. When it is not here, read crawl/the-internet.herokuapp.com.crawl.json
+(each page's title, headings, links and texts as crawled), controls/ and the page classes instead; what a story names
+that none of them holds is not known to be missing: ask for that page saved (saved-pages/, under `Needs from you:`),
+never push back saying the page does not show it, and never write a locator you could not check.
+Every push-back says how old the crawl is: read `crawlFileSaved` in crawl/manifest.json and add the line
+`The crawl is <n> days old (<date>): a page or element added since is not in it.` under `Not implemented:`.
+
 ## 3. Push back when
 
 - **Its locator is wrong.** A locator the story gives finds nothing, or several things, on the page as
@@ -94,7 +103,7 @@ locator: find it in the page's snapshot, and check the locator you write the sam
   right. Confirmed as the story says, the difference is the site's: its test, and KNOWN-ISSUES.md.
 - **The crawl could not have seen it.** It happens after a click, behind a login, or after a form is
   sent, and no saved page shows it. Ask for exactly that page: which page, saved when (after doing what).
-  Not this: anything in crawl/pages/ was seen; `data-sb-hidden="true"` is only not opened yet (a closed menu),
+  Not this: anything in crawl/pages/ (when it is here) was seen; `data-sb-hidden="true"` is only not opened yet (a closed menu),
   and what it shows after the click is known when the page's words or the story say. Unseen is what no
   file holds: the page after a form is sent, a list built as you type, a tooltip made on hover.
 - **It has nothing to check.** No outcome a visitor would see ("the user uses the form"). Ask what should
@@ -117,7 +126,7 @@ locator: find it in the page's snapshot, and check the locator you write the sam
   story undoes it first, then does the step: close the message, then make a new one; its return is the
   outcome, and that is the same story, not a different one.
 - **A visitor could not do a step.** A link or button with no words a visitor can read (empty, hidden as
-  crawled, an image with no alt text), named by a locator or a data-testid: read it in crawl/pages/ before
+  crawled, an image with no alt text), named by a locator or a data-testid: read it in crawl/pages/ (or the crawl's report) before
   you write a click on it. Push back, saying what the page shows there; a test that clicks what a visitor
   cannot see proves nothing about the visitor.
 - **It is unsafe on the live site.** It sends a form, orders, pays, signs up, deletes, or emails someone,

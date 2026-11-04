@@ -46,14 +46,14 @@ public class ReadonlyEnterActions {
     }
 
     /** Types into the text field "Disabled (not the same as read-only)". */
-    public ReadonlyEnterActions disabledNotTheSameAs(String text) {
-        UserActions.type(driver, ReadonlyElements.DISABLED_NOT_THE_SAME_AS_INPUT, text);
+    public ReadonlyEnterActions disabledNotTheSame(String text) {
+        UserActions.type(driver, ReadonlyElements.DISABLED_NOT_THE_SAME_INPUT, text);
         return this;
     }
 
     /** Empties the text field "Disabled (not the same as read-only)". */
-    public ReadonlyEnterActions clearDisabledNotTheSameAs() {
-        UserActions.clear(driver, ReadonlyElements.DISABLED_NOT_THE_SAME_AS_INPUT);
+    public ReadonlyEnterActions clearDisabledNotTheSame() {
+        UserActions.clear(driver, ReadonlyElements.DISABLED_NOT_THE_SAME_INPUT);
         return this;
     }
 

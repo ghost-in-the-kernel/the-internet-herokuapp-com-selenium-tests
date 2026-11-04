@@ -29,7 +29,7 @@ public class LargeFormTasks {
         here.enter().firstName(form.firstName()).lastName(form.lastName()).email(form.email())
                 .nicknameOptional(form.nicknameOptional()).birthday(form.birthday()).age(form.age())
                 .country(form.country()).languages(form.languages()).aboutYou(form.aboutYou())
-                .yearsOfExperience5(form.yearsOfExperience5()).color(form.color());
+                .yearsOfExperience(form.yearsOfExperience()).color(form.color());
         return here;
     }
 
@@ -39,11 +39,11 @@ public class LargeFormTasks {
      */
     @Deprecated
     public LargeFormPage fillAccountForm(String firstName, String lastName, String email, String nicknameOptional,
-            String birthday, String age, String country, String languages, String aboutYou, String yearsOfExperience5,
+            String birthday, String age, String country, String languages, String aboutYou, String yearsOfExperience,
             String color) {
         return fillAccountForm(
                 new Account(firstName, lastName, email, nicknameOptional, birthday, age, country, languages, aboutYou,
-                yearsOfExperience5, color));
+                yearsOfExperience, color));
     }
 
     // ==== YOURS (tasks): safe to edit; regenerating keeps what is between these lines ====

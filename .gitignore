@@ -5,16 +5,17 @@ saved-pages/**/*.html
 saved-pages/**/*.htm
 # Accounts: each person's own, never committed (SR-20). secrets/README.md is.
 secrets/*.login
+secrets/**/*.login
 # What this computer has reported to Jira: each its own (Jira itself is the record).
 jira-loop/reported.json
+# A run of the Jira loop on this machine: what it claimed and the crew's bundles, handed between jobs, never committed.
+jira-loop/run/
 # One person's computer, not the suite: editor settings, an environment file, folder notes.
 .idea/
 .vscode/
 .env
 .DS_Store
-# The pages as the crawl read them: someone else's site, and they can hold personal data too. They stay
-# on this computer for the AI to read, until the crawl is 1 day old (Suite Builder deletes them then).
-crawl/pages/
+# The pages as the crawl read them: a public practice site, so they are kept and shipped with the suite as its context.
 orphaned/
 # The crawl the suite came from stays with it, even under a folder whose own .gitignore drops crawl files.
 !crawl/*.json

@@ -349,6 +349,14 @@ Each of these links answered an error or did not answer. A person is to look at 
 - /: no page of the site sends Strict-Transport-Security (browsers keep to https)
 - /: no page of the site sends Content-Security-Policy (which scripts may run)
 
+### MINOR SITE-35: Requests to 1 host of other sites failed during the crawl, as seen from the crawler's machine and network
+
+**Why it matters:** A script on the page asked another site's host for data (a third party's logging, analytics or a widget) and got an error or no answer. This was seen from the crawler's own machine and network only: an ad blocker, the region, DNS filtering or the crawler's own network can cause the same failure, and it may not fail for real visitors. The crawl cannot tell whether a page needs the answer. The names were not looked up (--offline, or a crawl from before the lookup), so "failed" is all it can say. It stops no build and no test.
+
+**Likely fix:** If a name does not resolve, the host is probably gone: remove its snippet or tag from the site. Otherwise open the page from an ordinary browser and network; if the request works there, there is nothing to fix.
+
+- /: `298279967.log.optimizely.com`: 57 pages asked it for data and the request failed (ERR_TUNNEL_CONNECTION_FAILED)
+
 ### MINOR SITE-29: The site has no security.txt: someone who finds a hole has no way to report it
 
 **Why it matters:** Researchers who find a security problem look for /.well-known/security.txt to know whom to tell (RFC 9116); without it they may not report it, or report it publicly.

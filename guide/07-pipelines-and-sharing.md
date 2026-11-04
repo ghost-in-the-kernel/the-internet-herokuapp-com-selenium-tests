@@ -10,6 +10,13 @@ job's hourly poll, commented out; take the `# ` off those lines to run them (the
 them as you leave them. Keep the pipeline you use and delete the others; a rebuild leaves them deleted. The
 `Dockerfile` runs the suite anywhere.
 
+A suite connected to Jira needs its token in the pipeline's secrets: `JIRA_API_TOKEN` (and `JIRA_EMAIL` on Jira
+Cloud). With the token set and `jira-loop/jira.properties` blank, the stories job fails and says so, rather than
+doing nothing; `required = true` in that file (`jira login` sets it) does the same without the token. With neither,
+blank settings are a suite that does not use Jira: the job warns that it does nothing, and stays green. Before you
+hand a suite on, or take back one rebuilt elsewhere, `suite verify <its folder> --handoff` checks its Jira settings
+against its git history.
+
 ## Sharing
 
 - `java pack/Pack.java --run` zips the last run's failures, report and the read of the site, beside this folder, and says its

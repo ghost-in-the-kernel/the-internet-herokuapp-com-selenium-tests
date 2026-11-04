@@ -216,7 +216,8 @@ async function login() {
   if (!output) return 0;
   mkdirSync(dirname(ACCOUNT), { recursive: true });
   writeFileSync(ACCOUNT, `Username: ${email}\nPassword: ${token}\n`);
-  setSettings({ site, edition, project, ready: watched.join(', '), claimed, ...output });
+  // Connected now: a blank file from here on fails the pipeline, never idles it (required).
+  setSettings({ site, edition, project, ready: watched.join(', '), claimed, ...output, required: 'true' });
   console.log(`\n  ${bold('Connected.')} Saved in jira-loop/jira.properties (commit it: it holds no secret).\n`);
   sync(['check']);
   console.log(

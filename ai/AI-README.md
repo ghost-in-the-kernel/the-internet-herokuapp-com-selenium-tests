@@ -117,6 +117,9 @@ class PROJ1 extends StoryTest {
   actions. No comments needed: if a test needs one, a method is badly named.
 - Expected texts are plain strings, never regular expressions.
 - `@DisplayName` is the story's title; `@Story` is its id in the team's tracker.
+- Names: classes PascalCase (`LoginPage`), methods and tests lowerCamelCase (`enterEmail`), element constants
+  as below. A name is made of words that say what the thing is: never a count, a price, a version or a sentence
+  of the page's text (the site changes those; `POLO_LINK`, not `N_6_POLO_LINK` for "(6) Polo").
 - Element constants: SCREAMING_SNAKE, ending in what the thing is: `_BUTTON`, `_LINK`, `_INPUT`,
   `_SELECT`, `_CHECKBOX`, `_RADIO`, `_HEADING`, `_TEXT`, `_IMAGE`, `_MENU`, `_DIALOG`, `_FRAME`.
   Steps name them from that: `EMAIL_INPUT` is "the email input".

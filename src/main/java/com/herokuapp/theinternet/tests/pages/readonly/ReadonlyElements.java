@@ -26,7 +26,7 @@ public enum ReadonlyElements implements PageElement {
     /** text field "Always read-only": seen by the crawl on /readonly. */
     ALWAYS_READ_ONLY_INPUT(By.xpath("//input[@id='always-readonly']")),
     /** text field "Disabled (not the same as read-only)": seen by the crawl on /readonly. */
-    DISABLED_NOT_THE_SAME_AS_INPUT(By.xpath("//input[@id='disabled']")),
+    DISABLED_NOT_THE_SAME_INPUT(By.xpath("//input[@id='disabled']")),
 
     // ==== YOURS (elements): safe to edit; regenerating keeps what is between these lines ====
     // This page's own elements (see ai/recipes/add-an-element.md). Selector Grabber's locators

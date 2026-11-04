@@ -446,7 +446,7 @@ abstract class GeneratedSmokeTest extends BaseTest {
     @DisplayName(
             "TwoFactorPage: the \"Then enter the one-time code shown on the next page.\" form is there and empty "
             + "(nothing is sent)")
-    void twoFactorThenEnterTheOneTimeCodeShownOnTheNextForm() {
+    void twoFactorForm() {
         new TwoFactorPage(driver).open().verify()
                 .isEmpty(TwoFactorElements.USERNAME_INPUT)
                 .isEmpty(TwoFactorElements.PASSWORD_INPUT)
@@ -455,7 +455,7 @@ abstract class GeneratedSmokeTest extends BaseTest {
 
     @Test
     @DisplayName("ForgotPasswordPage: the \"forgot_password\" form is there and empty (nothing is sent)")
-    void forgotPasswordForgotPasswordForm() {
+    void forgotPasswordForm() {
         new ForgotPasswordPage(driver).open().verify()
                 .isEmpty(ForgotPasswordElements.E_MAIL_INPUT)
                 .shows(ForgotPasswordElements.RETRIEVE_PASSWORD_BUTTON);
@@ -473,7 +473,7 @@ abstract class GeneratedSmokeTest extends BaseTest {
                 .isEmpty(LargeFormElements.BIRTHDAY_INPUT)
                 .isEmpty(LargeFormElements.AGE_INPUT)
                 .isEmpty(LargeFormElements.ABOUT_YOU_INPUT)
-                .holds(LargeFormElements.YEARS_OF_EXPERIENCE_5_INPUT, "5")
+                .holds(LargeFormElements.YEARS_OF_EXPERIENCE_INPUT, "5")
                 .shows(LargeFormElements.SUBMIT_BUTTON);
     }
 
@@ -483,12 +483,12 @@ abstract class GeneratedSmokeTest extends BaseTest {
         new ReadonlyPage(driver).open().verify()
                 .holds(ReadonlyElements.TEXT_FIELD_INPUT, "I am editable")
                 .holds(ReadonlyElements.ALWAYS_READ_ONLY_INPUT, "You cannot change me")
-                .holds(ReadonlyElements.DISABLED_NOT_THE_SAME_AS_INPUT, "I am disabled");
+                .holds(ReadonlyElements.DISABLED_NOT_THE_SAME_INPUT, "I am disabled");
     }
 
     @Test
     @DisplayName("KeyPressesPage: the \"Key Presses\" form is there and empty (nothing is sent)")
-    void keyPressesKeyPressesForm() {
+    void keyPressesForm() {
         new KeyPressesPage(driver).open().verify()
                 .isEmpty(KeyPressesElements.TEXT_FIELD_INPUT);
     }
