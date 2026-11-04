@@ -30,6 +30,7 @@ written for whoever fixes a failure, person or AI.
 | [SR-21](#sr-21--a-done-storys-notes-name-every-criterion-by-its-number) | A done story's notes name every criterion, by its number |
 | [SR-22](#sr-22--one-element-one-name) | One element, one name |
 | [SR-23](#sr-23--a-done-storys-test-passed-in-its-latest-recorded-run-of-this-commit) | A done story's test passed in its latest recorded run of this commit |
+| [SR-24](#sr-24--test-code-does-not-delete-files-or-run-processes) | Test code does not delete files or run processes |
 
 A **story** is a test carrying `@Story` or extending `StoryTest`. The story rules hold for stories
 only; a test of your own that is not one is held to the hard rules (it checks something, and the
@@ -399,3 +400,11 @@ new HomePage(driver).open()
 **Why.** A story is done when its test has passed, not when its file exists: a story moved to stories/done/ by hand, or whose test has failed since, claims coverage nobody has seen. A run only counts if the rules held in it, since a test passing beside broken rules says little. And a run counts only for the commit it ran: a pass from before a later commit says nothing of the code now.
 
 **How to fix it.** Commit your changes (a tree with changes is a warning under a plain mvn test, a failure under suite test and the pipelines, which set SUITE_JUDGE=commit), then run the whole suite on that commit with Suite Builder (suite test &lt;project>, in the suite-builder folder, never from here) so the run is recorded; fix the story's test if it failed, and the other rules if they were broken in that run. A story that is not finished goes back to stories/new/. Never edit runs/index.jsonl: it is the record of what ran.
+
+## SR-24 · Test code does not delete files or run processes
+
+**What it checks.** No .java file under src (the rules and HarnessTest aside) deletes a file or starts a process, in code: Runtime.getRuntime, ProcessBuilder, .exec(, System.exit, Files.delete(, deleteIfExists(, deleteAll(, FileUtils and kin. Evidence.java and RerunOnce.java are read in their YOURS blocks only.
+
+**Why.** A test only looks at the site: a delete can take a person's files, a process runs with the runner's rights, and the site's text must never reach either.
+
+**How to fix it.** Take the call out: the harness clears target/ itself; a command to run before the tests belongs in a pipeline step.

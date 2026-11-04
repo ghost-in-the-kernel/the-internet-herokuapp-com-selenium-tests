@@ -94,7 +94,7 @@ public class JqueryuiMenuPage extends LoadablePage<JqueryuiMenuPage> implements
     /** What the crawl timed of these pages after their load event (core/Timings flags one much slower). */
     @Override
     protected long crawlSettledMs() {
-        return 0;
+        return 100;
     }
 
     @Override

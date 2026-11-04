@@ -2,7 +2,7 @@
   "version": 2,
   "crawl": {
     "file": "crawl/the-internet.herokuapp.com.crawl.json",
-    "sha256": "a083c6b47eb52959c4a646e49bf661fd1e9cc73dcfe242c3420b1a109301fb5e"
+    "sha256": "50797e13c560665a53a9af83412c5ba1653e714968ed02b796771756a1d5b60e"
   },
   "entities": {
     "type:/": {
@@ -537,11 +537,11 @@
         }
       ]
     },
-    "link:/:ELEMENT_LINK": {
+    "link:/:FORGOT_PASSWORD_LINK": {
       "kind": "link",
       "why": "seen on /: \"Forgot Password\" (/forgot_password); found by its address",
       "facts": [
-        "page HomePage link ELEMENT_LINK xpath //a[@href='/forgot_password']"
+        "page HomePage link FORGOT_PASSWORD_LINK xpath //a[@href='/forgot_password']"
       ],
       "evidence": [
         {
@@ -553,7 +553,7 @@
         {
           "file": "src/main/java/com/herokuapp/theinternet/tests/pages/home/HomeElements.java",
           "line": 67,
-          "fact": "page HomePage link ELEMENT_LINK xpath //a[@href='/forgot_password']",
+          "fact": "page HomePage link FORGOT_PASSWORD_LINK xpath //a[@href='/forgot_password']",
           "why": "seen on /: \"Forgot Password\" (/forgot_password); found by its address"
         }
       ]
@@ -873,11 +873,11 @@
         }
       ]
     },
-    "link:/:INFINITE_SCROLL_LIST_LINK": {
+    "link:/:INFINITE_SCROLL_LINK": {
       "kind": "link",
       "why": "seen on /: \"Infinite Scroll\" (/infinite_scroll); found by its address",
       "facts": [
-        "page HomePage link INFINITE_SCROLL_LIST_LINK xpath //a[@href='/infinite_scroll']"
+        "page HomePage link INFINITE_SCROLL_LINK xpath //a[@href='/infinite_scroll']"
       ],
       "evidence": [
         {
@@ -889,7 +889,7 @@
         {
           "file": "src/main/java/com/herokuapp/theinternet/tests/pages/home/HomeElements.java",
           "line": 101,
-          "fact": "page HomePage link INFINITE_SCROLL_LIST_LINK xpath //a[@href='/infinite_scroll']",
+          "fact": "page HomePage link INFINITE_SCROLL_LINK xpath //a[@href='/infinite_scroll']",
           "why": "seen on /: \"Infinite Scroll\" (/infinite_scroll); found by its address"
         }
       ]
@@ -1528,7 +1528,7 @@
       "kind": "link",
       "why": "seen on /: \"Forgot Password\" (/forgot_password)",
       "facts": [
-        "page HomePage links-to ForgotPasswordPage clicking ELEMENT_LINK"
+        "page HomePage links-to ForgotPasswordPage clicking FORGOT_PASSWORD_LINK"
       ],
       "evidence": [
         {
@@ -1540,7 +1540,7 @@
         {
           "file": "src/main/java/com/herokuapp/theinternet/tests/pages/home/actions/HomeClickActions.java",
           "line": 183,
-          "fact": "page HomePage links-to ForgotPasswordPage clicking ELEMENT_LINK",
+          "fact": "page HomePage links-to ForgotPasswordPage clicking FORGOT_PASSWORD_LINK",
           "why": "seen on /: \"Forgot Password\" (/forgot_password)"
         }
       ]
@@ -1864,7 +1864,7 @@
       "kind": "link",
       "why": "seen on /: \"Infinite Scroll\" (/infinite_scroll)",
       "facts": [
-        "page HomePage links-to InfiniteScrollListPage clicking INFINITE_SCROLL_LIST_LINK"
+        "page HomePage links-to InfiniteScrollPage clicking INFINITE_SCROLL_LINK"
       ],
       "evidence": [
         {
@@ -1876,7 +1876,7 @@
         {
           "file": "src/main/java/com/herokuapp/theinternet/tests/pages/home/actions/HomeClickActions.java",
           "line": 279,
-          "fact": "page HomePage links-to InfiniteScrollListPage clicking INFINITE_SCROLL_LIST_LINK",
+          "fact": "page HomePage links-to InfiniteScrollPage clicking INFINITE_SCROLL_LINK",
           "why": "seen on /: \"Infinite Scroll\" (/infinite_scroll)"
         }
       ]
@@ -2680,7 +2680,7 @@
         "page HoversPage opens ()",
         "page HoversPage url-shapes /hovers",
         "page HoversPage doors read, verify",
-        "page HoversPage settles 0",
+        "page HoversPage settles 100",
         "page HoversPage title is \"The Internet\""
       ],
       "evidence": [
@@ -2717,7 +2717,7 @@
         {
           "file": "src/main/java/com/herokuapp/theinternet/tests/pages/hovers/HoversPage.java",
           "line": 92,
-          "fact": "page HoversPage settles 0",
+          "fact": "page HoversPage settles 100",
           "why": "the median of its pages read, after their load event, the crawl's quiet windows taken out"
         },
         {
@@ -2876,7 +2876,7 @@
         "page RadioButtonsPage opens ()",
         "page RadioButtonsPage url-shapes /radio_buttons",
         "page RadioButtonsPage doors check, read, verify",
-        "page RadioButtonsPage settles 0",
+        "page RadioButtonsPage settles 300",
         "page RadioButtonsPage title is \"The Internet\""
       ],
       "evidence": [
@@ -2913,7 +2913,7 @@
         {
           "file": "src/main/java/com/herokuapp/theinternet/tests/pages/radiobuttons/RadioButtonsPage.java",
           "line": 99,
-          "fact": "page RadioButtonsPage settles 0",
+          "fact": "page RadioButtonsPage settles 300",
           "why": "the median of its pages read, after their load event, the crawl's quiet windows taken out"
         },
         {
@@ -3527,7 +3527,7 @@
         "page UploadPage opens ()",
         "page UploadPage url-shapes /upload",
         "page UploadPage doors click, enter, read, verify",
-        "page UploadPage settles 0",
+        "page UploadPage settles 100",
         "page UploadPage title is \"The Internet\""
       ],
       "evidence": [
@@ -3564,7 +3564,7 @@
         {
           "file": "src/main/java/com/herokuapp/theinternet/tests/pages/upload/UploadPage.java",
           "line": 100,
-          "fact": "page UploadPage settles 0",
+          "fact": "page UploadPage settles 100",
           "why": "the median of its pages read, after their load event, the crawl's quiet windows taken out"
         },
         {
@@ -3751,7 +3751,7 @@
         "page JavascriptAlertsPage opens ()",
         "page JavascriptAlertsPage url-shapes /javascript_alerts",
         "page JavascriptAlertsPage doors click, read, verify",
-        "page JavascriptAlertsPage settles 0",
+        "page JavascriptAlertsPage settles 200",
         "page JavascriptAlertsPage title is \"The Internet\""
       ],
       "evidence": [
@@ -3788,7 +3788,7 @@
         {
           "file": "src/main/java/com/herokuapp/theinternet/tests/pages/javascriptalerts/JavascriptAlertsPage.java",
           "line": 95,
-          "fact": "page JavascriptAlertsPage settles 0",
+          "fact": "page JavascriptAlertsPage settles 200",
           "why": "the median of its pages read, after their load event, the crawl's quiet windows taken out"
         },
         {
@@ -3919,7 +3919,7 @@
         "page EntryAdPage opens ()",
         "page EntryAdPage url-shapes /entry_ad",
         "page EntryAdPage doors read, verify",
-        "page EntryAdPage settles 0",
+        "page EntryAdPage settles 200",
         "page EntryAdPage title is \"The Internet\""
       ],
       "evidence": [
@@ -3956,7 +3956,7 @@
         {
           "file": "src/main/java/com/herokuapp/theinternet/tests/pages/entryad/EntryAdPage.java",
           "line": 94,
-          "fact": "page EntryAdPage settles 0",
+          "fact": "page EntryAdPage settles 200",
           "why": "the median of its pages read, after their load event, the crawl's quiet windows taken out"
         },
         {
@@ -4325,7 +4325,7 @@
         "page TwoFactorPage opens ()",
         "page TwoFactorPage url-shapes /two_factor",
         "page TwoFactorPage doors click, enter, read, verify, execute",
-        "page TwoFactorPage settles 0",
+        "page TwoFactorPage settles 300",
         "page TwoFactorPage title is \"The Internet\""
       ],
       "evidence": [
@@ -4362,7 +4362,7 @@
         {
           "file": "src/main/java/com/herokuapp/theinternet/tests/pages/twofactor/TwoFactorPage.java",
           "line": 102,
-          "fact": "page TwoFactorPage settles 0",
+          "fact": "page TwoFactorPage settles 300",
           "why": "the median of its pages read, after their load event, the crawl's quiet windows taken out"
         },
         {
@@ -4390,7 +4390,7 @@
       "generated": [
         {
           "file": "src/main/java/com/herokuapp/theinternet/tests/pages/twofactor/TwoFactorElements.java",
-          "line": 24,
+          "line": 23,
           "fact": "page TwoFactorPage element USERNAME_INPUT xpath //input[@id='username']",
           "why": "seen on /two_factor: text field \"Username\"; the crawl trusts its locator (text field)"
         },
@@ -4425,7 +4425,7 @@
       "generated": [
         {
           "file": "src/main/java/com/herokuapp/theinternet/tests/pages/twofactor/TwoFactorElements.java",
-          "line": 26,
+          "line": 25,
           "fact": "page TwoFactorPage element PASSWORD_INPUT xpath //input[@id='password']",
           "why": "seen on /two_factor: password field \"Password\"; the crawl trusts its locator (password field)"
         },
@@ -4459,7 +4459,7 @@
       "generated": [
         {
           "file": "src/main/java/com/herokuapp/theinternet/tests/pages/twofactor/TwoFactorElements.java",
-          "line": 28,
+          "line": 27,
           "fact": "page TwoFactorPage element NEXT_BUTTON xpath //button[normalize-space()='Next']",
           "why": "seen on /two_factor: button \"Next\"; the crawl trusts its locator (button)"
         },
@@ -4471,12 +4471,12 @@
         }
       ]
     },
-    "form:/two_factor:Log in with tomsmith and SuperSecretPassword!. Then enter th": {
+    "form:/two_factor:Then enter the one-time code shown on the next page.": {
       "kind": "form",
-      "why": "the \"Log in with tomsmith and SuperSecretPassword!. Then enter th\" form the crawl saw; filled, never sent",
+      "why": "the \"Then enter the one-time code shown on the next page.\" form the crawl saw; filled, never sent",
       "facts": [
-        "page TwoFactorPage task fillThenEnterThForm takes ThenEnterTh enters username",
-        "page TwoFactorPage record ThenEnterTh username=\"Test Username\""
+        "page TwoFactorPage task fillForm takes TwoFactorForm enters username",
+        "page TwoFactorPage record TwoFactorForm username=\"Test Username\""
       ],
       "evidence": [
         {
@@ -4488,14 +4488,14 @@
         {
           "file": "src/main/java/com/herokuapp/theinternet/tests/pages/twofactor/TwoFactorTasks.java",
           "line": 28,
-          "fact": "page TwoFactorPage task fillThenEnterThForm takes ThenEnterTh enters username",
-          "why": "the \"Log in with tomsmith and SuperSecretPassword!. Then enter th\" form the crawl saw; filled, never sent"
+          "fact": "page TwoFactorPage task fillForm takes TwoFactorForm enters username",
+          "why": "the \"Then enter the one-time code shown on the next page.\" form the crawl saw; filled, never sent"
         },
         {
-          "file": "src/main/java/com/herokuapp/theinternet/tests/pages/twofactor/ThenEnterTh.java",
+          "file": "src/main/java/com/herokuapp/theinternet/tests/pages/twofactor/TwoFactorForm.java",
           "line": 16,
-          "fact": "page TwoFactorPage record ThenEnterTh username=\"Test Username\"",
-          "why": "the \"Log in with tomsmith and SuperSecretPassword!. Then enter th\" form's fields in page order, each sample plausible for its kind"
+          "fact": "page TwoFactorPage record TwoFactorForm username=\"Test Username\"",
+          "why": "the \"Then enter the one-time code shown on the next page.\" form's fields in page order, each sample plausible for its kind"
         }
       ]
     },
@@ -4535,7 +4535,7 @@
         "page AddRemoveElementsPage opens ()",
         "page AddRemoveElementsPage url-shapes /add_remove_elements/",
         "page AddRemoveElementsPage doors click, read, verify",
-        "page AddRemoveElementsPage settles 0",
+        "page AddRemoveElementsPage settles 200",
         "page AddRemoveElementsPage title is \"The Internet\""
       ],
       "evidence": [
@@ -4572,7 +4572,7 @@
         {
           "file": "src/main/java/com/herokuapp/theinternet/tests/pages/addremoveelements/AddRemoveElementsPage.java",
           "line": 95,
-          "fact": "page AddRemoveElementsPage settles 0",
+          "fact": "page AddRemoveElementsPage settles 200",
           "why": "the median of its pages read, after their load event, the crawl's quiet windows taken out"
         },
         {
@@ -4647,7 +4647,7 @@
         "page InputsPage opens ()",
         "page InputsPage url-shapes /inputs",
         "page InputsPage doors enter, read, verify",
-        "page InputsPage settles 0",
+        "page InputsPage settles 200",
         "page InputsPage title is \"The Internet\""
       ],
       "evidence": [
@@ -4684,7 +4684,7 @@
         {
           "file": "src/main/java/com/herokuapp/theinternet/tests/pages/inputs/InputsPage.java",
           "line": 95,
-          "fact": "page InputsPage settles 0",
+          "fact": "page InputsPage settles 200",
           "why": "the median of its pages read, after their load event, the crawl's quiet windows taken out"
         },
         {
@@ -4766,7 +4766,7 @@
         "page DynamicLoadingListPage opens ()",
         "page DynamicLoadingListPage url-shapes /dynamic_loading",
         "page DynamicLoadingListPage doors click, read, verify",
-        "page DynamicLoadingListPage settles 0",
+        "page DynamicLoadingListPage settles 200",
         "page DynamicLoadingListPage title is \"The Internet\""
       ],
       "evidence": [
@@ -4803,7 +4803,7 @@
         {
           "file": "src/main/java/com/herokuapp/theinternet/tests/pages/dynamicloadinglist/DynamicLoadingListPage.java",
           "line": 96,
-          "fact": "page DynamicLoadingListPage settles 0",
+          "fact": "page DynamicLoadingListPage settles 200",
           "why": "the median of its pages read, after their load event, the crawl's quiet windows taken out"
         },
         {
@@ -4878,7 +4878,7 @@
         "page ShadowdomPage opens ()",
         "page ShadowdomPage url-shapes /shadowdom",
         "page ShadowdomPage doors read, verify",
-        "page ShadowdomPage settles 0",
+        "page ShadowdomPage settles 200",
         "page ShadowdomPage title is \"The Internet\""
       ],
       "evidence": [
@@ -4915,7 +4915,7 @@
         {
           "file": "src/main/java/com/herokuapp/theinternet/tests/pages/shadowdom/ShadowdomPage.java",
           "line": 93,
-          "fact": "page ShadowdomPage settles 0",
+          "fact": "page ShadowdomPage settles 200",
           "why": "the median of its pages read, after their load event, the crawl's quiet windows taken out"
         },
         {
@@ -4990,7 +4990,7 @@
         "page ContextMenuPage opens ()",
         "page ContextMenuPage url-shapes /context_menu",
         "page ContextMenuPage doors read, verify",
-        "page ContextMenuPage settles 0",
+        "page ContextMenuPage settles 200",
         "page ContextMenuPage title is \"The Internet\""
       ],
       "evidence": [
@@ -5027,7 +5027,7 @@
         {
           "file": "src/main/java/com/herokuapp/theinternet/tests/pages/contextmenu/ContextMenuPage.java",
           "line": 92,
-          "fact": "page ContextMenuPage settles 0",
+          "fact": "page ContextMenuPage settles 200",
           "why": "the median of its pages read, after their load event, the crawl's quiet windows taken out"
         },
         {
@@ -5123,7 +5123,7 @@
         "page ForgotPasswordPage opens ()",
         "page ForgotPasswordPage url-shapes /forgot_password",
         "page ForgotPasswordPage doors click, enter, read, verify, execute",
-        "page ForgotPasswordPage settles 0",
+        "page ForgotPasswordPage settles 100",
         "page ForgotPasswordPage title is \"The Internet\""
       ],
       "evidence": [
@@ -5160,7 +5160,7 @@
         {
           "file": "src/main/java/com/herokuapp/theinternet/tests/pages/forgotpassword/ForgotPasswordPage.java",
           "line": 102,
-          "fact": "page ForgotPasswordPage settles 0",
+          "fact": "page ForgotPasswordPage settles 100",
           "why": "the median of its pages read, after their load event, the crawl's quiet windows taken out"
         },
         {
@@ -5298,7 +5298,7 @@
         "page SubdirectoriesPage opens ()",
         "page SubdirectoriesPage url-shapes /subdirectories",
         "page SubdirectoriesPage doors click, read, verify",
-        "page SubdirectoriesPage settles 0",
+        "page SubdirectoriesPage settles 100",
         "page SubdirectoriesPage title is \"The Internet\""
       ],
       "evidence": [
@@ -5335,7 +5335,7 @@
         {
           "file": "src/main/java/com/herokuapp/theinternet/tests/pages/subdirectories/SubdirectoriesPage.java",
           "line": 97,
-          "fact": "page SubdirectoriesPage settles 0",
+          "fact": "page SubdirectoriesPage settles 100",
           "why": "the median of its pages read, after their load event, the crawl's quiet windows taken out"
         },
         {
@@ -5438,7 +5438,7 @@
         "page DynamicLoadingPage opens (name)",
         "page DynamicLoadingPage url-shapes /dynamic_loading/*",
         "page DynamicLoadingPage doors click, read, verify",
-        "page DynamicLoadingPage settles 0"
+        "page DynamicLoadingPage settles 100"
       ],
       "evidence": [
         {
@@ -5478,7 +5478,7 @@
         {
           "file": "src/main/java/com/herokuapp/theinternet/tests/pages/dynamicloading/DynamicLoadingPage.java",
           "line": 110,
-          "fact": "page DynamicLoadingPage settles 0",
+          "fact": "page DynamicLoadingPage settles 100",
           "why": "the median of its pages read, after their load event, the crawl's quiet windows taken out"
         }
       ]
@@ -5551,7 +5551,7 @@
         "page SubdirectoryPage opens (name)",
         "page SubdirectoryPage url-shapes /subdirectories/*",
         "page SubdirectoryPage doors click, read, verify",
-        "page SubdirectoryPage settles 0"
+        "page SubdirectoryPage settles 200"
       ],
       "evidence": [
         {
@@ -5591,7 +5591,7 @@
         {
           "file": "src/main/java/com/herokuapp/theinternet/tests/pages/subdirectory/SubdirectoryPage.java",
           "line": 109,
-          "fact": "page SubdirectoryPage settles 0",
+          "fact": "page SubdirectoryPage settles 200",
           "why": "the median of its pages read, after their load event, the crawl's quiet windows taken out"
         }
       ]
@@ -5706,7 +5706,7 @@
         "page JqueryuiMenuPage opens ()",
         "page JqueryuiMenuPage url-shapes /jqueryui/menu",
         "page JqueryuiMenuPage doors click, read, verify",
-        "page JqueryuiMenuPage settles 0",
+        "page JqueryuiMenuPage settles 100",
         "page JqueryuiMenuPage title is \"The Internet\""
       ],
       "evidence": [
@@ -5743,7 +5743,7 @@
         {
           "file": "src/main/java/com/herokuapp/theinternet/tests/pages/jqueryuimenu/JqueryuiMenuPage.java",
           "line": 96,
-          "fact": "page JqueryuiMenuPage settles 0",
+          "fact": "page JqueryuiMenuPage settles 100",
           "why": "the median of its pages read, after their load event, the crawl's quiet windows taken out"
         },
         {
@@ -5916,7 +5916,7 @@
         "page CanvasPage opens ()",
         "page CanvasPage url-shapes /canvas",
         "page CanvasPage doors read, verify",
-        "page CanvasPage settles 0",
+        "page CanvasPage settles 300",
         "page CanvasPage title is \"The Internet\""
       ],
       "evidence": [
@@ -5953,7 +5953,7 @@
         {
           "file": "src/main/java/com/herokuapp/theinternet/tests/pages/canvas/CanvasPage.java",
           "line": 92,
-          "fact": "page CanvasPage settles 0",
+          "fact": "page CanvasPage settles 300",
           "why": "the median of its pages read, after their load event, the crawl's quiet windows taken out"
         },
         {
@@ -6000,7 +6000,7 @@
         "page LargeFormPage opens ()",
         "page LargeFormPage url-shapes /large_form",
         "page LargeFormPage doors click, check, enter, read, verify, execute",
-        "page LargeFormPage settles 0",
+        "page LargeFormPage settles 200",
         "page LargeFormPage title is \"The Internet\""
       ],
       "evidence": [
@@ -6037,7 +6037,7 @@
         {
           "file": "src/main/java/com/herokuapp/theinternet/tests/pages/largeform/LargeFormPage.java",
           "line": 107,
-          "fact": "page LargeFormPage settles 0",
+          "fact": "page LargeFormPage settles 200",
           "why": "the median of its pages read, after their load event, the crawl's quiet windows taken out"
         },
         {
@@ -6882,7 +6882,7 @@
         "page DownloadPage opens ()",
         "page DownloadPage url-shapes /download",
         "page DownloadPage doors read, verify",
-        "page DownloadPage settles 0",
+        "page DownloadPage settles 100",
         "page DownloadPage title is \"The Internet\""
       ],
       "evidence": [
@@ -6919,7 +6919,7 @@
         {
           "file": "src/main/java/com/herokuapp/theinternet/tests/pages/download/DownloadPage.java",
           "line": 92,
-          "fact": "page DownloadPage settles 0",
+          "fact": "page DownloadPage settles 100",
           "why": "the median of its pages read, after their load event, the crawl's quiet windows taken out"
         },
         {
@@ -7071,7 +7071,7 @@
         "page StatusCodePage opens (name)",
         "page StatusCodePage url-shapes /status_codes/*",
         "page StatusCodePage doors click, read, verify",
-        "page StatusCodePage settles 0"
+        "page StatusCodePage settles 200"
       ],
       "evidence": [
         {
@@ -7111,7 +7111,7 @@
         {
           "file": "src/main/java/com/herokuapp/theinternet/tests/pages/statuscode/StatusCodePage.java",
           "line": 110,
-          "fact": "page StatusCodePage settles 0",
+          "fact": "page StatusCodePage settles 200",
           "why": "the median of its pages read, after their load event, the crawl's quiet windows taken out"
         }
       ]
@@ -7198,7 +7198,7 @@
         "page DynamicContentPage opens ()",
         "page DynamicContentPage url-shapes /dynamic_content",
         "page DynamicContentPage doors read, verify",
-        "page DynamicContentPage settles 0",
+        "page DynamicContentPage settles 200",
         "page DynamicContentPage title is \"The Internet\""
       ],
       "evidence": [
@@ -7235,7 +7235,7 @@
         {
           "file": "src/main/java/com/herokuapp/theinternet/tests/pages/dynamiccontent/DynamicContentPage.java",
           "line": 92,
-          "fact": "page DynamicContentPage settles 0",
+          "fact": "page DynamicContentPage settles 200",
           "why": "the median of its pages read, after their load event, the crawl's quiet windows taken out"
         },
         {
@@ -7282,7 +7282,7 @@
         "page ReadonlyPage opens ()",
         "page ReadonlyPage url-shapes /readonly",
         "page ReadonlyPage doors check, enter, read, verify, execute",
-        "page ReadonlyPage settles 0",
+        "page ReadonlyPage settles 300",
         "page ReadonlyPage title is \"The Internet\""
       ],
       "evidence": [
@@ -7319,7 +7319,7 @@
         {
           "file": "src/main/java/com/herokuapp/theinternet/tests/pages/readonly/ReadonlyPage.java",
           "line": 102,
-          "fact": "page ReadonlyPage settles 0",
+          "fact": "page ReadonlyPage settles 300",
           "why": "the median of its pages read, after their load event, the crawl's quiet windows taken out"
         },
         {
@@ -7527,7 +7527,7 @@
         "page HorizontalSliderPage opens ()",
         "page HorizontalSliderPage url-shapes /horizontal_slider",
         "page HorizontalSliderPage doors enter, read, verify",
-        "page HorizontalSliderPage settles 0",
+        "page HorizontalSliderPage settles 200",
         "page HorizontalSliderPage title is \"The Internet\""
       ],
       "evidence": [
@@ -7564,7 +7564,7 @@
         {
           "file": "src/main/java/com/herokuapp/theinternet/tests/pages/horizontalslider/HorizontalSliderPage.java",
           "line": 95,
-          "fact": "page HorizontalSliderPage settles 0",
+          "fact": "page HorizontalSliderPage settles 200",
           "why": "the median of its pages read, after their load event, the crawl's quiet windows taken out"
         },
         {
@@ -7646,7 +7646,7 @@
         "page JqueryuiPage opens ()",
         "page JqueryuiPage url-shapes /jqueryui",
         "page JqueryuiPage doors click, read, verify",
-        "page JqueryuiPage settles 0",
+        "page JqueryuiPage settles 200",
         "page JqueryuiPage title is \"The Internet\""
       ],
       "evidence": [
@@ -7683,7 +7683,7 @@
         {
           "file": "src/main/java/com/herokuapp/theinternet/tests/pages/jqueryui/JqueryuiPage.java",
           "line": 95,
-          "fact": "page JqueryuiPage settles 0",
+          "fact": "page JqueryuiPage settles 200",
           "why": "the median of its pages read, after their load event, the crawl's quiet windows taken out"
         },
         {
@@ -7772,7 +7772,7 @@
         "page AbtestPage opens ()",
         "page AbtestPage url-shapes /abtest",
         "page AbtestPage doors read, verify",
-        "page AbtestPage settles 0",
+        "page AbtestPage settles 800",
         "page AbtestPage title is \"The Internet\""
       ],
       "evidence": [
@@ -7809,7 +7809,7 @@
         {
           "file": "src/main/java/com/herokuapp/theinternet/tests/pages/abtest/AbtestPage.java",
           "line": 91,
-          "fact": "page AbtestPage settles 0",
+          "fact": "page AbtestPage settles 800",
           "why": "the median of its pages read, after their load event, the crawl's quiet windows taken out"
         },
         {
@@ -7884,7 +7884,7 @@
         "page DynamicControlsPage opens ()",
         "page DynamicControlsPage url-shapes /dynamic_controls",
         "page DynamicControlsPage doors click, check, enter, read, verify",
-        "page DynamicControlsPage settles 0",
+        "page DynamicControlsPage settles 100",
         "page DynamicControlsPage title is \"The Internet\""
       ],
       "evidence": [
@@ -7921,7 +7921,7 @@
         {
           "file": "src/main/java/com/herokuapp/theinternet/tests/pages/dynamiccontrols/DynamicControlsPage.java",
           "line": 105,
-          "fact": "page DynamicControlsPage settles 0",
+          "fact": "page DynamicControlsPage settles 100",
           "why": "the median of its pages read, after their load event, the crawl's quiet windows taken out"
         },
         {
@@ -8136,7 +8136,7 @@
         "page ShiftingContentListPage opens ()",
         "page ShiftingContentListPage url-shapes /shifting_content",
         "page ShiftingContentListPage doors click, read, verify",
-        "page ShiftingContentListPage settles 0",
+        "page ShiftingContentListPage settles 300",
         "page ShiftingContentListPage title is \"The Internet\""
       ],
       "evidence": [
@@ -8173,7 +8173,7 @@
         {
           "file": "src/main/java/com/herokuapp/theinternet/tests/pages/shiftingcontentlist/ShiftingContentListPage.java",
           "line": 95,
-          "fact": "page ShiftingContentListPage settles 0",
+          "fact": "page ShiftingContentListPage settles 300",
           "why": "the median of its pages read, after their load event, the crawl's quiet windows taken out"
         },
         {
@@ -8290,7 +8290,7 @@
         "page ShiftingContentPage opens (name)",
         "page ShiftingContentPage url-shapes /shifting_content/*",
         "page ShiftingContentPage doors read, verify",
-        "page ShiftingContentPage settles 0"
+        "page ShiftingContentPage settles 300"
       ],
       "evidence": [
         {
@@ -8330,7 +8330,7 @@
         {
           "file": "src/main/java/com/herokuapp/theinternet/tests/pages/shiftingcontent/ShiftingContentPage.java",
           "line": 105,
-          "fact": "page ShiftingContentPage settles 0",
+          "fact": "page ShiftingContentPage settles 300",
           "why": "the median of its pages read, after their load event, the crawl's quiet windows taken out"
         }
       ]
@@ -8343,7 +8343,7 @@
         "page ShiftingContentMenuPage opens ()",
         "page ShiftingContentMenuPage url-shapes /shifting_content/menu",
         "page ShiftingContentMenuPage doors click, read, verify",
-        "page ShiftingContentMenuPage settles 0",
+        "page ShiftingContentMenuPage settles 200",
         "page ShiftingContentMenuPage title is \"The Internet\""
       ],
       "evidence": [
@@ -8380,7 +8380,7 @@
         {
           "file": "src/main/java/com/herokuapp/theinternet/tests/pages/shiftingcontentmenu/ShiftingContentMenuPage.java",
           "line": 96,
-          "fact": "page ShiftingContentMenuPage settles 0",
+          "fact": "page ShiftingContentMenuPage settles 200",
           "why": "the median of its pages read, after their load event, the crawl's quiet windows taken out"
         },
         {
@@ -8469,7 +8469,7 @@
         "page DisappearingElementsPage opens ()",
         "page DisappearingElementsPage url-shapes /disappearing_elements",
         "page DisappearingElementsPage doors click, read, verify",
-        "page DisappearingElementsPage settles 0",
+        "page DisappearingElementsPage settles 200",
         "page DisappearingElementsPage title is \"The Internet\""
       ],
       "evidence": [
@@ -8506,7 +8506,7 @@
         {
           "file": "src/main/java/com/herokuapp/theinternet/tests/pages/disappearingelements/DisappearingElementsPage.java",
           "line": 96,
-          "fact": "page DisappearingElementsPage settles 0",
+          "fact": "page DisappearingElementsPage settles 200",
           "why": "the median of its pages read, after their load event, the crawl's quiet windows taken out"
         },
         {
@@ -8595,7 +8595,7 @@
         "page TablesPage opens ()",
         "page TablesPage url-shapes /tables",
         "page TablesPage doors read, verify",
-        "page TablesPage settles 0",
+        "page TablesPage settles 200",
         "page TablesPage title is \"The Internet\""
       ],
       "evidence": [
@@ -8632,7 +8632,7 @@
         {
           "file": "src/main/java/com/herokuapp/theinternet/tests/pages/tables/TablesPage.java",
           "line": 94,
-          "fact": "page TablesPage settles 0",
+          "fact": "page TablesPage settles 200",
           "why": "the median of its pages read, after their load event, the crawl's quiet windows taken out"
         },
         {
@@ -8787,12 +8787,12 @@
       "kind": "type",
       "why": "laid out like /javascript_alerts, /context_menu, /status_codes and 9 more, but no title or heading says they are one kind of page, and their addresses share no part: each is its own [rules: layout-only]",
       "facts": [
-        "page InfiniteScrollListPage",
-        "page InfiniteScrollListPage opens ()",
-        "page InfiniteScrollListPage url-shapes /infinite_scroll",
-        "page InfiniteScrollListPage doors click, read, verify",
-        "page InfiniteScrollListPage settles 100",
-        "page InfiniteScrollListPage title is \"The Internet\""
+        "page InfiniteScrollPage",
+        "page InfiniteScrollPage opens ()",
+        "page InfiniteScrollPage url-shapes /infinite_scroll",
+        "page InfiniteScrollPage doors read, verify",
+        "page InfiniteScrollPage settles 400",
+        "page InfiniteScrollPage title is \"The Internet\""
       ],
       "evidence": [
         {
@@ -8802,49 +8802,49 @@
       ],
       "generated": [
         {
-          "file": "src/main/java/com/herokuapp/theinternet/tests/pages/infinitescrolllist/InfiniteScrollListPage.java",
-          "line": 37,
-          "fact": "page InfiniteScrollListPage",
+          "file": "src/main/java/com/herokuapp/theinternet/tests/pages/infinitescroll/InfiniteScrollPage.java",
+          "line": 35,
+          "fact": "page InfiniteScrollPage",
           "why": "laid out like /javascript_alerts, /context_menu, /status_codes and 9 more, but no title or heading says they are one kind of page, and their addresses share no part: each is its own [rules: layout-only]"
         },
         {
-          "file": "src/main/java/com/herokuapp/theinternet/tests/pages/infinitescrolllist/InfiniteScrollListPage.java",
-          "line": 57,
-          "fact": "page InfiniteScrollListPage opens ()",
+          "file": "src/main/java/com/herokuapp/theinternet/tests/pages/infinitescroll/InfiniteScrollPage.java",
+          "line": 54,
+          "fact": "page InfiniteScrollPage opens ()",
           "why": "laid out like /javascript_alerts, /context_menu, /status_codes and 9 more, but no title or heading says they are one kind of page, and their addresses share no part: each is its own [rules: layout-only]"
         },
         {
-          "file": "src/main/java/com/herokuapp/theinternet/tests/pages/infinitescrolllist/InfiniteScrollListPage.java",
-          "line": 64,
-          "fact": "page InfiniteScrollListPage url-shapes /infinite_scroll",
+          "file": "src/main/java/com/herokuapp/theinternet/tests/pages/infinitescroll/InfiniteScrollPage.java",
+          "line": 61,
+          "fact": "page InfiniteScrollPage url-shapes /infinite_scroll",
           "why": "laid out like /javascript_alerts, /context_menu, /status_codes and 9 more, but no title or heading says they are one kind of page, and their addresses share no part: each is its own [rules: layout-only]"
         },
         {
-          "file": "src/main/java/com/herokuapp/theinternet/tests/pages/infinitescrolllist/InfiniteScrollListPage.java",
-          "line": 37,
-          "fact": "page InfiniteScrollListPage doors click, read, verify",
+          "file": "src/main/java/com/herokuapp/theinternet/tests/pages/infinitescroll/InfiniteScrollPage.java",
+          "line": 35,
+          "fact": "page InfiniteScrollPage doors read, verify",
           "why": "the doors its controls, links and forms give it, read and verify always, and any a person filled"
         },
         {
-          "file": "src/main/java/com/herokuapp/theinternet/tests/pages/infinitescrolllist/InfiniteScrollListPage.java",
-          "line": 95,
-          "fact": "page InfiniteScrollListPage settles 100",
+          "file": "src/main/java/com/herokuapp/theinternet/tests/pages/infinitescroll/InfiniteScrollPage.java",
+          "line": 92,
+          "fact": "page InfiniteScrollPage settles 400",
           "why": "the median of its pages read, after their load event, the crawl's quiet windows taken out"
         },
         {
-          "file": "src/main/java/com/herokuapp/theinternet/tests/pages/infinitescrolllist/InfiniteScrollListPage.java",
-          "line": 44,
-          "fact": "page InfiniteScrollListPage title is \"The Internet\"",
+          "file": "src/main/java/com/herokuapp/theinternet/tests/pages/infinitescroll/InfiniteScrollPage.java",
+          "line": 41,
+          "fact": "page InfiniteScrollPage title is \"The Internet\"",
           "why": "every page read of it had this title"
         }
       ]
     },
     "check:/infinite_scroll:Infinite Scroll": {
       "kind": "check",
-      "why": "every page of InfiniteScrollListPage the crawl read showed it (1 page); isLoaded() waits for the first 1 checks",
+      "why": "every page of InfiniteScrollPage the crawl read showed it (1 page); isLoaded() waits for the first 1 checks",
       "facts": [
-        "page InfiniteScrollListPage loaded-when \"Infinite Scroll\"",
-        "page InfiniteScrollListPage check \"Infinite Scroll\" spelled \"Infinite Scroll\""
+        "page InfiniteScrollPage loaded-when \"Infinite Scroll\"",
+        "page InfiniteScrollPage check \"Infinite Scroll\" spelled \"Infinite Scroll\""
       ],
       "evidence": [
         {
@@ -8854,233 +8854,16 @@
       ],
       "generated": [
         {
-          "file": "src/main/java/com/herokuapp/theinternet/tests/pages/infinitescrolllist/InfiniteScrollListPage.java",
-          "line": 48,
-          "fact": "page InfiniteScrollListPage loaded-when \"Infinite Scroll\"",
-          "why": "every page of InfiniteScrollListPage the crawl read showed it (1 page); isLoaded() waits for the first 1 checks"
-        },
-        {
-          "file": "src/main/java/com/herokuapp/theinternet/tests/pages/infinitescrolllist/InfiniteScrollListElements.java",
-          "line": 20,
-          "fact": "page InfiniteScrollListPage check \"Infinite Scroll\" spelled \"Infinite Scroll\"",
-          "why": "every page of InfiniteScrollListPage the crawl read showed it (1 page)"
-        }
-      ]
-    },
-    "link:/infinite_scroll->/infinite_scroll/*": {
-      "kind": "link",
-      "why": "seen on /infinite_scroll: \"next page\" (/infinite_scroll/18)",
-      "facts": [
-        "page InfiniteScrollListPage links-to InfiniteScrollPage clicking getInfiniteScrollLink",
-        "page InfiniteScrollListPage helper getInfiniteScrollLink href \"/infinite_scroll/\" + name match \"//a[@href=\" + literal(href) + \" or @href=\" + literal(decoded) + \"]\""
-      ],
-      "evidence": [
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll",
-          "snapshot": "crawl/pages/infinite_scroll.html"
-        }
-      ],
-      "generated": [
-        {
-          "file": "src/main/java/com/herokuapp/theinternet/tests/pages/infinitescrolllist/actions/InfiniteScrollListClickActions.java",
-          "line": 23,
-          "fact": "page InfiniteScrollListPage links-to InfiniteScrollPage clicking getInfiniteScrollLink",
-          "why": "seen on /infinite_scroll: \"next page\" (/infinite_scroll/18)"
-        },
-        {
-          "file": "src/main/java/com/herokuapp/theinternet/tests/pages/infinitescrolllist/InfiniteScrollListElements.java",
-          "line": 53,
-          "fact": "page InfiniteScrollListPage helper getInfiniteScrollLink href \"/infinite_scroll/\" + name match \"//a[@href=\" + literal(href) + \" or @href=\" + literal(decoded) + \"]\"",
-          "why": "seen on /infinite_scroll: \"next page\" (/infinite_scroll/18); its address holds name"
-        }
-      ]
-    },
-    "type:/infinite_scroll/*": {
-      "kind": "type",
-      "why": "its 29 pages read look alike (layout 100% the same) and share the address pattern /infinite_scroll/*; joined by: no headings on either page, and the layouts agree (406 comparisons) [rules: family-by-address; layout-no-headings x406]",
-      "facts": [
-        "page InfiniteScrollPage",
-        "page InfiniteScrollPage opens (name)",
-        "page InfiniteScrollPage url-shapes /infinite_scroll/*",
-        "page InfiniteScrollPage doors click, read, verify",
-        "page InfiniteScrollPage settles 0"
-      ],
-      "evidence": [
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/18",
-          "snapshot": "crawl/pages/infinite_scroll/18.html"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/19",
-          "snapshot": "crawl/pages/infinite_scroll/19.html"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/20",
-          "snapshot": "crawl/pages/infinite_scroll/20.html"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/21",
-          "snapshot": "crawl/pages/infinite_scroll/21.html"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/22",
-          "snapshot": "crawl/pages/infinite_scroll/22.html"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/23",
-          "snapshot": "crawl/pages/infinite_scroll/23.html"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/24",
-          "snapshot": "crawl/pages/infinite_scroll/24.html"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/25",
-          "snapshot": "crawl/pages/infinite_scroll/25.html"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/26",
-          "snapshot": "crawl/pages/infinite_scroll/26.html"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/27",
-          "snapshot": "crawl/pages/infinite_scroll/27.html"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/28",
-          "snapshot": "crawl/pages/infinite_scroll/28.html"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/29",
-          "snapshot": "crawl/pages/infinite_scroll/29.html"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/30",
-          "snapshot": "crawl/pages/infinite_scroll/30.html"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/31",
-          "snapshot": "crawl/pages/infinite_scroll/31.html"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/32",
-          "snapshot": "crawl/pages/infinite_scroll/32.html"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/33",
-          "snapshot": "crawl/pages/infinite_scroll/33.html"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/34",
-          "snapshot": "crawl/pages/infinite_scroll/34.html"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/35",
-          "snapshot": "crawl/pages/infinite_scroll/35.html"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/36",
-          "snapshot": "crawl/pages/infinite_scroll/36.html"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/37",
-          "snapshot": "crawl/pages/infinite_scroll/37.html"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/38",
-          "snapshot": "crawl/pages/infinite_scroll/38.html"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/39",
-          "snapshot": "crawl/pages/infinite_scroll/39.html"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/40",
-          "snapshot": "crawl/pages/infinite_scroll/40.html"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/41",
-          "snapshot": "crawl/pages/infinite_scroll/41.html"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/42",
-          "snapshot": "crawl/pages/infinite_scroll/42.html"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/43",
-          "snapshot": "crawl/pages/infinite_scroll/43.html"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/44",
-          "snapshot": "crawl/pages/infinite_scroll/44.html"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/45",
-          "snapshot": "crawl/pages/infinite_scroll/45.html"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/46",
-          "snapshot": "crawl/pages/infinite_scroll/46.html"
-        }
-      ],
-      "generated": [
-        {
           "file": "src/main/java/com/herokuapp/theinternet/tests/pages/infinitescroll/InfiniteScrollPage.java",
-          "line": 38,
-          "fact": "page InfiniteScrollPage",
-          "why": "its 29 pages read look alike (layout 100% the same) and share the address pattern /infinite_scroll/*; joined by: no headings on either page, and the layouts agree (406 comparisons) [rules: family-by-address; layout-no-headings x406]"
-        },
-        {
-          "file": "src/main/java/com/herokuapp/theinternet/tests/pages/infinitescroll/InfiniteScrollPage.java",
-          "line": 99,
-          "fact": "page InfiniteScrollPage opens (name)",
-          "why": "its 29 pages read look alike (layout 100% the same) and share the address pattern /infinite_scroll/*; joined by: no headings on either page, and the layouts agree (406 comparisons) [rules: family-by-address; layout-no-headings x406]"
-        },
-        {
-          "file": "src/main/java/com/herokuapp/theinternet/tests/pages/infinitescroll/InfiniteScrollPage.java",
-          "line": 47,
-          "fact": "page InfiniteScrollPage url-shapes /infinite_scroll/*",
-          "why": "its 29 pages read look alike (layout 100% the same) and share the address pattern /infinite_scroll/*; joined by: no headings on either page, and the layouts agree (406 comparisons) [rules: family-by-address; layout-no-headings x406]"
-        },
-        {
-          "file": "src/main/java/com/herokuapp/theinternet/tests/pages/infinitescroll/InfiniteScrollPage.java",
-          "line": 38,
-          "fact": "page InfiniteScrollPage doors click, read, verify",
-          "why": "the doors its controls, links and forms give it, read and verify always, and any a person filled"
-        },
-        {
-          "file": "src/main/java/com/herokuapp/theinternet/tests/pages/infinitescroll/InfiniteScrollPage.java",
-          "line": 136,
-          "fact": "page InfiniteScrollPage settles 0",
-          "why": "the median of its pages read, after their load event, the crawl's quiet windows taken out"
-        }
-      ]
-    },
-    "link:/infinite_scroll/*->/infinite_scroll/*": {
-      "kind": "link",
-      "why": "seen on /infinite_scroll/18: \"next page\" (/infinite_scroll/19)",
-      "facts": [
-        "page InfiniteScrollPage links-to InfiniteScrollPage clicking getInfiniteScrollLink",
-        "page InfiniteScrollPage helper getInfiniteScrollLink href \"/infinite_scroll/\" + name match \"//a[@href=\" + literal(href) + \" or @href=\" + literal(decoded) + \"]\""
-      ],
-      "evidence": [
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/18",
-          "snapshot": "crawl/pages/infinite_scroll/18.html"
-        }
-      ],
-      "generated": [
-        {
-          "file": "src/main/java/com/herokuapp/theinternet/tests/pages/infinitescroll/actions/InfiniteScrollClickActions.java",
-          "line": 23,
-          "fact": "page InfiniteScrollPage links-to InfiniteScrollPage clicking getInfiniteScrollLink",
-          "why": "seen on /infinite_scroll/18: \"next page\" (/infinite_scroll/19)"
+          "line": 45,
+          "fact": "page InfiniteScrollPage loaded-when \"Infinite Scroll\"",
+          "why": "every page of InfiniteScrollPage the crawl read showed it (1 page); isLoaded() waits for the first 1 checks"
         },
         {
           "file": "src/main/java/com/herokuapp/theinternet/tests/pages/infinitescroll/InfiniteScrollElements.java",
-          "line": 49,
-          "fact": "page InfiniteScrollPage helper getInfiniteScrollLink href \"/infinite_scroll/\" + name match \"//a[@href=\" + literal(href) + \" or @href=\" + literal(decoded) + \"]\"",
-          "why": "seen on /infinite_scroll/18: \"next page\" (/infinite_scroll/19); its address holds name"
+          "line": 19,
+          "fact": "page InfiniteScrollPage check \"Infinite Scroll\" spelled \"Infinite Scroll\"",
+          "why": "every page of InfiniteScrollPage the crawl read showed it (1 page)"
         }
       ]
     },
@@ -9092,7 +8875,7 @@
         "page CheckboxesPage opens ()",
         "page CheckboxesPage url-shapes /checkboxes",
         "page CheckboxesPage doors check, read, verify",
-        "page CheckboxesPage settles 0",
+        "page CheckboxesPage settles 300",
         "page CheckboxesPage title is \"The Internet\""
       ],
       "evidence": [
@@ -9129,7 +8912,7 @@
         {
           "file": "src/main/java/com/herokuapp/theinternet/tests/pages/checkboxes/CheckboxesPage.java",
           "line": 97,
-          "fact": "page CheckboxesPage settles 0",
+          "fact": "page CheckboxesPage settles 300",
           "why": "the median of its pages read, after their load event, the crawl's quiet windows taken out"
         },
         {
@@ -9232,7 +9015,7 @@
         "page RedirectorPage opens ()",
         "page RedirectorPage url-shapes /redirector",
         "page RedirectorPage doors read, verify",
-        "page RedirectorPage settles 0",
+        "page RedirectorPage settles 300",
         "page RedirectorPage title is \"The Internet\""
       ],
       "evidence": [
@@ -9269,7 +9052,7 @@
         {
           "file": "src/main/java/com/herokuapp/theinternet/tests/pages/redirector/RedirectorPage.java",
           "line": 92,
-          "fact": "page RedirectorPage settles 0",
+          "fact": "page RedirectorPage settles 300",
           "why": "the median of its pages read, after their load event, the crawl's quiet windows taken out"
         },
         {
@@ -9316,7 +9099,7 @@
         "page GeolocationPage opens ()",
         "page GeolocationPage url-shapes /geolocation",
         "page GeolocationPage doors click, read, verify",
-        "page GeolocationPage settles 0",
+        "page GeolocationPage settles 300",
         "page GeolocationPage title is \"The Internet\""
       ],
       "evidence": [
@@ -9353,7 +9136,7 @@
         {
           "file": "src/main/java/com/herokuapp/theinternet/tests/pages/geolocation/GeolocationPage.java",
           "line": 95,
-          "fact": "page GeolocationPage settles 0",
+          "fact": "page GeolocationPage settles 300",
           "why": "the median of its pages read, after their load event, the crawl's quiet windows taken out"
         },
         {
@@ -9428,7 +9211,7 @@
         "page ExitIntentPage opens ()",
         "page ExitIntentPage url-shapes /exit_intent",
         "page ExitIntentPage doors read, verify",
-        "page ExitIntentPage settles 0",
+        "page ExitIntentPage settles 200",
         "page ExitIntentPage title is \"The Internet\""
       ],
       "evidence": [
@@ -9465,7 +9248,7 @@
         {
           "file": "src/main/java/com/herokuapp/theinternet/tests/pages/exitintent/ExitIntentPage.java",
           "line": 92,
-          "fact": "page ExitIntentPage settles 0",
+          "fact": "page ExitIntentPage settles 200",
           "why": "the median of its pages read, after their load event, the crawl's quiet windows taken out"
         },
         {
@@ -10072,7 +9855,7 @@
         "page MultipleDropdownPage opens ()",
         "page MultipleDropdownPage url-shapes /multiple_dropdown",
         "page MultipleDropdownPage doors enter, read, verify",
-        "page MultipleDropdownPage settles 0",
+        "page MultipleDropdownPage settles 300",
         "page MultipleDropdownPage title is \"The Internet\""
       ],
       "evidence": [
@@ -10109,7 +9892,7 @@
         {
           "file": "src/main/java/com/herokuapp/theinternet/tests/pages/multipledropdown/MultipleDropdownPage.java",
           "line": 96,
-          "fact": "page MultipleDropdownPage settles 0",
+          "fact": "page MultipleDropdownPage settles 300",
           "why": "the median of its pages read, after their load event, the crawl's quiet windows taken out"
         },
         {
@@ -10184,7 +9967,7 @@
         "page BrokenImagesPage opens ()",
         "page BrokenImagesPage url-shapes /broken_images",
         "page BrokenImagesPage doors read, verify",
-        "page BrokenImagesPage settles 0",
+        "page BrokenImagesPage settles 200",
         "page BrokenImagesPage title is \"The Internet\""
       ],
       "evidence": [
@@ -10221,7 +10004,7 @@
         {
           "file": "src/main/java/com/herokuapp/theinternet/tests/pages/brokenimages/BrokenImagesPage.java",
           "line": 92,
-          "fact": "page BrokenImagesPage settles 0",
+          "fact": "page BrokenImagesPage settles 200",
           "why": "the median of its pages read, after their load event, the crawl's quiet windows taken out"
         },
         {
@@ -10268,7 +10051,7 @@
         "page NotificationMessageRenderedPage opens ()",
         "page NotificationMessageRenderedPage url-shapes /notification_message_rendered",
         "page NotificationMessageRenderedPage doors read, verify",
-        "page NotificationMessageRenderedPage settles 0",
+        "page NotificationMessageRenderedPage settles 200",
         "page NotificationMessageRenderedPage title is \"The Internet\""
       ],
       "evidence": [
@@ -10305,7 +10088,7 @@
         {
           "file": "src/main/java/com/herokuapp/theinternet/tests/pages/notificationmessage/NotificationMessageRenderedPage.java",
           "line": 93,
-          "fact": "page NotificationMessageRenderedPage settles 0",
+          "fact": "page NotificationMessageRenderedPage settles 200",
           "why": "the median of its pages read, after their load event, the crawl's quiet windows taken out"
         },
         {
@@ -10352,7 +10135,7 @@
         "page FloatingMenuPage opens ()",
         "page FloatingMenuPage url-shapes /floating_menu",
         "page FloatingMenuPage doors read, verify",
-        "page FloatingMenuPage settles 0",
+        "page FloatingMenuPage settles 200",
         "page FloatingMenuPage title is \"The Internet\""
       ],
       "evidence": [
@@ -10389,7 +10172,7 @@
         {
           "file": "src/main/java/com/herokuapp/theinternet/tests/pages/floatingmenu/FloatingMenuPage.java",
           "line": 92,
-          "fact": "page FloatingMenuPage settles 0",
+          "fact": "page FloatingMenuPage settles 200",
           "why": "the median of its pages read, after their load event, the crawl's quiet windows taken out"
         },
         {
@@ -10436,7 +10219,7 @@
         "page DragAndDropPage opens ()",
         "page DragAndDropPage url-shapes /drag_and_drop",
         "page DragAndDropPage doors read, verify",
-        "page DragAndDropPage settles 0",
+        "page DragAndDropPage settles 200",
         "page DragAndDropPage title is \"The Internet\""
       ],
       "evidence": [
@@ -10473,7 +10256,7 @@
         {
           "file": "src/main/java/com/herokuapp/theinternet/tests/pages/draganddrop/DragAndDropPage.java",
           "line": 92,
-          "fact": "page DragAndDropPage settles 0",
+          "fact": "page DragAndDropPage settles 200",
           "why": "the median of its pages read, after their load event, the crawl's quiet windows taken out"
         },
         {
@@ -10520,7 +10303,7 @@
         "page KeyPressesPage opens ()",
         "page KeyPressesPage url-shapes /key_presses",
         "page KeyPressesPage doors enter, read, verify, execute",
-        "page KeyPressesPage settles 0",
+        "page KeyPressesPage settles 400",
         "page KeyPressesPage title is \"The Internet\""
       ],
       "evidence": [
@@ -10557,7 +10340,7 @@
         {
           "file": "src/main/java/com/herokuapp/theinternet/tests/pages/keypresses/KeyPressesPage.java",
           "line": 99,
-          "fact": "page KeyPressesPage settles 0",
+          "fact": "page KeyPressesPage settles 400",
           "why": "the median of its pages read, after their load event, the crawl's quiet windows taken out"
         },
         {
@@ -10667,7 +10450,7 @@
         "page TyposPage opens ()",
         "page TyposPage url-shapes /typos",
         "page TyposPage doors read, verify",
-        "page TyposPage settles 0",
+        "page TyposPage settles 100",
         "page TyposPage title is \"The Internet\""
       ],
       "evidence": [
@@ -10704,7 +10487,7 @@
         {
           "file": "src/main/java/com/herokuapp/theinternet/tests/pages/typos/TyposPage.java",
           "line": 92,
-          "fact": "page TyposPage settles 0",
+          "fact": "page TyposPage settles 100",
           "why": "the median of its pages read, after their load event, the crawl's quiet windows taken out"
         },
         {
@@ -10745,7 +10528,7 @@
     },
     "run:timings": {
       "kind": "run",
-      "why": "TODO.md item 13: the same rows in every framework",
+      "why": "each page load timed: the same rows in every framework",
       "facts": [
         "run timings columns test,page,path,ready_ms,first_byte_ms,dom_loaded_ms,load_ms,after_load_ms,crawl_after_load_ms,slow"
       ],
@@ -10755,13 +10538,13 @@
           "file": "src/main/java/com/herokuapp/theinternet/tests/core/Timings.java",
           "line": 38,
           "fact": "run timings columns test,page,path,ready_ms,first_byte_ms,dom_loaded_ms,load_ms,after_load_ms,crawl_after_load_ms,slow",
-          "why": "TODO.md item 13: the same rows in every framework"
+          "why": "each page load timed: the same rows in every framework"
         }
       ]
     },
     "run:api-timings": {
       "kind": "run",
-      "why": "TODO.md item 32, step 3: each API call timed, the same rows in every framework",
+      "why": "each API call timed: the same rows in every framework",
       "facts": [
         "run api timings columns test,call,status,ms,previous_ms,slow"
       ],
@@ -10771,7 +10554,7 @@
           "file": "src/main/java/com/herokuapp/theinternet/tests/core/Timings.java",
           "line": 48,
           "fact": "run api timings columns test,call,status,ms,previous_ms,slow",
-          "why": "TODO.md item 32, step 3: each API call timed, the same rows in every framework"
+          "why": "each API call timed: the same rows in every framework"
         }
       ]
     },
@@ -10790,7 +10573,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/GeneratedSmokeTest.java",
-          "line": 93,
+          "line": 92,
           "fact": "test smoke HomePage opens 1 of 1 proof headings",
           "why": "every page type gets a smoke test; it opens 1 of 1 crawled example"
         }
@@ -10811,7 +10594,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/GeneratedSmokeTest.java",
-          "line": 99,
+          "line": 98,
           "fact": "test smoke TinymcePage opens 1 of 1 proof headings",
           "why": "every page type gets a smoke test; it opens 1 of 1 crawled example"
         }
@@ -10832,7 +10615,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/GeneratedSmokeTest.java",
-          "line": 105,
+          "line": 104,
           "fact": "test smoke HoversPage opens 1 of 1 proof headings",
           "why": "every page type gets a smoke test; it opens 1 of 1 crawled example"
         }
@@ -10853,7 +10636,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/GeneratedSmokeTest.java",
-          "line": 111,
+          "line": 110,
           "fact": "test smoke DropdownPage opens 1 of 1 proof headings",
           "why": "every page type gets a smoke test; it opens 1 of 1 crawled example"
         }
@@ -10874,7 +10657,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/GeneratedSmokeTest.java",
-          "line": 117,
+          "line": 116,
           "fact": "test smoke RadioButtonsPage opens 1 of 1 proof headings",
           "why": "every page type gets a smoke test; it opens 1 of 1 crawled example"
         }
@@ -10895,7 +10678,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/GeneratedSmokeTest.java",
-          "line": 123,
+          "line": 122,
           "fact": "test smoke ChallengingDomPage opens 1 of 1 proof headings",
           "why": "every page type gets a smoke test; it opens 1 of 1 crawled example"
         }
@@ -10916,7 +10699,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/GeneratedSmokeTest.java",
-          "line": 129,
+          "line": 128,
           "fact": "test smoke LargePage opens 1 of 1 proof headings",
           "why": "every page type gets a smoke test; it opens 1 of 1 crawled example"
         }
@@ -10937,7 +10720,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/GeneratedSmokeTest.java",
-          "line": 135,
+          "line": 134,
           "fact": "test smoke UploadPage opens 1 of 1 proof headings",
           "why": "every page type gets a smoke test; it opens 1 of 1 crawled example"
         }
@@ -10958,7 +10741,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/GeneratedSmokeTest.java",
-          "line": 141,
+          "line": 140,
           "fact": "test smoke SlowPage opens 1 of 1 proof headings",
           "why": "every page type gets a smoke test; it opens 1 of 1 crawled example"
         }
@@ -10979,7 +10762,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/GeneratedSmokeTest.java",
-          "line": 147,
+          "line": 146,
           "fact": "test smoke JavascriptAlertsPage opens 1 of 1 proof headings",
           "why": "every page type gets a smoke test; it opens 1 of 1 crawled example"
         }
@@ -11000,7 +10783,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/GeneratedSmokeTest.java",
-          "line": 153,
+          "line": 152,
           "fact": "test smoke EntryAdPage opens 1 of 1 proof headings",
           "why": "every page type gets a smoke test; it opens 1 of 1 crawled example"
         }
@@ -11021,7 +10804,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/GeneratedSmokeTest.java",
-          "line": 159,
+          "line": 158,
           "fact": "test smoke WindowsPage opens 1 of 1 proof headings",
           "why": "every page type gets a smoke test; it opens 1 of 1 crawled example"
         }
@@ -11042,7 +10825,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/GeneratedSmokeTest.java",
-          "line": 165,
+          "line": 164,
           "fact": "test smoke FramesPage opens 1 of 1 proof headings",
           "why": "every page type gets a smoke test; it opens 1 of 1 crawled example"
         }
@@ -11063,7 +10846,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/GeneratedSmokeTest.java",
-          "line": 171,
+          "line": 170,
           "fact": "test smoke TwoFactorPage opens 1 of 1 proof headings",
           "why": "every page type gets a smoke test; it opens 1 of 1 crawled example"
         }
@@ -11084,7 +10867,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/GeneratedSmokeTest.java",
-          "line": 177,
+          "line": 176,
           "fact": "test smoke AddRemoveElementsPage opens 1 of 1 proof headings",
           "why": "every page type gets a smoke test; it opens 1 of 1 crawled example"
         }
@@ -11105,7 +10888,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/GeneratedSmokeTest.java",
-          "line": 183,
+          "line": 182,
           "fact": "test smoke InputsPage opens 1 of 1 proof headings",
           "why": "every page type gets a smoke test; it opens 1 of 1 crawled example"
         }
@@ -11126,7 +10909,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/GeneratedSmokeTest.java",
-          "line": 189,
+          "line": 188,
           "fact": "test smoke DynamicLoadingListPage opens 1 of 1 proof headings",
           "why": "every page type gets a smoke test; it opens 1 of 1 crawled example"
         }
@@ -11147,7 +10930,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/GeneratedSmokeTest.java",
-          "line": 195,
+          "line": 194,
           "fact": "test smoke ShadowdomPage opens 1 of 1 proof headings",
           "why": "every page type gets a smoke test; it opens 1 of 1 crawled example"
         }
@@ -11168,7 +10951,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/GeneratedSmokeTest.java",
-          "line": 201,
+          "line": 200,
           "fact": "test smoke ContextMenuPage opens 1 of 1 proof headings",
           "why": "every page type gets a smoke test; it opens 1 of 1 crawled example"
         }
@@ -11189,7 +10972,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/GeneratedSmokeTest.java",
-          "line": 207,
+          "line": 206,
           "fact": "test smoke NestedFramesPage opens 1 of 1 proof loaded",
           "why": "every page type gets a smoke test; it opens 1 of 1 crawled example"
         }
@@ -11210,7 +10993,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/GeneratedSmokeTest.java",
-          "line": 213,
+          "line": 212,
           "fact": "test smoke ForgotPasswordPage opens 1 of 1 proof headings",
           "why": "every page type gets a smoke test; it opens 1 of 1 crawled example"
         }
@@ -11231,7 +11014,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/GeneratedSmokeTest.java",
-          "line": 219,
+          "line": 218,
           "fact": "test smoke SubdirectoriesPage opens 1 of 1 proof headings",
           "why": "every page type gets a smoke test; it opens 1 of 1 crawled example"
         }
@@ -11256,7 +11039,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/GeneratedSmokeTest.java",
-          "line": 222,
+          "line": 221,
           "fact": "test smoke DynamicLoadingPage opens 2 of 2 proof headings",
           "why": "every page type gets a smoke test; it opens 2 of 2 crawled examples"
         }
@@ -11281,7 +11064,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/GeneratedSmokeTest.java",
-          "line": 233,
+          "line": 232,
           "fact": "test smoke SubdirectoryPage opens 2 of 2 proof loaded",
           "why": "every page type gets a smoke test; it opens 2 of 2 crawled examples"
         }
@@ -11302,7 +11085,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/GeneratedSmokeTest.java",
-          "line": 247,
+          "line": 246,
           "fact": "test smoke JqueryuiMenuPage opens 1 of 1 proof headings",
           "why": "every page type gets a smoke test; it opens 1 of 1 crawled example"
         }
@@ -11323,7 +11106,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/GeneratedSmokeTest.java",
-          "line": 253,
+          "line": 252,
           "fact": "test smoke WindowsNewPage opens 1 of 1 proof headings",
           "why": "every page type gets a smoke test; it opens 1 of 1 crawled example"
         }
@@ -11344,7 +11127,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/GeneratedSmokeTest.java",
-          "line": 259,
+          "line": 258,
           "fact": "test smoke CanvasPage opens 1 of 1 proof headings",
           "why": "every page type gets a smoke test; it opens 1 of 1 crawled example"
         }
@@ -11365,7 +11148,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/GeneratedSmokeTest.java",
-          "line": 265,
+          "line": 264,
           "fact": "test smoke LargeFormPage opens 1 of 1 proof headings",
           "why": "every page type gets a smoke test; it opens 1 of 1 crawled example"
         }
@@ -11386,7 +11169,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/GeneratedSmokeTest.java",
-          "line": 271,
+          "line": 270,
           "fact": "test smoke DownloadPage opens 1 of 1 proof headings",
           "why": "every page type gets a smoke test; it opens 1 of 1 crawled example"
         }
@@ -11407,7 +11190,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/GeneratedSmokeTest.java",
-          "line": 277,
+          "line": 276,
           "fact": "test smoke StatusCodesPage opens 1 of 1 proof headings",
           "why": "every page type gets a smoke test; it opens 1 of 1 crawled example"
         }
@@ -11432,7 +11215,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/GeneratedSmokeTest.java",
-          "line": 280,
+          "line": 279,
           "fact": "test smoke StatusCodePage opens 2 of 2 proof headings",
           "why": "every page type gets a smoke test; it opens 2 of 2 crawled examples"
         }
@@ -11453,7 +11236,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/GeneratedSmokeTest.java",
-          "line": 294,
+          "line": 293,
           "fact": "test smoke DynamicContentPage opens 1 of 1 proof headings",
           "why": "every page type gets a smoke test; it opens 1 of 1 crawled example"
         }
@@ -11474,7 +11257,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/GeneratedSmokeTest.java",
-          "line": 300,
+          "line": 299,
           "fact": "test smoke ReadonlyPage opens 1 of 1 proof headings",
           "why": "every page type gets a smoke test; it opens 1 of 1 crawled example"
         }
@@ -11495,7 +11278,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/GeneratedSmokeTest.java",
-          "line": 306,
+          "line": 305,
           "fact": "test smoke HorizontalSliderPage opens 1 of 1 proof headings",
           "why": "every page type gets a smoke test; it opens 1 of 1 crawled example"
         }
@@ -11516,7 +11299,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/GeneratedSmokeTest.java",
-          "line": 312,
+          "line": 311,
           "fact": "test smoke JqueryuiPage opens 1 of 1 proof headings",
           "why": "every page type gets a smoke test; it opens 1 of 1 crawled example"
         }
@@ -11537,7 +11320,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/GeneratedSmokeTest.java",
-          "line": 318,
+          "line": 317,
           "fact": "test smoke AbtestPage opens 1 of 1 proof loaded",
           "why": "every page type gets a smoke test; it opens 1 of 1 crawled example"
         }
@@ -11558,7 +11341,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/GeneratedSmokeTest.java",
-          "line": 324,
+          "line": 323,
           "fact": "test smoke JavascriptErrorPage opens 1 of 1 proof loaded",
           "why": "every page type gets a smoke test; it opens 1 of 1 crawled example"
         }
@@ -11579,7 +11362,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/GeneratedSmokeTest.java",
-          "line": 330,
+          "line": 329,
           "fact": "test smoke DynamicControlsPage opens 1 of 1 proof headings",
           "why": "every page type gets a smoke test; it opens 1 of 1 crawled example"
         }
@@ -11600,7 +11383,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/GeneratedSmokeTest.java",
-          "line": 336,
+          "line": 335,
           "fact": "test smoke ShiftingContentListPage opens 1 of 1 proof headings",
           "why": "every page type gets a smoke test; it opens 1 of 1 crawled example"
         }
@@ -11625,7 +11408,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/GeneratedSmokeTest.java",
-          "line": 339,
+          "line": 338,
           "fact": "test smoke ShiftingContentPage opens 2 of 2 proof loaded",
           "why": "every page type gets a smoke test; it opens 2 of 2 crawled examples"
         }
@@ -11646,7 +11429,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/GeneratedSmokeTest.java",
-          "line": 353,
+          "line": 352,
           "fact": "test smoke ShiftingContentMenuPage opens 1 of 1 proof headings",
           "why": "every page type gets a smoke test; it opens 1 of 1 crawled example"
         }
@@ -11667,7 +11450,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/GeneratedSmokeTest.java",
-          "line": 359,
+          "line": 358,
           "fact": "test smoke DisappearingElementsPage opens 1 of 1 proof headings",
           "why": "every page type gets a smoke test; it opens 1 of 1 crawled example"
         }
@@ -11688,7 +11471,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/GeneratedSmokeTest.java",
-          "line": 365,
+          "line": 364,
           "fact": "test smoke TablesPage opens 1 of 1 proof headings",
           "why": "every page type gets a smoke test; it opens 1 of 1 crawled example"
         }
@@ -11698,7 +11481,7 @@
       "kind": "test",
       "why": "every page type gets a smoke test; it opens 1 of 1 crawled example",
       "facts": [
-        "test smoke InfiniteScrollListPage opens 1 of 1 proof headings"
+        "test smoke InfiniteScrollPage opens 1 of 1 proof headings"
       ],
       "evidence": [
         {
@@ -11709,38 +11492,9 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/GeneratedSmokeTest.java",
-          "line": 371,
-          "fact": "test smoke InfiniteScrollListPage opens 1 of 1 proof headings",
+          "line": 370,
+          "fact": "test smoke InfiniteScrollPage opens 1 of 1 proof headings",
           "why": "every page type gets a smoke test; it opens 1 of 1 crawled example"
-        }
-      ]
-    },
-    "test:smoke:/infinite_scroll/*": {
-      "kind": "test",
-      "why": "every page type gets a smoke test; it opens 3 of 29 crawled examples",
-      "facts": [
-        "test smoke InfiniteScrollPage opens 3 of 29 proof loaded"
-      ],
-      "evidence": [
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/18",
-          "snapshot": "crawl/pages/infinite_scroll/18.html"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/19",
-          "snapshot": "crawl/pages/infinite_scroll/19.html"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/20",
-          "snapshot": "crawl/pages/infinite_scroll/20.html"
-        }
-      ],
-      "generated": [
-        {
-          "file": "src/test/java/com/herokuapp/theinternet/tests/cases/GeneratedSmokeTest.java",
-          "line": 374,
-          "fact": "test smoke InfiniteScrollPage opens 3 of 29 proof loaded",
-          "why": "every page type gets a smoke test; it opens 3 of 29 crawled examples"
         }
       ]
     },
@@ -11759,7 +11513,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/GeneratedSmokeTest.java",
-          "line": 388,
+          "line": 376,
           "fact": "test smoke CheckboxesPage opens 1 of 1 proof headings",
           "why": "every page type gets a smoke test; it opens 1 of 1 crawled example"
         }
@@ -11780,7 +11534,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/GeneratedSmokeTest.java",
-          "line": 394,
+          "line": 382,
           "fact": "test smoke RedirectorPage opens 1 of 1 proof headings",
           "why": "every page type gets a smoke test; it opens 1 of 1 crawled example"
         }
@@ -11801,7 +11555,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/GeneratedSmokeTest.java",
-          "line": 400,
+          "line": 388,
           "fact": "test smoke GeolocationPage opens 1 of 1 proof headings",
           "why": "every page type gets a smoke test; it opens 1 of 1 crawled example"
         }
@@ -11822,7 +11576,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/GeneratedSmokeTest.java",
-          "line": 406,
+          "line": 394,
           "fact": "test smoke ExitIntentPage opens 1 of 1 proof headings",
           "why": "every page type gets a smoke test; it opens 1 of 1 crawled example"
         }
@@ -11843,7 +11597,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/GeneratedSmokeTest.java",
-          "line": 412,
+          "line": 400,
           "fact": "test smoke IframePage opens 1 of 1 proof headings",
           "why": "every page type gets a smoke test; it opens 1 of 1 crawled example"
         }
@@ -11864,7 +11618,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/GeneratedSmokeTest.java",
-          "line": 418,
+          "line": 406,
           "fact": "test smoke MultipleDropdownPage opens 1 of 1 proof headings",
           "why": "every page type gets a smoke test; it opens 1 of 1 crawled example"
         }
@@ -11885,7 +11639,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/GeneratedSmokeTest.java",
-          "line": 424,
+          "line": 412,
           "fact": "test smoke BrokenImagesPage opens 1 of 1 proof headings",
           "why": "every page type gets a smoke test; it opens 1 of 1 crawled example"
         }
@@ -11906,7 +11660,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/GeneratedSmokeTest.java",
-          "line": 430,
+          "line": 418,
           "fact": "test smoke NotificationMessageRenderedPage opens 1 of 1 proof headings",
           "why": "every page type gets a smoke test; it opens 1 of 1 crawled example"
         }
@@ -11927,7 +11681,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/GeneratedSmokeTest.java",
-          "line": 436,
+          "line": 424,
           "fact": "test smoke FloatingMenuPage opens 1 of 1 proof headings",
           "why": "every page type gets a smoke test; it opens 1 of 1 crawled example"
         }
@@ -11948,7 +11702,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/GeneratedSmokeTest.java",
-          "line": 442,
+          "line": 430,
           "fact": "test smoke DragAndDropPage opens 1 of 1 proof headings",
           "why": "every page type gets a smoke test; it opens 1 of 1 crawled example"
         }
@@ -11969,7 +11723,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/GeneratedSmokeTest.java",
-          "line": 448,
+          "line": 436,
           "fact": "test smoke KeyPressesPage opens 1 of 1 proof headings",
           "why": "every page type gets a smoke test; it opens 1 of 1 crawled example"
         }
@@ -11990,7 +11744,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/GeneratedSmokeTest.java",
-          "line": 454,
+          "line": 442,
           "fact": "test smoke TyposPage opens 1 of 1 proof headings",
           "why": "every page type gets a smoke test; it opens 1 of 1 crawled example"
         }
@@ -12011,7 +11765,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/NavigationTest.java",
-          "line": 33,
+          "line": 32,
           "fact": "test navigation HomePage() -> TinymcePage() then loaded",
           "why": "a link a visitor can click, seen on /: \"WYSIWYG Editor\""
         }
@@ -12032,7 +11786,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/NavigationTest.java",
-          "line": 39,
+          "line": 38,
           "fact": "test navigation HomePage() -> HoversPage() then loaded",
           "why": "a link a visitor can click, seen on /: \"Hovers\""
         }
@@ -12053,7 +11807,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/NavigationTest.java",
-          "line": 45,
+          "line": 44,
           "fact": "test navigation HomePage() -> DropdownPage() then loaded",
           "why": "a link a visitor can click, seen on /: \"Dropdown\""
         }
@@ -12074,7 +11828,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/NavigationTest.java",
-          "line": 51,
+          "line": 50,
           "fact": "test navigation HomePage() -> RadioButtonsPage() then loaded",
           "why": "a link a visitor can click, seen on /: \"Radio Buttons\""
         }
@@ -12095,7 +11849,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/NavigationTest.java",
-          "line": 57,
+          "line": 56,
           "fact": "test navigation HomePage() -> ChallengingDomPage() then loaded",
           "why": "a link a visitor can click, seen on /: \"Challenging DOM\""
         }
@@ -12116,7 +11870,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/NavigationTest.java",
-          "line": 63,
+          "line": 62,
           "fact": "test navigation HomePage() -> LargePage() then loaded",
           "why": "a link a visitor can click, seen on /: \"Large & Deep DOM\""
         }
@@ -12137,7 +11891,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/NavigationTest.java",
-          "line": 69,
+          "line": 68,
           "fact": "test navigation HomePage() -> UploadPage() then loaded",
           "why": "a link a visitor can click, seen on /: \"File Upload\""
         }
@@ -12158,7 +11912,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/NavigationTest.java",
-          "line": 75,
+          "line": 74,
           "fact": "test navigation HomePage() -> SlowPage() then loaded",
           "why": "a link a visitor can click, seen on /: \"Slow Resources\""
         }
@@ -12179,7 +11933,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/NavigationTest.java",
-          "line": 81,
+          "line": 80,
           "fact": "test navigation HomePage() -> JavascriptAlertsPage() then loaded",
           "why": "a link a visitor can click, seen on /: \"JavaScript Alerts\""
         }
@@ -12200,7 +11954,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/NavigationTest.java",
-          "line": 87,
+          "line": 86,
           "fact": "test navigation HomePage() -> EntryAdPage() then loaded",
           "why": "a link a visitor can click, seen on /: \"Entry Ad\""
         }
@@ -12221,7 +11975,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/NavigationTest.java",
-          "line": 93,
+          "line": 92,
           "fact": "test navigation HomePage() -> WindowsPage() then loaded",
           "why": "a link a visitor can click, seen on /: \"Multiple Windows\""
         }
@@ -12242,7 +11996,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/NavigationTest.java",
-          "line": 99,
+          "line": 98,
           "fact": "test navigation HomePage() -> FramesPage() then loaded",
           "why": "a link a visitor can click, seen on /: \"Frames\""
         }
@@ -12263,7 +12017,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/NavigationTest.java",
-          "line": 105,
+          "line": 104,
           "fact": "test navigation HomePage() -> TwoFactorPage() then loaded",
           "why": "a link a visitor can click, seen on /: \"Two-Factor Login\""
         }
@@ -12284,7 +12038,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/NavigationTest.java",
-          "line": 111,
+          "line": 110,
           "fact": "test navigation HomePage() -> AddRemoveElementsPage() then loaded",
           "why": "a link a visitor can click, seen on /: \"Add/Remove Elements\""
         }
@@ -12305,7 +12059,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/NavigationTest.java",
-          "line": 117,
+          "line": 116,
           "fact": "test navigation HomePage() -> InputsPage() then loaded",
           "why": "a link a visitor can click, seen on /: \"Inputs\""
         }
@@ -12326,7 +12080,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/NavigationTest.java",
-          "line": 123,
+          "line": 122,
           "fact": "test navigation HomePage() -> DynamicLoadingListPage() then loaded",
           "why": "a link a visitor can click, seen on /: \"Dynamic Loading\""
         }
@@ -12347,7 +12101,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/NavigationTest.java",
-          "line": 129,
+          "line": 128,
           "fact": "test navigation HomePage() -> ShadowdomPage() then loaded",
           "why": "a link a visitor can click, seen on /: \"Shadow DOM\""
         }
@@ -12368,7 +12122,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/NavigationTest.java",
-          "line": 135,
+          "line": 134,
           "fact": "test navigation HomePage() -> ContextMenuPage() then loaded",
           "why": "a link a visitor can click, seen on /: \"Context Menu\""
         }
@@ -12389,7 +12143,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/NavigationTest.java",
-          "line": 141,
+          "line": 140,
           "fact": "test navigation HomePage() -> NestedFramesPage() then loaded",
           "why": "a link a visitor can click, seen on /: \"Nested Frames\""
         }
@@ -12410,7 +12164,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/NavigationTest.java",
-          "line": 147,
+          "line": 146,
           "fact": "test navigation HomePage() -> ForgotPasswordPage() then loaded",
           "why": "a link a visitor can click, seen on /: \"Forgot Password\""
         }
@@ -12431,7 +12185,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/NavigationTest.java",
-          "line": 153,
+          "line": 152,
           "fact": "test navigation HomePage() -> SubdirectoriesPage() then loaded",
           "why": "a link a visitor can click, seen on /: \"Subdirectories\""
         }
@@ -12452,7 +12206,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/NavigationTest.java",
-          "line": 159,
+          "line": 158,
           "fact": "test navigation HomePage() -> JqueryuiMenuPage() then loaded",
           "why": "a link a visitor can click, seen on /: \"JQuery UI Menus\""
         }
@@ -12473,7 +12227,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/NavigationTest.java",
-          "line": 165,
+          "line": 164,
           "fact": "test navigation HomePage() -> CanvasPage() then loaded",
           "why": "a link a visitor can click, seen on /: \"Canvas\""
         }
@@ -12494,7 +12248,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/NavigationTest.java",
-          "line": 171,
+          "line": 170,
           "fact": "test navigation HomePage() -> LargeFormPage() then loaded",
           "why": "a link a visitor can click, seen on /: \"Large Form\""
         }
@@ -12515,7 +12269,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/NavigationTest.java",
-          "line": 177,
+          "line": 176,
           "fact": "test navigation HomePage() -> DownloadPage() then loaded",
           "why": "a link a visitor can click, seen on /: \"File Download\""
         }
@@ -12536,7 +12290,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/NavigationTest.java",
-          "line": 183,
+          "line": 182,
           "fact": "test navigation HomePage() -> StatusCodesPage() then loaded",
           "why": "a link a visitor can click, seen on /: \"Status Codes\""
         }
@@ -12557,7 +12311,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/NavigationTest.java",
-          "line": 189,
+          "line": 188,
           "fact": "test navigation HomePage() -> DynamicContentPage() then loaded",
           "why": "a link a visitor can click, seen on /: \"Dynamic Content\""
         }
@@ -12578,7 +12332,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/NavigationTest.java",
-          "line": 195,
+          "line": 194,
           "fact": "test navigation HomePage() -> ReadonlyPage() then loaded",
           "why": "a link a visitor can click, seen on /: \"Read-only Inputs\""
         }
@@ -12599,7 +12353,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/NavigationTest.java",
-          "line": 201,
+          "line": 200,
           "fact": "test navigation HomePage() -> HorizontalSliderPage() then loaded",
           "why": "a link a visitor can click, seen on /: \"Horizontal Slider\""
         }
@@ -12620,7 +12374,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/NavigationTest.java",
-          "line": 207,
+          "line": 206,
           "fact": "test navigation HomePage() -> AbtestPage() then loaded",
           "why": "a link a visitor can click, seen on /: \"A/B Testing\""
         }
@@ -12641,7 +12395,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/NavigationTest.java",
-          "line": 213,
+          "line": 212,
           "fact": "test navigation HomePage() -> JavascriptErrorPage() then loaded",
           "why": "a link a visitor can click, seen on /: \"JavaScript onload event error\""
         }
@@ -12662,7 +12416,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/NavigationTest.java",
-          "line": 219,
+          "line": 218,
           "fact": "test navigation HomePage() -> DynamicControlsPage() then loaded",
           "why": "a link a visitor can click, seen on /: \"Dynamic Controls\""
         }
@@ -12683,7 +12437,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/NavigationTest.java",
-          "line": 225,
+          "line": 224,
           "fact": "test navigation HomePage() -> ShiftingContentListPage() then loaded",
           "why": "a link a visitor can click, seen on /: \"Shifting Content\""
         }
@@ -12704,7 +12458,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/NavigationTest.java",
-          "line": 231,
+          "line": 230,
           "fact": "test navigation HomePage() -> DisappearingElementsPage() then loaded",
           "why": "a link a visitor can click, seen on /: \"Disappearing Elements\""
         }
@@ -12725,7 +12479,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/NavigationTest.java",
-          "line": 237,
+          "line": 236,
           "fact": "test navigation HomePage() -> TablesPage() then loaded",
           "why": "a link a visitor can click, seen on /: \"Sortable Data Tables\""
         }
@@ -12735,7 +12489,7 @@
       "kind": "test",
       "why": "a link a visitor can click, seen on /: \"Infinite Scroll\"",
       "facts": [
-        "test navigation HomePage() -> InfiniteScrollListPage() then loaded"
+        "test navigation HomePage() -> InfiniteScrollPage() then loaded"
       ],
       "evidence": [
         {
@@ -12746,8 +12500,8 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/NavigationTest.java",
-          "line": 243,
-          "fact": "test navigation HomePage() -> InfiniteScrollListPage() then loaded",
+          "line": 242,
+          "fact": "test navigation HomePage() -> InfiniteScrollPage() then loaded",
           "why": "a link a visitor can click, seen on /: \"Infinite Scroll\""
         }
       ]
@@ -12767,7 +12521,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/NavigationTest.java",
-          "line": 249,
+          "line": 248,
           "fact": "test navigation HomePage() -> CheckboxesPage() then loaded",
           "why": "a link a visitor can click, seen on /: \"Checkboxes\""
         }
@@ -12788,7 +12542,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/NavigationTest.java",
-          "line": 255,
+          "line": 254,
           "fact": "test navigation HomePage() -> RedirectorPage() then loaded",
           "why": "a link a visitor can click, seen on /: \"Redirect Link\""
         }
@@ -12809,7 +12563,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/NavigationTest.java",
-          "line": 261,
+          "line": 260,
           "fact": "test navigation HomePage() -> GeolocationPage() then loaded",
           "why": "a link a visitor can click, seen on /: \"Geolocation\""
         }
@@ -12830,7 +12584,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/NavigationTest.java",
-          "line": 267,
+          "line": 266,
           "fact": "test navigation HomePage() -> ExitIntentPage() then loaded",
           "why": "a link a visitor can click, seen on /: \"Exit Intent\""
         }
@@ -12851,7 +12605,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/NavigationTest.java",
-          "line": 273,
+          "line": 272,
           "fact": "test navigation HomePage() -> MultipleDropdownPage() then loaded",
           "why": "a link a visitor can click, seen on /: \"Multiple Select Dropdown\""
         }
@@ -12872,7 +12626,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/NavigationTest.java",
-          "line": 279,
+          "line": 278,
           "fact": "test navigation HomePage() -> BrokenImagesPage() then loaded",
           "why": "a link a visitor can click, seen on /: \"Broken Images\""
         }
@@ -12893,7 +12647,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/NavigationTest.java",
-          "line": 285,
+          "line": 284,
           "fact": "test navigation HomePage() -> NotificationMessageRenderedPage() then loaded",
           "why": "a link a visitor can click, seen on /: \"Notification Messages\""
         }
@@ -12914,7 +12668,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/NavigationTest.java",
-          "line": 291,
+          "line": 290,
           "fact": "test navigation HomePage() -> FloatingMenuPage() then loaded",
           "why": "a link a visitor can click, seen on /: \"Floating Menu\""
         }
@@ -12935,7 +12689,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/NavigationTest.java",
-          "line": 297,
+          "line": 296,
           "fact": "test navigation HomePage() -> DragAndDropPage() then loaded",
           "why": "a link a visitor can click, seen on /: \"Drag and Drop\""
         }
@@ -12956,7 +12710,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/NavigationTest.java",
-          "line": 303,
+          "line": 302,
           "fact": "test navigation HomePage() -> KeyPressesPage() then loaded",
           "why": "a link a visitor can click, seen on /: \"Key Presses\""
         }
@@ -12977,7 +12731,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/NavigationTest.java",
-          "line": 309,
+          "line": 308,
           "fact": "test navigation HomePage() -> TyposPage() then loaded",
           "why": "a link a visitor can click, seen on /: \"Typos\""
         }
@@ -12998,7 +12752,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/NavigationTest.java",
-          "line": 315,
+          "line": 314,
           "fact": "test navigation WindowsPage() -> WindowsNewPage() then loaded",
           "why": "a link a visitor can click, seen on /windows: \"Click Here\""
         }
@@ -13019,7 +12773,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/NavigationTest.java",
-          "line": 321,
+          "line": 320,
           "fact": "test navigation FramesPage() -> NestedFramesPage() then loaded",
           "why": "a link a visitor can click, seen on /frames: \"Nested Frames\""
         }
@@ -13040,7 +12794,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/NavigationTest.java",
-          "line": 327,
+          "line": 326,
           "fact": "test navigation FramesPage() -> IframePage() then loaded",
           "why": "a link a visitor can click, seen on /frames: \"iFrame\""
         }
@@ -13061,7 +12815,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/NavigationTest.java",
-          "line": 333,
+          "line": 332,
           "fact": "test navigation DynamicLoadingListPage() -> DynamicLoadingPage(\"1\") then loaded",
           "why": "a link a visitor can click, seen on /dynamic_loading: \"Example 1: Element on page that is hidden\""
         }
@@ -13082,7 +12836,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/NavigationTest.java",
-          "line": 339,
+          "line": 338,
           "fact": "test navigation SubdirectoriesPage() -> SubdirectoryPage(\"one\") then loaded",
           "why": "a link a visitor can click, seen on /subdirectories: \"/subdirectories/one\""
         }
@@ -13103,7 +12857,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/NavigationTest.java",
-          "line": 345,
+          "line": 344,
           "fact": "test navigation SubdirectoryPage(\"two\") -> SubdirectoriesPage() then loaded",
           "why": "a link a visitor can click, seen on /subdirectories/two: \"/subdirectories\""
         }
@@ -13124,7 +12878,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/NavigationTest.java",
-          "line": 351,
+          "line": 350,
           "fact": "test navigation SubdirectoryPage(\"two\") -> SubdirectoryPage(\"one\") then loaded",
           "why": "a link a visitor can click, seen on /subdirectories/two: \"/subdirectories/one\""
         }
@@ -13145,7 +12899,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/NavigationTest.java",
-          "line": 357,
+          "line": 356,
           "fact": "test navigation StatusCodesPage() -> StatusCodePage(\"200\") then loaded",
           "why": "a link a visitor can click, seen on /status_codes: \"200\""
         }
@@ -13166,7 +12920,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/NavigationTest.java",
-          "line": 363,
+          "line": 362,
           "fact": "test navigation StatusCodePage(\"301\") -> StatusCodesPage() then loaded",
           "why": "a link a visitor can click, seen on /status_codes/301: \"here\""
         }
@@ -13187,7 +12941,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/NavigationTest.java",
-          "line": 369,
+          "line": 368,
           "fact": "test navigation JqueryuiPage() -> JqueryuiMenuPage() then loaded",
           "why": "a link a visitor can click, seen on /jqueryui: \"Menu\""
         }
@@ -13208,7 +12962,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/NavigationTest.java",
-          "line": 375,
+          "line": 374,
           "fact": "test navigation ShiftingContentListPage() -> ShiftingContentPage(\"image\") then loaded",
           "why": "a link a visitor can click, seen on /shifting_content: \"Example 2: An image\""
         }
@@ -13229,7 +12983,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/NavigationTest.java",
-          "line": 381,
+          "line": 380,
           "fact": "test navigation ShiftingContentListPage() -> ShiftingContentMenuPage() then loaded",
           "why": "a link a visitor can click, seen on /shifting_content: \"Example 1: Menu Element\""
         }
@@ -13250,7 +13004,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/NavigationTest.java",
-          "line": 387,
+          "line": 386,
           "fact": "test navigation ShiftingContentMenuPage() -> HomePage() then loaded",
           "why": "a link a visitor can click, seen on /shifting_content/menu: \"Home\""
         }
@@ -13271,36 +13025,15 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/NavigationTest.java",
-          "line": 393,
+          "line": 392,
           "fact": "test navigation DisappearingElementsPage() -> HomePage() then loaded",
           "why": "a link a visitor can click, seen on /disappearing_elements: \"Home\""
         }
       ]
     },
-    "test:navigation:/infinite_scroll/*#0": {
+    "test:form:/two_factor:Then enter the one-time code shown on the next page.": {
       "kind": "test",
-      "why": "a link a visitor can click, seen on /infinite_scroll/18: \"next page\"",
-      "facts": [
-        "test navigation InfiniteScrollPage(\"18\") -> InfiniteScrollPage(\"19\") then loaded"
-      ],
-      "evidence": [
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/18",
-          "snapshot": "crawl/pages/infinite_scroll/18.html"
-        }
-      ],
-      "generated": [
-        {
-          "file": "src/test/java/com/herokuapp/theinternet/tests/cases/NavigationTest.java",
-          "line": 399,
-          "fact": "test navigation InfiniteScrollPage(\"18\") -> InfiniteScrollPage(\"19\") then loaded",
-          "why": "a link a visitor can click, seen on /infinite_scroll/18: \"next page\""
-        }
-      ]
-    },
-    "test:form:/two_factor:Log in with tomsmith and SuperSecretPassword!. Then enter th": {
-      "kind": "test",
-      "why": "the \"Log in with tomsmith and SuperSecretPassword!. Then enter th\" form the crawl saw: shown and empty; nothing typed or sent",
+      "why": "the \"Then enter the one-time code shown on the next page.\" form the crawl saw: shown and empty; nothing typed or sent",
       "facts": [
         "test form TwoFactorPage() empty USERNAME_INPUT, PASSWORD_INPUT shows NEXT_BUTTON"
       ],
@@ -13313,9 +13046,9 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/GeneratedSmokeTest.java",
-          "line": 462,
+          "line": 450,
           "fact": "test form TwoFactorPage() empty USERNAME_INPUT, PASSWORD_INPUT shows NEXT_BUTTON",
-          "why": "the \"Log in with tomsmith and SuperSecretPassword!. Then enter th\" form the crawl saw: shown and empty; nothing typed or sent"
+          "why": "the \"Then enter the one-time code shown on the next page.\" form the crawl saw: shown and empty; nothing typed or sent"
         }
       ]
     },
@@ -13334,7 +13067,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/GeneratedSmokeTest.java",
-          "line": 471,
+          "line": 459,
           "fact": "test form ForgotPasswordPage() empty E_MAIL_INPUT shows RETRIEVE_PASSWORD_BUTTON",
           "why": "the \"forgot_password\" form the crawl saw: shown and empty; nothing typed or sent"
         }
@@ -13355,7 +13088,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/GeneratedSmokeTest.java",
-          "line": 479,
+          "line": 467,
           "fact": "test form LargeFormPage() empty FIRST_NAME_INPUT, LAST_NAME_INPUT, EMAIL_INPUT, PASSWORD_INPUT, NICKNAME_OPTIONAL_INPUT, BIRTHDAY_INPUT, AGE_INPUT, ABOUT_YOU_INPUT holds YEARS_OF_EXPERIENCE_5_INPUT=\"5\" shows SUBMIT_BUTTON",
           "why": "the \"Account\" form the crawl saw: shown and each field as the page loaded it (empty, or holding what the crawl saw; a value the crawl saw change is not checked); nothing typed or sent"
         }
@@ -13376,7 +13109,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/GeneratedSmokeTest.java",
-          "line": 495,
+          "line": 483,
           "fact": "test form ReadonlyPage() empty none holds TEXT_FIELD_INPUT=\"I am editable\", ALWAYS_READ_ONLY_INPUT=\"You cannot change me\", DISABLED_NOT_THE_SAME_AS_INPUT=\"I am disabled\"",
           "why": "the \"Read-only Inputs\" form the crawl saw: shown and each field as the page loaded it (empty, or holding what the crawl saw; a value the crawl saw change is not checked); nothing typed or sent"
         }
@@ -13397,7 +13130,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/GeneratedSmokeTest.java",
-          "line": 504,
+          "line": 492,
           "fact": "test form KeyPressesPage() empty TEXT_FIELD_INPUT",
           "why": "the \"Key Presses\" form the crawl saw: shown and empty; nothing typed or sent"
         }
@@ -13407,7 +13140,7 @@
       "kind": "test",
       "why": "the worked example: its form has the fewest fields of any page's; a plain test written as a person would, nothing sent",
       "facts": [
-        "test example TwoFactorPage() refuses none fills fillThenEnterThForm with ThenEnterTh.sample() holds USERNAME_INPUT"
+        "test example TwoFactorPage() refuses none fills fillForm with TwoFactorForm.sample() holds USERNAME_INPUT"
       ],
       "evidence": [
         {
@@ -13418,8 +13151,8 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/TwoFactorFormTest.java",
-          "line": 31,
-          "fact": "test example TwoFactorPage() refuses none fills fillThenEnterThForm with ThenEnterTh.sample() holds USERNAME_INPUT",
+          "line": 32,
+          "fact": "test example TwoFactorPage() refuses none fills fillForm with TwoFactorForm.sample() holds USERNAME_INPUT",
           "why": "the worked example: its form has the fewest fields of any page's; a plain test written as a person would, nothing sent"
         }
       ]
@@ -13522,7 +13255,7 @@
       "generated": [
         {
           "file": "src/test/java/com/herokuapp/theinternet/tests/cases/GeneratedSmokeTest.java",
-          "line": 511,
+          "line": 499,
           "fact": "test not-found /suite-builder-no-such-page-883b31f0",
           "why": "an address that cannot exist, which the crawl asked: answered 404, or a page (a soft 404, filed as a bug)"
         }
@@ -14504,54 +14237,6 @@
         }
       ]
     },
-    "test:link:/infinite_scroll/18": {
-      "kind": "test",
-      "why": "the crawl requested it and it answered 200; the link report holds it to that",
-      "facts": [
-        "test link /infinite_scroll/18 was 200 from /infinite_scroll"
-      ],
-      "evidence": [],
-      "generated": [
-        {
-          "file": "src/test/resources/link-report/links.tsv",
-          "line": 58,
-          "fact": "test link /infinite_scroll/18 was 200 from /infinite_scroll",
-          "why": "the crawl requested it and it answered 200; the link report holds it to that"
-        }
-      ]
-    },
-    "test:link:/infinite_scroll/19": {
-      "kind": "test",
-      "why": "the crawl requested it and it answered 200; the link report holds it to that",
-      "facts": [
-        "test link /infinite_scroll/19 was 200 from /infinite_scroll/18"
-      ],
-      "evidence": [],
-      "generated": [
-        {
-          "file": "src/test/resources/link-report/links.tsv",
-          "line": 59,
-          "fact": "test link /infinite_scroll/19 was 200 from /infinite_scroll/18",
-          "why": "the crawl requested it and it answered 200; the link report holds it to that"
-        }
-      ]
-    },
-    "test:link:/infinite_scroll/20": {
-      "kind": "test",
-      "why": "the crawl requested it and it answered 200; the link report holds it to that",
-      "facts": [
-        "test link /infinite_scroll/20 was 200 from /infinite_scroll/19"
-      ],
-      "evidence": [],
-      "generated": [
-        {
-          "file": "src/test/resources/link-report/links.tsv",
-          "line": 60,
-          "fact": "test link /infinite_scroll/20 was 200 from /infinite_scroll/19",
-          "why": "the crawl requested it and it answered 200; the link report holds it to that"
-        }
-      ]
-    },
     "test:link:/portfolio/": {
       "kind": "test",
       "why": "the crawl requested it and it answered 404; the link report holds it to that",
@@ -14562,7 +14247,7 @@
       "generated": [
         {
           "file": "src/test/resources/link-report/links.tsv",
-          "line": 61,
+          "line": 58,
           "fact": "test link /portfolio/ was 404 from /shifting_content/menu, /disappearing_elements",
           "why": "the crawl requested it and it answered 404; the link report holds it to that"
         }
@@ -14578,7 +14263,7 @@
       "generated": [
         {
           "file": "src/test/resources/link-report/links.tsv",
-          "line": 62,
+          "line": 59,
           "fact": "test link /checkboxes was 200 from /",
           "why": "the crawl requested it and it answered 200; the link report holds it to that"
         }
@@ -14594,7 +14279,7 @@
       "generated": [
         {
           "file": "src/test/resources/link-report/links.tsv",
-          "line": 63,
+          "line": 60,
           "fact": "test link /redirector was 200 from /",
           "why": "the crawl requested it and it answered 200; the link report holds it to that"
         }
@@ -14610,7 +14295,7 @@
       "generated": [
         {
           "file": "src/test/resources/link-report/links.tsv",
-          "line": 64,
+          "line": 61,
           "fact": "test link /geolocation was 200 from /",
           "why": "the crawl requested it and it answered 200; the link report holds it to that"
         }
@@ -14626,7 +14311,7 @@
       "generated": [
         {
           "file": "src/test/resources/link-report/links.tsv",
-          "line": 65,
+          "line": 62,
           "fact": "test link /contact-us/ was 404 from /shifting_content/menu, /disappearing_elements",
           "why": "the crawl requested it and it answered 404; the link report holds it to that"
         }
@@ -14642,7 +14327,7 @@
       "generated": [
         {
           "file": "src/test/resources/link-report/links.tsv",
-          "line": 66,
+          "line": 63,
           "fact": "test link /exit_intent was 200 from /",
           "why": "the crawl requested it and it answered 200; the link report holds it to that"
         }
@@ -14658,7 +14343,7 @@
       "generated": [
         {
           "file": "src/test/resources/link-report/links.tsv",
-          "line": 67,
+          "line": 64,
           "fact": "test link /iframe was 200 from /frames",
           "why": "the crawl requested it and it answered 200; the link report holds it to that"
         }
@@ -14674,7 +14359,7 @@
       "generated": [
         {
           "file": "src/test/resources/link-report/links.tsv",
-          "line": 68,
+          "line": 65,
           "fact": "test link /multiple_dropdown was 200 from /",
           "why": "the crawl requested it and it answered 200; the link report holds it to that"
         }
@@ -14690,7 +14375,7 @@
       "generated": [
         {
           "file": "src/test/resources/link-report/links.tsv",
-          "line": 69,
+          "line": 66,
           "fact": "test link /redirect was unanswered from /redirector",
           "why": "the crawl requested it and got no answer; the link report holds it to that"
         }
@@ -14706,7 +14391,7 @@
       "generated": [
         {
           "file": "src/test/resources/link-report/links.tsv",
-          "line": 70,
+          "line": 67,
           "fact": "test link /broken_images was 200 from /",
           "why": "the crawl requested it and it answered 200; the link report holds it to that"
         }
@@ -14722,7 +14407,7 @@
       "generated": [
         {
           "file": "src/test/resources/link-report/links.tsv",
-          "line": 71,
+          "line": 68,
           "fact": "test link /notification_message was 200 from /, /notification_message_rendered",
           "why": "the crawl requested it and it answered 200; the link report holds it to that"
         }
@@ -14738,7 +14423,7 @@
       "generated": [
         {
           "file": "src/test/resources/link-report/links.tsv",
-          "line": 72,
+          "line": 69,
           "fact": "test link /floating_menu was 200 from /, /floating_menu",
           "why": "the crawl requested it and it answered 200; the link report holds it to that"
         }
@@ -14754,7 +14439,7 @@
       "generated": [
         {
           "file": "src/test/resources/link-report/links.tsv",
-          "line": 73,
+          "line": 70,
           "fact": "test link /about/ was 404 from /shifting_content/menu, /disappearing_elements",
           "why": "the crawl requested it and it answered 404; the link report holds it to that"
         }
@@ -14770,7 +14455,7 @@
       "generated": [
         {
           "file": "src/test/resources/link-report/links.tsv",
-          "line": 74,
+          "line": 71,
           "fact": "test link /drag_and_drop was 200 from /",
           "why": "the crawl requested it and it answered 200; the link report holds it to that"
         }
@@ -14780,14 +14465,14 @@
       "kind": "test",
       "why": "the crawl requested it and it answered 404; the link report holds it to that",
       "facts": [
-        "test link /gallery/ was 404 from /shifting_content/menu, /disappearing_elements"
+        "test link /gallery/ was 404 from /shifting_content/menu"
       ],
       "evidence": [],
       "generated": [
         {
           "file": "src/test/resources/link-report/links.tsv",
-          "line": 75,
-          "fact": "test link /gallery/ was 404 from /shifting_content/menu, /disappearing_elements",
+          "line": 72,
+          "fact": "test link /gallery/ was 404 from /shifting_content/menu",
           "why": "the crawl requested it and it answered 404; the link report holds it to that"
         }
       ]
@@ -14802,7 +14487,7 @@
       "generated": [
         {
           "file": "src/test/resources/link-report/links.tsv",
-          "line": 76,
+          "line": 73,
           "fact": "test link /key_presses was 200 from /",
           "why": "the crawl requested it and it answered 200; the link report holds it to that"
         }
@@ -14818,7 +14503,7 @@
       "generated": [
         {
           "file": "src/test/resources/link-report/links.tsv",
-          "line": 77,
+          "line": 74,
           "fact": "test link /typos was 200 from /",
           "why": "the crawl requested it and it answered 200; the link report holds it to that"
         }
@@ -14834,431 +14519,15 @@
       "generated": [
         {
           "file": "src/test/resources/link-report/links.tsv",
-          "line": 78,
+          "line": 75,
           "fact": "test link /status_codes/404 was 404 from /status_codes",
           "why": "the crawl requested it and it answered 404; the link report holds it to that"
         }
       ]
     },
-    "test:link:/infinite_scroll/21": {
-      "kind": "test",
-      "why": "the crawl requested it and it answered 200; the link report holds it to that",
-      "facts": [
-        "test link /infinite_scroll/21 was 200 from /infinite_scroll/20"
-      ],
-      "evidence": [],
-      "generated": [
-        {
-          "file": "src/test/resources/link-report/links.tsv",
-          "line": 79,
-          "fact": "test link /infinite_scroll/21 was 200 from /infinite_scroll/20",
-          "why": "the crawl requested it and it answered 200; the link report holds it to that"
-        }
-      ]
-    },
-    "test:link:/infinite_scroll/22": {
-      "kind": "test",
-      "why": "the crawl requested it and it answered 200; the link report holds it to that",
-      "facts": [
-        "test link /infinite_scroll/22 was 200 from /infinite_scroll/21"
-      ],
-      "evidence": [],
-      "generated": [
-        {
-          "file": "src/test/resources/link-report/links.tsv",
-          "line": 80,
-          "fact": "test link /infinite_scroll/22 was 200 from /infinite_scroll/21",
-          "why": "the crawl requested it and it answered 200; the link report holds it to that"
-        }
-      ]
-    },
-    "test:link:/infinite_scroll/23": {
-      "kind": "test",
-      "why": "the crawl requested it and it answered 200; the link report holds it to that",
-      "facts": [
-        "test link /infinite_scroll/23 was 200 from /infinite_scroll/22"
-      ],
-      "evidence": [],
-      "generated": [
-        {
-          "file": "src/test/resources/link-report/links.tsv",
-          "line": 81,
-          "fact": "test link /infinite_scroll/23 was 200 from /infinite_scroll/22",
-          "why": "the crawl requested it and it answered 200; the link report holds it to that"
-        }
-      ]
-    },
-    "test:link:/infinite_scroll/24": {
-      "kind": "test",
-      "why": "the crawl requested it and it answered 200; the link report holds it to that",
-      "facts": [
-        "test link /infinite_scroll/24 was 200 from /infinite_scroll/23"
-      ],
-      "evidence": [],
-      "generated": [
-        {
-          "file": "src/test/resources/link-report/links.tsv",
-          "line": 82,
-          "fact": "test link /infinite_scroll/24 was 200 from /infinite_scroll/23",
-          "why": "the crawl requested it and it answered 200; the link report holds it to that"
-        }
-      ]
-    },
-    "test:link:/infinite_scroll/25": {
-      "kind": "test",
-      "why": "the crawl requested it and it answered 200; the link report holds it to that",
-      "facts": [
-        "test link /infinite_scroll/25 was 200 from /infinite_scroll/24"
-      ],
-      "evidence": [],
-      "generated": [
-        {
-          "file": "src/test/resources/link-report/links.tsv",
-          "line": 83,
-          "fact": "test link /infinite_scroll/25 was 200 from /infinite_scroll/24",
-          "why": "the crawl requested it and it answered 200; the link report holds it to that"
-        }
-      ]
-    },
-    "test:link:/infinite_scroll/26": {
-      "kind": "test",
-      "why": "the crawl requested it and it answered 200; the link report holds it to that",
-      "facts": [
-        "test link /infinite_scroll/26 was 200 from /infinite_scroll/25"
-      ],
-      "evidence": [],
-      "generated": [
-        {
-          "file": "src/test/resources/link-report/links.tsv",
-          "line": 84,
-          "fact": "test link /infinite_scroll/26 was 200 from /infinite_scroll/25",
-          "why": "the crawl requested it and it answered 200; the link report holds it to that"
-        }
-      ]
-    },
-    "test:link:/infinite_scroll/27": {
-      "kind": "test",
-      "why": "the crawl requested it and it answered 200; the link report holds it to that",
-      "facts": [
-        "test link /infinite_scroll/27 was 200 from /infinite_scroll/26"
-      ],
-      "evidence": [],
-      "generated": [
-        {
-          "file": "src/test/resources/link-report/links.tsv",
-          "line": 85,
-          "fact": "test link /infinite_scroll/27 was 200 from /infinite_scroll/26",
-          "why": "the crawl requested it and it answered 200; the link report holds it to that"
-        }
-      ]
-    },
-    "test:link:/infinite_scroll/28": {
-      "kind": "test",
-      "why": "the crawl requested it and it answered 200; the link report holds it to that",
-      "facts": [
-        "test link /infinite_scroll/28 was 200 from /infinite_scroll/27"
-      ],
-      "evidence": [],
-      "generated": [
-        {
-          "file": "src/test/resources/link-report/links.tsv",
-          "line": 86,
-          "fact": "test link /infinite_scroll/28 was 200 from /infinite_scroll/27",
-          "why": "the crawl requested it and it answered 200; the link report holds it to that"
-        }
-      ]
-    },
-    "test:link:/infinite_scroll/29": {
-      "kind": "test",
-      "why": "the crawl requested it and it answered 200; the link report holds it to that",
-      "facts": [
-        "test link /infinite_scroll/29 was 200 from /infinite_scroll/28"
-      ],
-      "evidence": [],
-      "generated": [
-        {
-          "file": "src/test/resources/link-report/links.tsv",
-          "line": 87,
-          "fact": "test link /infinite_scroll/29 was 200 from /infinite_scroll/28",
-          "why": "the crawl requested it and it answered 200; the link report holds it to that"
-        }
-      ]
-    },
-    "test:link:/infinite_scroll/30": {
-      "kind": "test",
-      "why": "the crawl requested it and it answered 200; the link report holds it to that",
-      "facts": [
-        "test link /infinite_scroll/30 was 200 from /infinite_scroll/29"
-      ],
-      "evidence": [],
-      "generated": [
-        {
-          "file": "src/test/resources/link-report/links.tsv",
-          "line": 88,
-          "fact": "test link /infinite_scroll/30 was 200 from /infinite_scroll/29",
-          "why": "the crawl requested it and it answered 200; the link report holds it to that"
-        }
-      ]
-    },
-    "test:link:/infinite_scroll/31": {
-      "kind": "test",
-      "why": "the crawl requested it and it answered 200; the link report holds it to that",
-      "facts": [
-        "test link /infinite_scroll/31 was 200 from /infinite_scroll/30"
-      ],
-      "evidence": [],
-      "generated": [
-        {
-          "file": "src/test/resources/link-report/links.tsv",
-          "line": 89,
-          "fact": "test link /infinite_scroll/31 was 200 from /infinite_scroll/30",
-          "why": "the crawl requested it and it answered 200; the link report holds it to that"
-        }
-      ]
-    },
-    "test:link:/infinite_scroll/32": {
-      "kind": "test",
-      "why": "the crawl requested it and it answered 200; the link report holds it to that",
-      "facts": [
-        "test link /infinite_scroll/32 was 200 from /infinite_scroll/31"
-      ],
-      "evidence": [],
-      "generated": [
-        {
-          "file": "src/test/resources/link-report/links.tsv",
-          "line": 90,
-          "fact": "test link /infinite_scroll/32 was 200 from /infinite_scroll/31",
-          "why": "the crawl requested it and it answered 200; the link report holds it to that"
-        }
-      ]
-    },
-    "test:link:/infinite_scroll/33": {
-      "kind": "test",
-      "why": "the crawl requested it and it answered 200; the link report holds it to that",
-      "facts": [
-        "test link /infinite_scroll/33 was 200 from /infinite_scroll/32"
-      ],
-      "evidence": [],
-      "generated": [
-        {
-          "file": "src/test/resources/link-report/links.tsv",
-          "line": 91,
-          "fact": "test link /infinite_scroll/33 was 200 from /infinite_scroll/32",
-          "why": "the crawl requested it and it answered 200; the link report holds it to that"
-        }
-      ]
-    },
-    "test:link:/infinite_scroll/34": {
-      "kind": "test",
-      "why": "the crawl requested it and it answered 200; the link report holds it to that",
-      "facts": [
-        "test link /infinite_scroll/34 was 200 from /infinite_scroll/33"
-      ],
-      "evidence": [],
-      "generated": [
-        {
-          "file": "src/test/resources/link-report/links.tsv",
-          "line": 92,
-          "fact": "test link /infinite_scroll/34 was 200 from /infinite_scroll/33",
-          "why": "the crawl requested it and it answered 200; the link report holds it to that"
-        }
-      ]
-    },
-    "test:link:/infinite_scroll/35": {
-      "kind": "test",
-      "why": "the crawl requested it and it answered 200; the link report holds it to that",
-      "facts": [
-        "test link /infinite_scroll/35 was 200 from /infinite_scroll/34"
-      ],
-      "evidence": [],
-      "generated": [
-        {
-          "file": "src/test/resources/link-report/links.tsv",
-          "line": 93,
-          "fact": "test link /infinite_scroll/35 was 200 from /infinite_scroll/34",
-          "why": "the crawl requested it and it answered 200; the link report holds it to that"
-        }
-      ]
-    },
-    "test:link:/infinite_scroll/36": {
-      "kind": "test",
-      "why": "the crawl requested it and it answered 200; the link report holds it to that",
-      "facts": [
-        "test link /infinite_scroll/36 was 200 from /infinite_scroll/35"
-      ],
-      "evidence": [],
-      "generated": [
-        {
-          "file": "src/test/resources/link-report/links.tsv",
-          "line": 94,
-          "fact": "test link /infinite_scroll/36 was 200 from /infinite_scroll/35",
-          "why": "the crawl requested it and it answered 200; the link report holds it to that"
-        }
-      ]
-    },
-    "test:link:/infinite_scroll/37": {
-      "kind": "test",
-      "why": "the crawl requested it and it answered 200; the link report holds it to that",
-      "facts": [
-        "test link /infinite_scroll/37 was 200 from /infinite_scroll/36"
-      ],
-      "evidence": [],
-      "generated": [
-        {
-          "file": "src/test/resources/link-report/links.tsv",
-          "line": 95,
-          "fact": "test link /infinite_scroll/37 was 200 from /infinite_scroll/36",
-          "why": "the crawl requested it and it answered 200; the link report holds it to that"
-        }
-      ]
-    },
-    "test:link:/infinite_scroll/38": {
-      "kind": "test",
-      "why": "the crawl requested it and it answered 200; the link report holds it to that",
-      "facts": [
-        "test link /infinite_scroll/38 was 200 from /infinite_scroll/37"
-      ],
-      "evidence": [],
-      "generated": [
-        {
-          "file": "src/test/resources/link-report/links.tsv",
-          "line": 96,
-          "fact": "test link /infinite_scroll/38 was 200 from /infinite_scroll/37",
-          "why": "the crawl requested it and it answered 200; the link report holds it to that"
-        }
-      ]
-    },
-    "test:link:/infinite_scroll/39": {
-      "kind": "test",
-      "why": "the crawl requested it and it answered 200; the link report holds it to that",
-      "facts": [
-        "test link /infinite_scroll/39 was 200 from /infinite_scroll/38"
-      ],
-      "evidence": [],
-      "generated": [
-        {
-          "file": "src/test/resources/link-report/links.tsv",
-          "line": 97,
-          "fact": "test link /infinite_scroll/39 was 200 from /infinite_scroll/38",
-          "why": "the crawl requested it and it answered 200; the link report holds it to that"
-        }
-      ]
-    },
-    "test:link:/infinite_scroll/40": {
-      "kind": "test",
-      "why": "the crawl requested it and it answered 200; the link report holds it to that",
-      "facts": [
-        "test link /infinite_scroll/40 was 200 from /infinite_scroll/39"
-      ],
-      "evidence": [],
-      "generated": [
-        {
-          "file": "src/test/resources/link-report/links.tsv",
-          "line": 98,
-          "fact": "test link /infinite_scroll/40 was 200 from /infinite_scroll/39",
-          "why": "the crawl requested it and it answered 200; the link report holds it to that"
-        }
-      ]
-    },
-    "test:link:/infinite_scroll/41": {
-      "kind": "test",
-      "why": "the crawl requested it and it answered 200; the link report holds it to that",
-      "facts": [
-        "test link /infinite_scroll/41 was 200 from /infinite_scroll/40"
-      ],
-      "evidence": [],
-      "generated": [
-        {
-          "file": "src/test/resources/link-report/links.tsv",
-          "line": 99,
-          "fact": "test link /infinite_scroll/41 was 200 from /infinite_scroll/40",
-          "why": "the crawl requested it and it answered 200; the link report holds it to that"
-        }
-      ]
-    },
-    "test:link:/infinite_scroll/42": {
-      "kind": "test",
-      "why": "the crawl requested it and it answered 200; the link report holds it to that",
-      "facts": [
-        "test link /infinite_scroll/42 was 200 from /infinite_scroll/41"
-      ],
-      "evidence": [],
-      "generated": [
-        {
-          "file": "src/test/resources/link-report/links.tsv",
-          "line": 100,
-          "fact": "test link /infinite_scroll/42 was 200 from /infinite_scroll/41",
-          "why": "the crawl requested it and it answered 200; the link report holds it to that"
-        }
-      ]
-    },
-    "test:link:/infinite_scroll/43": {
-      "kind": "test",
-      "why": "the crawl requested it and it answered 200; the link report holds it to that",
-      "facts": [
-        "test link /infinite_scroll/43 was 200 from /infinite_scroll/42"
-      ],
-      "evidence": [],
-      "generated": [
-        {
-          "file": "src/test/resources/link-report/links.tsv",
-          "line": 101,
-          "fact": "test link /infinite_scroll/43 was 200 from /infinite_scroll/42",
-          "why": "the crawl requested it and it answered 200; the link report holds it to that"
-        }
-      ]
-    },
-    "test:link:/infinite_scroll/44": {
-      "kind": "test",
-      "why": "the crawl requested it and it answered 200; the link report holds it to that",
-      "facts": [
-        "test link /infinite_scroll/44 was 200 from /infinite_scroll/43"
-      ],
-      "evidence": [],
-      "generated": [
-        {
-          "file": "src/test/resources/link-report/links.tsv",
-          "line": 102,
-          "fact": "test link /infinite_scroll/44 was 200 from /infinite_scroll/43",
-          "why": "the crawl requested it and it answered 200; the link report holds it to that"
-        }
-      ]
-    },
-    "test:link:/infinite_scroll/45": {
-      "kind": "test",
-      "why": "the crawl requested it and it answered 200; the link report holds it to that",
-      "facts": [
-        "test link /infinite_scroll/45 was 200 from /infinite_scroll/44"
-      ],
-      "evidence": [],
-      "generated": [
-        {
-          "file": "src/test/resources/link-report/links.tsv",
-          "line": 103,
-          "fact": "test link /infinite_scroll/45 was 200 from /infinite_scroll/44",
-          "why": "the crawl requested it and it answered 200; the link report holds it to that"
-        }
-      ]
-    },
-    "test:link:/infinite_scroll/46": {
-      "kind": "test",
-      "why": "the crawl requested it and it answered 200; the link report holds it to that",
-      "facts": [
-        "test link /infinite_scroll/46 was 200 from /infinite_scroll/45"
-      ],
-      "evidence": [],
-      "generated": [
-        {
-          "file": "src/test/resources/link-report/links.tsv",
-          "line": 104,
-          "fact": "test link /infinite_scroll/46 was 200 from /infinite_scroll/45",
-          "why": "the crawl requested it and it answered 200; the link report holds it to that"
-        }
-      ]
-    },
     "test:external:https://github.com/saucelabs/the-internet": {
       "kind": "test",
-      "why": "it answered 200 after the crawl; the link report fails when it is gone (G-241)",
+      "why": "it answered 200 after the crawl; the link report fails when it is gone",
       "facts": [
         "test external link https://github.com/saucelabs/the-internet was 200 alive from /, /tinymce, /hovers"
       ],
@@ -15268,103 +14537,7 @@
           "file": "src/test/resources/link-report/external.tsv",
           "line": 3,
           "fact": "test external link https://github.com/saucelabs/the-internet was 200 alive from /, /tinymce, /hovers",
-          "why": "it answered 200 after the crawl; the link report fails when it is gone (G-241)"
-        }
-      ]
-    },
-    "test:external:http://elementalselenium.com/": {
-      "kind": "test",
-      "why": "it answered 200 after the crawl; the link report fails when it is gone (G-241)",
-      "facts": [
-        "test external link http://elementalselenium.com/ was 200 alive from /, /tinymce, /hovers"
-      ],
-      "evidence": [],
-      "generated": [
-        {
-          "file": "src/test/resources/link-report/external.tsv",
-          "line": 4,
-          "fact": "test external link http://elementalselenium.com/ was 200 alive from /, /tinymce, /hovers",
-          "why": "it answered 200 after the crawl; the link report fails when it is gone (G-241)"
-        }
-      ]
-    },
-    "test:external:https://saucelabs.com/": {
-      "kind": "test",
-      "why": "it answered 200 after the crawl; the link report fails when it is gone (G-241)",
-      "facts": [
-        "test external link https://saucelabs.com/ was 200 alive from /, /tinymce, /hovers"
-      ],
-      "evidence": [],
-      "generated": [
-        {
-          "file": "src/test/resources/link-report/external.tsv",
-          "line": 5,
-          "fact": "test external link https://saucelabs.com/ was 200 alive from /, /tinymce, /hovers",
-          "why": "it answered 200 after the crawl; the link report fails when it is gone (G-241)"
-        }
-      ]
-    },
-    "test:external:https://www.tiny.cloud/powered-by-tiny": {
-      "kind": "test",
-      "why": "it answered 200 after the crawl; the link report fails when it is gone (G-241)",
-      "facts": [
-        "test external link https://www.tiny.cloud/powered-by-tiny was 200 alive from /tinymce, /iframe"
-      ],
-      "evidence": [],
-      "generated": [
-        {
-          "file": "src/test/resources/link-report/external.tsv",
-          "line": 6,
-          "fact": "test external link https://www.tiny.cloud/powered-by-tiny was 200 alive from /tinymce, /iframe",
-          "why": "it answered 200 after the crawl; the link report fails when it is gone (G-241)"
-        }
-      ]
-    },
-    "test:external:http://api.jqueryui.com/menu/": {
-      "kind": "test",
-      "why": "it answered 200 after the crawl; the link report fails when it is gone (G-241)",
-      "facts": [
-        "test external link http://api.jqueryui.com/menu/ was 200 alive from /jqueryui/menu"
-      ],
-      "evidence": [],
-      "generated": [
-        {
-          "file": "src/test/resources/link-report/external.tsv",
-          "line": 7,
-          "fact": "test external link http://api.jqueryui.com/menu/ was 200 alive from /jqueryui/menu",
-          "why": "it answered 200 after the crawl; the link report fails when it is gone (G-241)"
-        }
-      ]
-    },
-    "test:external:http://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml": {
-      "kind": "test",
-      "why": "it answered 200 after the crawl; the link report fails when it is gone (G-241)",
-      "facts": [
-        "test external link http://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml was 200 alive from /status_codes"
-      ],
-      "evidence": [],
-      "generated": [
-        {
-          "file": "src/test/resources/link-report/external.tsv",
-          "line": 8,
-          "fact": "test external link http://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml was 200 alive from /status_codes",
-          "why": "it answered 200 after the crawl; the link report fails when it is gone (G-241)"
-        }
-      ]
-    },
-    "test:external:http://jqueryui.com/": {
-      "kind": "test",
-      "why": "it answered 200 after the crawl; the link report fails when it is gone (G-241)",
-      "facts": [
-        "test external link http://jqueryui.com/ was 200 alive from /jqueryui"
-      ],
-      "evidence": [],
-      "generated": [
-        {
-          "file": "src/test/resources/link-report/external.tsv",
-          "line": 9,
-          "fact": "test external link http://jqueryui.com/ was 200 alive from /jqueryui",
-          "why": "it answered 200 after the crawl; the link report fails when it is gone (G-241)"
+          "why": "it answered 200 after the crawl; the link report fails when it is gone"
         }
       ]
     }

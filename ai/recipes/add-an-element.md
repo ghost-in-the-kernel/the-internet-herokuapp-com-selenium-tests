@@ -25,7 +25,7 @@ Elements live in the page's Elements enum (`DynamicLoadingElements` for DynamicL
 - **Name** it SCREAMING_SNAKE, ending in what it is (`_BUTTON`, `_INPUT`, `_LINK`, `_HEADING`,
   `_TEXT`, ...). Steps call it by that: "Click the sign up button". If that reads badly, give the
   constant a label: `SEND_BUTTON(...) { @Override public String label() { return "the Send button"; } },`
-- **Look it up first** in controls/<PageClass>.md (controls/DynamicLoadingPage.md for DynamicLoadingPage) and controls/Everywhere.md:
+- **Look it up first** in controls/<PageClass>.md and controls/Everywhere.md:
   each button, field and dropdown the crawl saw, by the words a story would use, with a line to paste
   here. Its locator matched exactly one element when the crawl read the page. Rename the constant if
   the story calls it something else.

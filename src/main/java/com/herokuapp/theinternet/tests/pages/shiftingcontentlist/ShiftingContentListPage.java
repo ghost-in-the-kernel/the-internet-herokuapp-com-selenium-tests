@@ -93,7 +93,7 @@ public class ShiftingContentListPage extends LoadablePage<ShiftingContentListPag
     /** What the crawl timed of these pages after their load event (core/Timings flags one much slower). */
     @Override
     protected long crawlSettledMs() {
-        return 0;
+        return 300;
     }
 
     @Override

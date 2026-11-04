@@ -10,7 +10,6 @@ import com.herokuapp.theinternet.tests.pages.disappearingelements.DisappearingEl
 import com.herokuapp.theinternet.tests.pages.dynamicloadinglist.DynamicLoadingListPage;
 import com.herokuapp.theinternet.tests.pages.frames.FramesPage;
 import com.herokuapp.theinternet.tests.pages.home.HomePage;
-import com.herokuapp.theinternet.tests.pages.infinitescroll.InfiniteScrollPage;
 import com.herokuapp.theinternet.tests.pages.jqueryui.JqueryuiPage;
 import com.herokuapp.theinternet.tests.pages.shiftingcontentlist.ShiftingContentListPage;
 import com.herokuapp.theinternet.tests.pages.shiftingcontentmenu.ShiftingContentMenuPage;
@@ -238,9 +237,9 @@ class NavigationTest extends BaseTest {
     }
 
     @Test
-    @DisplayName("/ -> /infinite_scroll lands on InfiniteScrollListPage")
-    void homeLinksToInfiniteScrollList() {
-        new HomePage(driver).open().click().goToInfiniteScrollList().verify().isLoaded();
+    @DisplayName("/ -> /infinite_scroll lands on InfiniteScrollPage")
+    void homeLinksToInfiniteScroll() {
+        new HomePage(driver).open().click().goToInfiniteScroll().verify().isLoaded();
     }
 
     @Test
@@ -391,11 +390,5 @@ class NavigationTest extends BaseTest {
     @DisplayName("/disappearing_elements -> / lands on HomePage")
     void disappearingElementsLinksToHome() {
         new DisappearingElementsPage(driver).open().click().goToHome().verify().isLoaded();
-    }
-
-    @Test
-    @DisplayName("/infinite_scroll/18 -> /infinite_scroll/19 lands on InfiniteScrollPage")
-    void infiniteScrollLinksToInfiniteScroll() {
-        new InfiniteScrollPage(driver).open("18").click().goToInfiniteScroll("19").verify().isLoaded();
     }
 }

@@ -48,7 +48,7 @@ public final class UrlPaths {
 
     public static final String NESTED_FRAMES = "/nested_frames";
 
-    public static final String ELEMENT = "/forgot_password";
+    public static final String FORGOT_PASSWORD = "/forgot_password";
 
     public static final String SUBDIRECTORIES = "/subdirectories";
 
@@ -86,7 +86,7 @@ public final class UrlPaths {
 
     public static final String TABLES = "/tables";
 
-    public static final String INFINITE_SCROLL_LIST = "/infinite_scroll";
+    public static final String INFINITE_SCROLL = "/infinite_scroll";
 
     public static final String CHECKBOXES = "/checkboxes";
 
@@ -130,11 +130,6 @@ public final class UrlPaths {
     /** /shifting_content/* */
     public static String shiftingContent(String name) {
         return "/shifting_content/" + name;
-    }
-
-    /** /infinite_scroll/* */
-    public static String infiniteScroll(String name) {
-        return "/infinite_scroll/" + name;
     }
 
     /**

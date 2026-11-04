@@ -28,7 +28,7 @@ import com.herokuapp.theinternet.tests.pages.geolocation.GeolocationPage;
 import com.herokuapp.theinternet.tests.pages.home.HomeElements;
 import com.herokuapp.theinternet.tests.pages.horizontalslider.HorizontalSliderPage;
 import com.herokuapp.theinternet.tests.pages.hovers.HoversPage;
-import com.herokuapp.theinternet.tests.pages.infinitescrolllist.InfiniteScrollListPage;
+import com.herokuapp.theinternet.tests.pages.infinitescroll.InfiniteScrollPage;
 import com.herokuapp.theinternet.tests.pages.inputs.InputsPage;
 import com.herokuapp.theinternet.tests.pages.javascriptalerts.JavascriptAlertsPage;
 import com.herokuapp.theinternet.tests.pages.javascripterror.JavascriptErrorPage;
@@ -181,7 +181,7 @@ public class HomeClickActions {
 
     /** Clicks the link to ForgotPasswordPage (Forgot Password) and waits for it. */
     public ForgotPasswordPage goToForgotPassword() {
-        UserActions.click(driver, HomeElements.ELEMENT_LINK);
+        UserActions.click(driver, HomeElements.FORGOT_PASSWORD_LINK);
         return new ForgotPasswordPage(driver).get();
     }
 
@@ -275,10 +275,10 @@ public class HomeClickActions {
         return new TablesPage(driver).get();
     }
 
-    /** Clicks the link to InfiniteScrollListPage (Infinite Scroll) and waits for it. */
-    public InfiniteScrollListPage goToInfiniteScrollList() {
-        UserActions.click(driver, HomeElements.INFINITE_SCROLL_LIST_LINK);
-        return new InfiniteScrollListPage(driver).get();
+    /** Clicks the link to InfiniteScrollPage (Infinite Scroll) and waits for it. */
+    public InfiniteScrollPage goToInfiniteScroll() {
+        UserActions.click(driver, HomeElements.INFINITE_SCROLL_LINK);
+        return new InfiniteScrollPage(driver).get();
     }
 
     /** Clicks the link to CheckboxesPage (Checkboxes) and waits for it. */

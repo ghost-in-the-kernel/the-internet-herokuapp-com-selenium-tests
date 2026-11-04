@@ -19,25 +19,25 @@ public class TwoFactorTasks {
     }
 
     /**
-     * Fills the "Log in with tomsmith and SuperSecretPassword!. Then enter th" form, field by field in page order, and
-     * stops before sending it: a generated
+     * Fills the "Then enter the one-time code shown on the next page." form, field by field in page order, and stops
+     * before sending it: a generated
      * test never sends a form (ai/recipes/forms-and-test-data.md). To send it, a story adds {@code .click().next()}:
-     * what the site does then is not something the crawl saw. Its values: {@code ThenEnterTh.sample()},
-     * or a copy with one changed, {@code ThenEnterTh.sample().withUsername("...")}.
+     * what the site does then is not something the crawl saw. Its values: {@code TwoFactorForm.sample()},
+     * or a copy with one changed, {@code TwoFactorForm.sample().withUsername("...")}.
      */
-    public TwoFactorPage fillThenEnterThForm(ThenEnterTh form) {
+    public TwoFactorPage fillForm(TwoFactorForm form) {
         TwoFactorPage here = new TwoFactorPage(driver);
         here.enter().username(form.username());
         return here;
     }
 
     /**
-     * @deprecated Takes the form's record now: {@code fillThenEnterThForm(ThenEnterTh.sample())}. This one goes
+     * @deprecated Takes the form's record now: {@code fillForm(TwoFactorForm.sample())}. This one goes
      * in a later release.
      */
     @Deprecated
-    public TwoFactorPage fillThenEnterThForm(String username) {
-        return fillThenEnterThForm(new ThenEnterTh(username));
+    public TwoFactorPage fillForm(String username) {
+        return fillForm(new TwoFactorForm(username));
     }
 
     // ==== YOURS (tasks): safe to edit; regenerating keeps what is between these lines ====

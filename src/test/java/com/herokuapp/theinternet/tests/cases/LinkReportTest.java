@@ -20,7 +20,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
- * The 102 addresses the crawl requested (src/test/resources/link-report/links.tsv), each asked
+ * The 73 addresses the crawl requested (src/test/resources/link-report/links.tsv), each asked
  * once more by HTTP, the report in target/link-report.md. It fails only on one that answered in the
  * crawl and does not now; one already broken in the crawl is listed as known, not failed again. No
  * browser is opened for it (WithoutBrowser): it runs first, so a site that is down fails the run in

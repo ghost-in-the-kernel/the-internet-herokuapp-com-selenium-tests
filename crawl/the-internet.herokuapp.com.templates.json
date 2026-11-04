@@ -4,7 +4,7 @@
   "version": 2,
   "startUrl": "https://the-internet.herokuapp.com/",
   "origin": "https://the-internet.herokuapp.com",
-  "pagesRead": 89,
+  "pagesRead": 60,
   "menu": [],
   "templates": [
     {
@@ -376,7 +376,7 @@
           }
         },
         {
-          "template": "infinite-scroll-list",
+          "template": "infinite-scroll",
           "count": 1,
           "example": {
             "from": "https://the-internet.herokuapp.com/",
@@ -1211,7 +1211,7 @@
             "Username"
           ],
           "region": "main",
-          "form": "Log in with tomsmith and SuperSecretPassword!. Then enter th",
+          "form": "Then enter the one-time code shown on the next page.",
           "xpath": "//input[@id='username']",
           "stability": "Strong",
           "pages": 1,
@@ -1223,7 +1223,7 @@
             "Password"
           ],
           "region": "main",
-          "form": "Log in with tomsmith and SuperSecretPassword!. Then enter th",
+          "form": "Then enter the one-time code shown on the next page.",
           "xpath": "//input[@id='password']",
           "stability": "Strong",
           "pages": 1,
@@ -1235,7 +1235,7 @@
             "Next"
           ],
           "region": "main",
-          "form": "Log in with tomsmith and SuperSecretPassword!. Then enter th",
+          "form": "Then enter the one-time code shown on the next page.",
           "xpath": "//button[normalize-space()='Next']",
           "stability": "OK",
           "pages": 1,
@@ -2251,7 +2251,7 @@
       "knownUrls": 1,
       "titlePattern": "The Internet",
       "sharedHeadings": [
-        "A/B Test Variation 1"
+        "A/B Test Control"
       ],
       "inMenu": false,
       "linksTo": [],
@@ -2518,8 +2518,8 @@
       }
     },
     {
-      "id": "infinite-scroll-list",
-      "name": "InfiniteScrollListPage",
+      "id": "infinite-scroll",
+      "name": "InfiniteScrollPage",
       "urlPatterns": [
         "/*"
       ],
@@ -2533,87 +2533,10 @@
         "Infinite Scroll"
       ],
       "inMenu": false,
-      "linksTo": [
-        {
-          "template": "infinite-scroll",
-          "count": 1,
-          "example": {
-            "from": "https://the-internet.herokuapp.com/infinite_scroll",
-            "to": "https://the-internet.herokuapp.com/infinite_scroll/18",
-            "href": "/infinite_scroll/18",
-            "text": "next page",
-            "hidden": true
-          }
-        }
-      ],
+      "linksTo": [],
       "why": {
         "rule": "layout-only",
         "says": "laid out like /javascript_alerts, /context_menu, /status_codes and 9 more, but no title or heading says they are one kind of page, and their addresses share no part: each is its own"
-      }
-    },
-    {
-      "id": "infinite-scroll",
-      "name": "InfiniteScrollPage",
-      "urlPatterns": [
-        "/infinite_scroll/*"
-      ],
-      "pages": [
-        "https://the-internet.herokuapp.com/infinite_scroll/18",
-        "https://the-internet.herokuapp.com/infinite_scroll/19",
-        "https://the-internet.herokuapp.com/infinite_scroll/20",
-        "https://the-internet.herokuapp.com/infinite_scroll/21",
-        "https://the-internet.herokuapp.com/infinite_scroll/22",
-        "https://the-internet.herokuapp.com/infinite_scroll/23",
-        "https://the-internet.herokuapp.com/infinite_scroll/24",
-        "https://the-internet.herokuapp.com/infinite_scroll/25",
-        "https://the-internet.herokuapp.com/infinite_scroll/26",
-        "https://the-internet.herokuapp.com/infinite_scroll/27",
-        "https://the-internet.herokuapp.com/infinite_scroll/28",
-        "https://the-internet.herokuapp.com/infinite_scroll/29",
-        "https://the-internet.herokuapp.com/infinite_scroll/30",
-        "https://the-internet.herokuapp.com/infinite_scroll/31",
-        "https://the-internet.herokuapp.com/infinite_scroll/32",
-        "https://the-internet.herokuapp.com/infinite_scroll/33",
-        "https://the-internet.herokuapp.com/infinite_scroll/34",
-        "https://the-internet.herokuapp.com/infinite_scroll/35",
-        "https://the-internet.herokuapp.com/infinite_scroll/36",
-        "https://the-internet.herokuapp.com/infinite_scroll/37",
-        "https://the-internet.herokuapp.com/infinite_scroll/38",
-        "https://the-internet.herokuapp.com/infinite_scroll/39",
-        "https://the-internet.herokuapp.com/infinite_scroll/40",
-        "https://the-internet.herokuapp.com/infinite_scroll/41",
-        "https://the-internet.herokuapp.com/infinite_scroll/42",
-        "https://the-internet.herokuapp.com/infinite_scroll/43",
-        "https://the-internet.herokuapp.com/infinite_scroll/44",
-        "https://the-internet.herokuapp.com/infinite_scroll/45",
-        "https://the-internet.herokuapp.com/infinite_scroll/46"
-      ],
-      "repeated": true,
-      "knownUrls": 30,
-      "titlePattern": null,
-      "sharedHeadings": [],
-      "inMenu": false,
-      "linksTo": [
-        {
-          "template": "infinite-scroll",
-          "count": 28,
-          "example": {
-            "from": "https://the-internet.herokuapp.com/infinite_scroll/18",
-            "to": "https://the-internet.herokuapp.com/infinite_scroll/19",
-            "href": "/infinite_scroll/19",
-            "text": "next page"
-          }
-        }
-      ],
-      "why": {
-        "rule": "family-by-address",
-        "says": "its 29 pages read look alike (layout 100% the same) and share the address pattern /infinite_scroll/*; joined by: no headings on either page, and the layouts agree (406 comparisons)",
-        "joinedBy": [
-          {
-            "rule": "layout-no-headings",
-            "pairs": 406
-          }
-        ]
       }
     },
     {
@@ -3254,8 +3177,7 @@
       "url": "https://the-internet.herokuapp.com/gallery/",
       "status": 404,
       "linkedFrom": [
-        "https://the-internet.herokuapp.com/shifting_content/menu",
-        "https://the-internet.herokuapp.com/disappearing_elements"
+        "https://the-internet.herokuapp.com/shifting_content/menu"
       ]
     }
   ],
@@ -3366,7 +3288,7 @@
         },
         {
           "url": "https://the-internet.herokuapp.com/gallery/",
-          "says": "answered 404; linked from /shifting_content/menu, /disappearing_elements",
+          "says": "answered 404; linked from /shifting_content/menu",
           "link": {
             "paths": [
               "/gallery/"
@@ -3374,8 +3296,7 @@
             "status": 404,
             "answer": "answered 404",
             "from": [
-              "/shifting_content/menu",
-              "/disappearing_elements"
+              "/shifting_content/menu"
             ],
             "more": 0,
             "why": "broken"
@@ -3392,56 +3313,69 @@
       "where": [
         {
           "url": "https://the-internet.herokuapp.com/dropdown",
-          "says": "1 field: <select id=\"dropdown\">"
+          "says": "1 field: `<select id=\"dropdown\">`"
         },
         {
           "url": "https://the-internet.herokuapp.com/radio_buttons",
-          "says": "3 fields: <input name=\"sport\"> and 2 more"
+          "says": "3 fields: `<input name=\"sport\">` and 2 more"
         },
         {
           "url": "https://the-internet.herokuapp.com/upload",
-          "says": "1 field: <input name=\"file\">"
+          "says": "1 field: `<input name=\"file\">`"
         },
         {
           "url": "https://the-internet.herokuapp.com/inputs",
-          "says": "1 field: <input type=\"number\">"
+          "says": "1 field: `<input type=\"number\">`"
         },
         {
           "url": "https://the-internet.herokuapp.com/large_form",
-          "says": "12 fields: <input name=\"email\">, <input name=\"password\">, <input name=\"nickname\">, <input name=\"age\">, <select name=\"languages[]\"> and 7 more"
+          "says": "12 fields: `<input name=\"email\">`, `<input name=\"password\">`, `<input name=\"nickname\">`, `<input name=\"age\">`, `<select name=\"languages[]\">` and 7 more"
         },
         {
           "url": "https://the-internet.herokuapp.com/readonly",
-          "says": "1 field: <input id=\"textfield\">"
+          "says": "1 field: `<input id=\"textfield\">`"
         },
         {
           "url": "https://the-internet.herokuapp.com/horizontal_slider",
-          "says": "1 field: <input type=\"range\">"
+          "says": "1 field: `<input type=\"range\">`"
         },
         {
           "url": "https://the-internet.herokuapp.com/dynamic_controls",
-          "says": "2 fields: <input type=\"checkbox\">, <input type=\"text\">"
+          "says": "2 fields: `<input type=\"checkbox\">`, `<input type=\"text\">`"
         },
         {
           "url": "https://the-internet.herokuapp.com/checkboxes",
-          "says": "2 fields: <input type=\"checkbox\"> and 1 more"
+          "says": "2 fields: `<input type=\"checkbox\">` and 1 more"
         },
         {
           "url": "https://the-internet.herokuapp.com/multiple_dropdown",
-          "says": "1 field: <select id=\"multiple-dropdown\">"
+          "says": "1 field: `<select id=\"multiple-dropdown\">`"
         },
         {
           "url": "https://the-internet.herokuapp.com/key_presses",
-          "says": "1 field: <input id=\"target\">"
+          "says": "1 field: `<input id=\"target\">`"
         }
       ],
       "why": "A screen reader announces a field with no label as \"edit text\", so a blind visitor cannot tell what to type; a placeholder alone vanishes once typing starts. Accessibility audits fail it.",
       "fix": "Give each field a <label for=\"its id\"> (each id used once on the page), or an aria-label."
     },
     {
+      "code": "SITE-10",
+      "severity": "major",
+      "title": "Text left from building the site shows on 1 page (1 place)",
+      "where": [
+        {
+          "url": "https://the-internet.herokuapp.com/infinite_scroll",
+          "says": "1 place: `s ut et quo culpa dolorem ipsum incidunt possimus c`"
+        }
+      ],
+      "why": "Lorem ipsum, TODO notes or test entries on a live site tell a visitor nobody checked the page, and can look like a security test left behind.",
+      "fix": "Replace or remove the text; test entries belong in a test copy of the site, not the live one."
+    },
+    {
       "code": "SITE-11",
       "severity": "major",
-      "title": "32 pages have no viewport setting",
+      "title": "3 pages have no viewport setting",
       "where": [
         {
           "url": "https://the-internet.herokuapp.com/nested_frames",
@@ -3454,363 +3388,10 @@
         {
           "url": "https://the-internet.herokuapp.com/javascript_error",
           "says": "no <meta name=\"viewport\">: a phone shows the desktop page, shrunk"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/18",
-          "says": "no <meta name=\"viewport\">: a phone shows the desktop page, shrunk"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/19",
-          "says": "no <meta name=\"viewport\">: a phone shows the desktop page, shrunk"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/20",
-          "says": "no <meta name=\"viewport\">: a phone shows the desktop page, shrunk"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/21",
-          "says": "no <meta name=\"viewport\">: a phone shows the desktop page, shrunk"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/22",
-          "says": "no <meta name=\"viewport\">: a phone shows the desktop page, shrunk"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/23",
-          "says": "no <meta name=\"viewport\">: a phone shows the desktop page, shrunk"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/24",
-          "says": "no <meta name=\"viewport\">: a phone shows the desktop page, shrunk"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/25",
-          "says": "no <meta name=\"viewport\">: a phone shows the desktop page, shrunk"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/26",
-          "says": "no <meta name=\"viewport\">: a phone shows the desktop page, shrunk"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/27",
-          "says": "no <meta name=\"viewport\">: a phone shows the desktop page, shrunk"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/28",
-          "says": "no <meta name=\"viewport\">: a phone shows the desktop page, shrunk"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/29",
-          "says": "no <meta name=\"viewport\">: a phone shows the desktop page, shrunk"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/30",
-          "says": "no <meta name=\"viewport\">: a phone shows the desktop page, shrunk"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/31",
-          "says": "no <meta name=\"viewport\">: a phone shows the desktop page, shrunk"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/32",
-          "says": "no <meta name=\"viewport\">: a phone shows the desktop page, shrunk"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/33",
-          "says": "no <meta name=\"viewport\">: a phone shows the desktop page, shrunk"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/34",
-          "says": "no <meta name=\"viewport\">: a phone shows the desktop page, shrunk"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/35",
-          "says": "no <meta name=\"viewport\">: a phone shows the desktop page, shrunk"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/36",
-          "says": "no <meta name=\"viewport\">: a phone shows the desktop page, shrunk"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/37",
-          "says": "no <meta name=\"viewport\">: a phone shows the desktop page, shrunk"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/38",
-          "says": "no <meta name=\"viewport\">: a phone shows the desktop page, shrunk"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/39",
-          "says": "no <meta name=\"viewport\">: a phone shows the desktop page, shrunk"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/40",
-          "says": "no <meta name=\"viewport\">: a phone shows the desktop page, shrunk"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/41",
-          "says": "no <meta name=\"viewport\">: a phone shows the desktop page, shrunk"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/42",
-          "says": "no <meta name=\"viewport\">: a phone shows the desktop page, shrunk"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/43",
-          "says": "no <meta name=\"viewport\">: a phone shows the desktop page, shrunk"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/44",
-          "says": "no <meta name=\"viewport\">: a phone shows the desktop page, shrunk"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/45",
-          "says": "no <meta name=\"viewport\">: a phone shows the desktop page, shrunk"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/46",
-          "says": "no <meta name=\"viewport\">: a phone shows the desktop page, shrunk"
         }
       ],
       "why": "On a phone a page with no viewport setting is drawn at desktop width and shrunk to fit, and Google ranks it as not mobile-friendly. A page that stops zooming fails people who need larger text (WCAG 1.4.4).",
       "fix": "Use <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">, without user-scalable=no or maximum-scale=1."
-    },
-    {
-      "code": "SITE-20",
-      "severity": "major",
-      "title": "572 scripts, style sheets and data requests on 57 pages failed to load",
-      "where": [
-        {
-          "url": "https://the-internet.herokuapp.com/",
-          "says": "1 request: 298279967.log.optimizely.com/event (ERR_NAME_NOT_RESOLVED)"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/tinymce",
-          "says": "2 requests: 298279967.log.optimizely.com/event (ERR_NAME_NOT_RESOLVED) and 1 more"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/hovers",
-          "says": "3 requests: 298279967.log.optimizely.com/event (ERR_NAME_NOT_RESOLVED) and 2 more"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/dropdown",
-          "says": "4 requests: 298279967.log.optimizely.com/event (ERR_NAME_NOT_RESOLVED) and 3 more"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/radio_buttons",
-          "says": "5 requests: 298279967.log.optimizely.com/event (ERR_NAME_NOT_RESOLVED) and 4 more"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/challenging_dom",
-          "says": "6 requests: 298279967.log.optimizely.com/event (ERR_NAME_NOT_RESOLVED) and 5 more"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/large",
-          "says": "7 requests: 298279967.log.optimizely.com/event (ERR_NAME_NOT_RESOLVED) and 6 more"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/upload",
-          "says": "8 requests: 298279967.log.optimizely.com/event (ERR_NAME_NOT_RESOLVED) and 7 more"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/slow",
-          "says": "9 requests: 298279967.log.optimizely.com/event (ERR_NAME_NOT_RESOLVED) and 8 more"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/javascript_alerts",
-          "says": "10 requests: 298279967.log.optimizely.com/event (ERR_NAME_NOT_RESOLVED) and 9 more"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/entry_ad",
-          "says": "11 requests: 298279967.log.optimizely.com/event (ERR_NAME_NOT_RESOLVED) and 10 more"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/windows",
-          "says": "11 requests: 298279967.log.optimizely.com/event (ERR_NAME_NOT_RESOLVED) and 10 more"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/frames",
-          "says": "11 requests: 298279967.log.optimizely.com/event (ERR_NAME_NOT_RESOLVED) and 10 more"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/two_factor",
-          "says": "11 requests: 298279967.log.optimizely.com/event (ERR_NAME_NOT_RESOLVED) and 10 more"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/add_remove_elements/",
-          "says": "11 requests: 298279967.log.optimizely.com/event (ERR_NAME_NOT_RESOLVED) and 10 more"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/inputs",
-          "says": "11 requests: 298279967.log.optimizely.com/event (ERR_NAME_NOT_RESOLVED) and 10 more"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/dynamic_loading",
-          "says": "11 requests: 298279967.log.optimizely.com/event (ERR_NAME_NOT_RESOLVED) and 10 more"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/shadowdom",
-          "says": "11 requests: 298279967.log.optimizely.com/event (ERR_NAME_NOT_RESOLVED) and 10 more"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/context_menu",
-          "says": "11 requests: 298279967.log.optimizely.com/event (ERR_NAME_NOT_RESOLVED) and 10 more"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/forgot_password",
-          "says": "11 requests: 298279967.log.optimizely.com/event (ERR_NAME_NOT_RESOLVED) and 10 more"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/subdirectories",
-          "says": "11 requests: 298279967.log.optimizely.com/event (ERR_NAME_NOT_RESOLVED) and 10 more"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/dynamic_loading/2",
-          "says": "11 requests: 298279967.log.optimizely.com/event (ERR_NAME_NOT_RESOLVED) and 10 more"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/subdirectories/two",
-          "says": "11 requests: 298279967.log.optimizely.com/event (ERR_NAME_NOT_RESOLVED) and 10 more"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/dynamic_loading/1",
-          "says": "11 requests: 298279967.log.optimizely.com/event (ERR_NAME_NOT_RESOLVED) and 10 more"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/subdirectories/one",
-          "says": "11 requests: 298279967.log.optimizely.com/event (ERR_NAME_NOT_RESOLVED) and 10 more"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/jqueryui/menu",
-          "says": "11 requests: 298279967.log.optimizely.com/event (ERR_NAME_NOT_RESOLVED) and 10 more"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/canvas",
-          "says": "11 requests: 298279967.log.optimizely.com/event (ERR_NAME_NOT_RESOLVED) and 10 more"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/large_form",
-          "says": "11 requests: 298279967.log.optimizely.com/event (ERR_NAME_NOT_RESOLVED) and 10 more"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/download",
-          "says": "11 requests: 298279967.log.optimizely.com/event (ERR_NAME_NOT_RESOLVED) and 10 more"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/status_codes",
-          "says": "11 requests: 298279967.log.optimizely.com/event (ERR_NAME_NOT_RESOLVED) and 10 more"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/status_codes/301",
-          "says": "11 requests: 298279967.log.optimizely.com/event (ERR_NAME_NOT_RESOLVED) and 10 more"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/status_codes/200",
-          "says": "11 requests: 298279967.log.optimizely.com/event (ERR_NAME_NOT_RESOLVED) and 10 more"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/dynamic_content",
-          "says": "11 requests: 298279967.log.optimizely.com/event (ERR_NAME_NOT_RESOLVED) and 10 more"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/readonly",
-          "says": "11 requests: 298279967.log.optimizely.com/event (ERR_NAME_NOT_RESOLVED) and 10 more"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/horizontal_slider",
-          "says": "11 requests: 298279967.log.optimizely.com/event (ERR_NAME_NOT_RESOLVED) and 10 more"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/jqueryui",
-          "says": "11 requests: 298279967.log.optimizely.com/event (ERR_NAME_NOT_RESOLVED) and 10 more"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/abtest",
-          "says": "11 requests: 298279967.log.optimizely.com/event (ERR_NAME_NOT_RESOLVED) and 10 more"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/dynamic_controls",
-          "says": "11 requests: 298279967.log.optimizely.com/event (ERR_NAME_NOT_RESOLVED) and 10 more"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/shifting_content",
-          "says": "11 requests: 298279967.log.optimizely.com/event (ERR_NAME_NOT_RESOLVED) and 10 more"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/shifting_content/list",
-          "says": "11 requests: 298279967.log.optimizely.com/event (ERR_NAME_NOT_RESOLVED) and 10 more"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/shifting_content/image",
-          "says": "11 requests: 298279967.log.optimizely.com/event (ERR_NAME_NOT_RESOLVED) and 10 more"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/shifting_content/menu",
-          "says": "11 requests: 298279967.log.optimizely.com/event (ERR_NAME_NOT_RESOLVED) and 10 more"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/disappearing_elements",
-          "says": "11 requests: 298279967.log.optimizely.com/event (ERR_NAME_NOT_RESOLVED) and 10 more"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/tables",
-          "says": "11 requests: 298279967.log.optimizely.com/event (ERR_NAME_NOT_RESOLVED) and 10 more"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll",
-          "says": "11 requests: 298279967.log.optimizely.com/event (ERR_NAME_NOT_RESOLVED) and 10 more"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/checkboxes",
-          "says": "11 requests: 298279967.log.optimizely.com/event (ERR_NAME_NOT_RESOLVED) and 10 more"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/redirector",
-          "says": "11 requests: 298279967.log.optimizely.com/event (ERR_NAME_NOT_RESOLVED) and 10 more"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/geolocation",
-          "says": "11 requests: 298279967.log.optimizely.com/event (ERR_NAME_NOT_RESOLVED) and 10 more"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/exit_intent",
-          "says": "11 requests: 298279967.log.optimizely.com/event (ERR_NAME_NOT_RESOLVED) and 10 more"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/iframe",
-          "says": "11 requests: 298279967.log.optimizely.com/event (ERR_NAME_NOT_RESOLVED) and 10 more"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/multiple_dropdown",
-          "says": "11 requests: 298279967.log.optimizely.com/event (ERR_NAME_NOT_RESOLVED) and 10 more"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/broken_images",
-          "says": "11 requests: 298279967.log.optimizely.com/event (ERR_NAME_NOT_RESOLVED) and 10 more"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/notification_message_rendered",
-          "says": "11 requests: 298279967.log.optimizely.com/event (ERR_NAME_NOT_RESOLVED) and 10 more"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/floating_menu",
-          "says": "11 requests: 298279967.log.optimizely.com/event (ERR_NAME_NOT_RESOLVED) and 10 more"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/drag_and_drop",
-          "says": "11 requests: 298279967.log.optimizely.com/event (ERR_NAME_NOT_RESOLVED) and 10 more"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/key_presses",
-          "says": "11 requests: 298279967.log.optimizely.com/event (ERR_NAME_NOT_RESOLVED) and 10 more"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/typos",
-          "says": "11 requests: 298279967.log.optimizely.com/event (ERR_NAME_NOT_RESOLVED) and 10 more"
-        }
-      ],
-      "why": "A script or style sheet that does not load leaves part of the page unstyled or not working: a menu that does not open, a button that does nothing, a list that never fills. Visitors see it; nothing tells the site's owner.",
-      "fix": "Point each at a file that exists (a path changed in a release is the usual cause), or remove the reference."
     },
     {
       "code": "SITE-21",
@@ -3824,6 +3405,19 @@
       ],
       "why": "An error nothing catches stops the script that threw it: whatever it was doing (a form's checks, a cart, tracking) is left undone. Visitors never report it; it is seen only in the browser's console.",
       "fix": "Open the page with the browser's developer tools, read the console, and fix each error at the line it names."
+    },
+    {
+      "code": "SITE-26",
+      "severity": "major",
+      "title": "The site's certificate expires on 2026-12-04, in 29 days: then browsers warn every visitor away",
+      "where": [
+        {
+          "url": "https://the-internet.herokuapp.com",
+          "says": "the certificate expires on 2026-12-04, in 29 days"
+        }
+      ],
+      "why": "A browser shows a full-page security warning in place of a site whose certificate has expired, is for another name, or is not trusted; most visitors leave, and search engines and payment providers treat the site as unsafe.",
+      "fix": "Renew the certificate before it ends, and have it renew itself (Let's Encrypt, or the host's automatic certificates); make sure it names every address the site answers on."
     },
     {
       "code": "SITE-27",
@@ -3841,7 +3435,7 @@
     {
       "code": "SITE-30",
       "severity": "major",
-      "title": "2 of the 10 images asked for are broken: visitors see an empty box",
+      "title": "2 of the 9 images asked for are broken: visitors see an empty box",
       "where": [
         {
           "url": "https://the-internet.herokuapp.com/broken_images",
@@ -3875,354 +3469,238 @@
     {
       "code": "SITE-04",
       "severity": "minor",
-      "title": "57 different pages share one title; 30 pages have no title",
+      "title": "57 different pages share one title; 1 page has no title",
       "where": [
         {
           "url": "https://the-internet.herokuapp.com/",
-          "says": "titled \"The Internet\", shows \"Welcome to the-internet\""
+          "says": "titled `The Internet`, shows `Welcome to the-internet`"
         },
         {
           "url": "https://the-internet.herokuapp.com/tinymce",
-          "says": "titled \"The Internet\", shows \"An iFrame containing the TinyMCE WYSIWYG Editor\""
+          "says": "titled `The Internet`, shows `An iFrame containing the TinyMCE WYSIWYG Editor`"
         },
         {
           "url": "https://the-internet.herokuapp.com/hovers",
-          "says": "titled \"The Internet\", shows \"Hovers\""
+          "says": "titled `The Internet`, shows `Hovers`"
         },
         {
           "url": "https://the-internet.herokuapp.com/dropdown",
-          "says": "titled \"The Internet\", shows \"Dropdown List\""
+          "says": "titled `The Internet`, shows `Dropdown List`"
         },
         {
           "url": "https://the-internet.herokuapp.com/radio_buttons",
-          "says": "titled \"The Internet\", shows \"Radio Buttons\""
+          "says": "titled `The Internet`, shows `Radio Buttons`"
         },
         {
           "url": "https://the-internet.herokuapp.com/challenging_dom",
-          "says": "titled \"The Internet\", shows \"Challenging DOM\""
+          "says": "titled `The Internet`, shows `Challenging DOM`"
         },
         {
           "url": "https://the-internet.herokuapp.com/large",
-          "says": "titled \"The Internet\", shows \"Large & Deep DOM\""
+          "says": "titled `The Internet`, shows `Large & Deep DOM`"
         },
         {
           "url": "https://the-internet.herokuapp.com/upload",
-          "says": "titled \"The Internet\", shows \"File Uploader\""
+          "says": "titled `The Internet`, shows `File Uploader`"
         },
         {
           "url": "https://the-internet.herokuapp.com/slow",
-          "says": "titled \"The Internet\", shows \"Slow Resources\""
+          "says": "titled `The Internet`, shows `Slow Resources`"
         },
         {
           "url": "https://the-internet.herokuapp.com/javascript_alerts",
-          "says": "titled \"The Internet\", shows \"JavaScript Alerts\""
+          "says": "titled `The Internet`, shows `JavaScript Alerts`"
         },
         {
           "url": "https://the-internet.herokuapp.com/entry_ad",
-          "says": "titled \"The Internet\", shows \"Entry Ad\""
+          "says": "titled `The Internet`, shows `Entry Ad`"
         },
         {
           "url": "https://the-internet.herokuapp.com/windows",
-          "says": "titled \"The Internet\", shows \"Opening a new window\""
+          "says": "titled `The Internet`, shows `Opening a new window`"
         },
         {
           "url": "https://the-internet.herokuapp.com/frames",
-          "says": "titled \"The Internet\", shows \"Frames\""
+          "says": "titled `The Internet`, shows `Frames`"
         },
         {
           "url": "https://the-internet.herokuapp.com/two_factor",
-          "says": "titled \"The Internet\", shows \"Two-Factor Login\""
+          "says": "titled `The Internet`, shows `Two-Factor Login`"
         },
         {
           "url": "https://the-internet.herokuapp.com/add_remove_elements/",
-          "says": "titled \"The Internet\", shows \"Add/Remove Elements\""
+          "says": "titled `The Internet`, shows `Add/Remove Elements`"
         },
         {
           "url": "https://the-internet.herokuapp.com/inputs",
-          "says": "titled \"The Internet\", shows \"Inputs\""
+          "says": "titled `The Internet`, shows `Inputs`"
         },
         {
           "url": "https://the-internet.herokuapp.com/dynamic_loading",
-          "says": "titled \"The Internet\", shows \"Dynamically Loaded Page Elements\""
+          "says": "titled `The Internet`, shows `Dynamically Loaded Page Elements`"
         },
         {
           "url": "https://the-internet.herokuapp.com/shadowdom",
-          "says": "titled \"The Internet\", shows \"Simple template\""
+          "says": "titled `The Internet`, shows `Simple template`"
         },
         {
           "url": "https://the-internet.herokuapp.com/context_menu",
-          "says": "titled \"The Internet\", shows \"Context Menu\""
+          "says": "titled `The Internet`, shows `Context Menu`"
         },
         {
           "url": "https://the-internet.herokuapp.com/forgot_password",
-          "says": "titled \"The Internet\", shows \"Forgot Password\""
+          "says": "titled `The Internet`, shows `Forgot Password`"
         },
         {
           "url": "https://the-internet.herokuapp.com/subdirectories",
-          "says": "titled \"The Internet\", shows \"Subdirectories\""
+          "says": "titled `The Internet`, shows `Subdirectories`"
         },
         {
           "url": "https://the-internet.herokuapp.com/dynamic_loading/2",
-          "says": "titled \"The Internet\", shows \"Dynamically Loaded Page Elements\""
+          "says": "titled `The Internet`, shows `Dynamically Loaded Page Elements`"
         },
         {
           "url": "https://the-internet.herokuapp.com/subdirectories/two",
-          "says": "titled \"The Internet\", shows \"Subdirectory Two\""
+          "says": "titled `The Internet`, shows `Subdirectory Two`"
         },
         {
           "url": "https://the-internet.herokuapp.com/dynamic_loading/1",
-          "says": "titled \"The Internet\", shows \"Dynamically Loaded Page Elements\""
+          "says": "titled `The Internet`, shows `Dynamically Loaded Page Elements`"
         },
         {
           "url": "https://the-internet.herokuapp.com/subdirectories/one",
-          "says": "titled \"The Internet\", shows \"Subdirectory One\""
+          "says": "titled `The Internet`, shows `Subdirectory One`"
         },
         {
           "url": "https://the-internet.herokuapp.com/jqueryui/menu",
-          "says": "titled \"The Internet\", shows \"JQueryUI - Menu\""
+          "says": "titled `The Internet`, shows `JQueryUI - Menu`"
         },
         {
           "url": "https://the-internet.herokuapp.com/canvas",
-          "says": "titled \"The Internet\", shows \"Canvas\""
+          "says": "titled `The Internet`, shows `Canvas`"
         },
         {
           "url": "https://the-internet.herokuapp.com/large_form",
-          "says": "titled \"The Internet\", shows \"Large Form\""
+          "says": "titled `The Internet`, shows `Large Form`"
         },
         {
           "url": "https://the-internet.herokuapp.com/download",
-          "says": "titled \"The Internet\", shows \"File Downloader\""
+          "says": "titled `The Internet`, shows `File Downloader`"
         },
         {
           "url": "https://the-internet.herokuapp.com/status_codes",
-          "says": "titled \"The Internet\", shows \"Status Codes\""
+          "says": "titled `The Internet`, shows `Status Codes`"
         },
         {
           "url": "https://the-internet.herokuapp.com/status_codes/301",
-          "says": "titled \"The Internet\", shows \"Status Codes\""
+          "says": "titled `The Internet`, shows `Status Codes`"
         },
         {
           "url": "https://the-internet.herokuapp.com/status_codes/200",
-          "says": "titled \"The Internet\", shows \"Status Codes\""
+          "says": "titled `The Internet`, shows `Status Codes`"
         },
         {
           "url": "https://the-internet.herokuapp.com/dynamic_content",
-          "says": "titled \"The Internet\", shows \"Dynamic Content\""
+          "says": "titled `The Internet`, shows `Dynamic Content`"
         },
         {
           "url": "https://the-internet.herokuapp.com/readonly",
-          "says": "titled \"The Internet\", shows \"Read-only Inputs\""
+          "says": "titled `The Internet`, shows `Read-only Inputs`"
         },
         {
           "url": "https://the-internet.herokuapp.com/horizontal_slider",
-          "says": "titled \"The Internet\", shows \"Horizontal Slider\""
+          "says": "titled `The Internet`, shows `Horizontal Slider`"
         },
         {
           "url": "https://the-internet.herokuapp.com/jqueryui",
-          "says": "titled \"The Internet\", shows \"JQuery UI\""
+          "says": "titled `The Internet`, shows `JQuery UI`"
         },
         {
           "url": "https://the-internet.herokuapp.com/abtest",
-          "says": "titled \"The Internet\", shows \"A/B Test Variation 1\""
+          "says": "titled `The Internet`, shows `A/B Test Control`"
         },
         {
           "url": "https://the-internet.herokuapp.com/dynamic_controls",
-          "says": "titled \"The Internet\", shows \"Dynamic Controls\""
+          "says": "titled `The Internet`, shows `Dynamic Controls`"
         },
         {
           "url": "https://the-internet.herokuapp.com/shifting_content",
-          "says": "titled \"The Internet\", shows \"Shifting Content\""
+          "says": "titled `The Internet`, shows `Shifting Content`"
         },
         {
           "url": "https://the-internet.herokuapp.com/shifting_content/list",
-          "says": "titled \"The Internet\", shows \"Shifting Content: List\""
+          "says": "titled `The Internet`, shows `Shifting Content: List`"
         },
         {
           "url": "https://the-internet.herokuapp.com/shifting_content/image",
-          "says": "titled \"The Internet\", shows \"Shifting Content: Image\""
+          "says": "titled `The Internet`, shows `Shifting Content: Image`"
         },
         {
           "url": "https://the-internet.herokuapp.com/shifting_content/menu",
-          "says": "titled \"The Internet\", shows \"Shifting Content: Menu Element\""
+          "says": "titled `The Internet`, shows `Shifting Content: Menu Element`"
         },
         {
           "url": "https://the-internet.herokuapp.com/disappearing_elements",
-          "says": "titled \"The Internet\", shows \"Disappearing Elements\""
+          "says": "titled `The Internet`, shows `Disappearing Elements`"
         },
         {
           "url": "https://the-internet.herokuapp.com/tables",
-          "says": "titled \"The Internet\", shows \"Data Tables\""
+          "says": "titled `The Internet`, shows `Data Tables`"
         },
         {
           "url": "https://the-internet.herokuapp.com/infinite_scroll",
-          "says": "titled \"The Internet\", shows \"Infinite Scroll\""
+          "says": "titled `The Internet`, shows `Infinite Scroll`"
         },
         {
           "url": "https://the-internet.herokuapp.com/checkboxes",
-          "says": "titled \"The Internet\", shows \"Checkboxes\""
+          "says": "titled `The Internet`, shows `Checkboxes`"
         },
         {
           "url": "https://the-internet.herokuapp.com/redirector",
-          "says": "titled \"The Internet\", shows \"Redirection\""
+          "says": "titled `The Internet`, shows `Redirection`"
         },
         {
           "url": "https://the-internet.herokuapp.com/geolocation",
-          "says": "titled \"The Internet\", shows \"Geolocation\""
+          "says": "titled `The Internet`, shows `Geolocation`"
         },
         {
           "url": "https://the-internet.herokuapp.com/exit_intent",
-          "says": "titled \"The Internet\", shows \"Exit Intent\""
+          "says": "titled `The Internet`, shows `Exit Intent`"
         },
         {
           "url": "https://the-internet.herokuapp.com/iframe",
-          "says": "titled \"The Internet\", shows \"An iFrame containing the TinyMCE WYSIWYG Editor\""
+          "says": "titled `The Internet`, shows `An iFrame containing the TinyMCE WYSIWYG Editor`"
         },
         {
           "url": "https://the-internet.herokuapp.com/multiple_dropdown",
-          "says": "titled \"The Internet\", shows \"Multiple Select Dropdown List\""
+          "says": "titled `The Internet`, shows `Multiple Select Dropdown List`"
         },
         {
           "url": "https://the-internet.herokuapp.com/broken_images",
-          "says": "titled \"The Internet\", shows \"Broken Images\""
+          "says": "titled `The Internet`, shows `Broken Images`"
         },
         {
           "url": "https://the-internet.herokuapp.com/notification_message_rendered",
-          "says": "titled \"The Internet\", shows \"Notification Message\""
+          "says": "titled `The Internet`, shows `Notification Message`"
         },
         {
           "url": "https://the-internet.herokuapp.com/floating_menu",
-          "says": "titled \"The Internet\", shows \"Floating Menu\""
+          "says": "titled `The Internet`, shows `Floating Menu`"
         },
         {
           "url": "https://the-internet.herokuapp.com/drag_and_drop",
-          "says": "titled \"The Internet\", shows \"Drag and Drop\""
+          "says": "titled `The Internet`, shows `Drag and Drop`"
         },
         {
           "url": "https://the-internet.herokuapp.com/key_presses",
-          "says": "titled \"The Internet\", shows \"Key Presses\""
+          "says": "titled `The Internet`, shows `Key Presses`"
         },
         {
           "url": "https://the-internet.herokuapp.com/typos",
-          "says": "titled \"The Internet\", shows \"Typos\""
+          "says": "titled `The Internet`, shows `Typos`"
         },
         {
           "url": "https://the-internet.herokuapp.com/nested_frames",
-          "says": "no title"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/18",
-          "says": "no title"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/19",
-          "says": "no title"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/20",
-          "says": "no title"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/21",
-          "says": "no title"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/22",
-          "says": "no title"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/23",
-          "says": "no title"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/24",
-          "says": "no title"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/25",
-          "says": "no title"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/26",
-          "says": "no title"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/27",
-          "says": "no title"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/28",
-          "says": "no title"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/29",
-          "says": "no title"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/30",
-          "says": "no title"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/31",
-          "says": "no title"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/32",
-          "says": "no title"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/33",
-          "says": "no title"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/34",
-          "says": "no title"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/35",
-          "says": "no title"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/36",
-          "says": "no title"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/37",
-          "says": "no title"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/38",
-          "says": "no title"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/39",
-          "says": "no title"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/40",
-          "says": "no title"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/41",
-          "says": "no title"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/42",
-          "says": "no title"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/43",
-          "says": "no title"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/44",
-          "says": "no title"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/45",
-          "says": "no title"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/46",
           "says": "no title"
         }
       ],
@@ -4236,15 +3714,15 @@
       "where": [
         {
           "url": "https://the-internet.herokuapp.com/dynamic_content",
-          "says": "3 images: <img src=\"/img/avatars/Original-Facebook-Geek-Profile-Avata… and 2 more"
+          "says": "3 images: `<img src=\"/img/avatars/Original-Facebook-Geek-Profile-Avata…` and 2 more"
         },
         {
           "url": "https://the-internet.herokuapp.com/shifting_content/image",
-          "says": "1 image: <img src=\"/img/avatar.jpg\">"
+          "says": "1 image: `<img src=\"/img/avatar.jpg\">`"
         },
         {
           "url": "https://the-internet.herokuapp.com/broken_images",
-          "says": "3 images: <img src=\"asdf.jpg\">, <img src=\"hjkl.jpg\">, <img src=\"img/avatar-blank.jpg\">"
+          "says": "3 images: `<img src=\"asdf.jpg\">`, `<img src=\"hjkl.jpg\">`, `<img src=\"img/avatar-blank.jpg\">`"
         }
       ],
       "why": "A screen reader reads the file name instead, or nothing; search engines lose the words that say what the image shows.",
@@ -4253,7 +3731,7 @@
     {
       "code": "SITE-14",
       "severity": "minor",
-      "title": "32 pages do not say their language",
+      "title": "3 pages do not say their language",
       "where": [
         {
           "url": "https://the-internet.herokuapp.com/nested_frames",
@@ -4266,122 +3744,6 @@
         {
           "url": "https://the-internet.herokuapp.com/javascript_error",
           "says": "no lang on <html>"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/18",
-          "says": "no lang on <html>"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/19",
-          "says": "no lang on <html>"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/20",
-          "says": "no lang on <html>"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/21",
-          "says": "no lang on <html>"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/22",
-          "says": "no lang on <html>"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/23",
-          "says": "no lang on <html>"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/24",
-          "says": "no lang on <html>"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/25",
-          "says": "no lang on <html>"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/26",
-          "says": "no lang on <html>"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/27",
-          "says": "no lang on <html>"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/28",
-          "says": "no lang on <html>"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/29",
-          "says": "no lang on <html>"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/30",
-          "says": "no lang on <html>"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/31",
-          "says": "no lang on <html>"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/32",
-          "says": "no lang on <html>"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/33",
-          "says": "no lang on <html>"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/34",
-          "says": "no lang on <html>"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/35",
-          "says": "no lang on <html>"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/36",
-          "says": "no lang on <html>"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/37",
-          "says": "no lang on <html>"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/38",
-          "says": "no lang on <html>"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/39",
-          "says": "no lang on <html>"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/40",
-          "says": "no lang on <html>"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/41",
-          "says": "no lang on <html>"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/42",
-          "says": "no lang on <html>"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/43",
-          "says": "no lang on <html>"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/44",
-          "says": "no lang on <html>"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/45",
-          "says": "no lang on <html>"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/46",
-          "says": "no lang on <html>"
         }
       ],
       "why": "A screen reader guesses the language and may read the page in the wrong accent; browsers may offer to translate it wrongly.",
@@ -4390,7 +3752,7 @@
     {
       "code": "SITE-15",
       "severity": "minor",
-      "title": "84 pages have no main heading",
+      "title": "55 pages have no main heading",
       "where": [
         {
           "url": "https://the-internet.herokuapp.com/tinymce",
@@ -4565,18 +3927,6 @@
           "says": "no h1 shown"
         },
         {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/18",
-          "says": "no h1 shown"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/19",
-          "says": "no h1 shown"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/20",
-          "says": "no h1 shown"
-        },
-        {
           "url": "https://the-internet.herokuapp.com/checkboxes",
           "says": "no h1 shown"
         },
@@ -4623,110 +3973,6 @@
         {
           "url": "https://the-internet.herokuapp.com/typos",
           "says": "no h1 shown"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/21",
-          "says": "no h1 shown"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/22",
-          "says": "no h1 shown"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/23",
-          "says": "no h1 shown"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/24",
-          "says": "no h1 shown"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/25",
-          "says": "no h1 shown"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/26",
-          "says": "no h1 shown"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/27",
-          "says": "no h1 shown"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/28",
-          "says": "no h1 shown"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/29",
-          "says": "no h1 shown"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/30",
-          "says": "no h1 shown"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/31",
-          "says": "no h1 shown"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/32",
-          "says": "no h1 shown"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/33",
-          "says": "no h1 shown"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/34",
-          "says": "no h1 shown"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/35",
-          "says": "no h1 shown"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/36",
-          "says": "no h1 shown"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/37",
-          "says": "no h1 shown"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/38",
-          "says": "no h1 shown"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/39",
-          "says": "no h1 shown"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/40",
-          "says": "no h1 shown"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/41",
-          "says": "no h1 shown"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/42",
-          "says": "no h1 shown"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/43",
-          "says": "no h1 shown"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/44",
-          "says": "no h1 shown"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/45",
-          "says": "no h1 shown"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/46",
-          "says": "no h1 shown"
         }
       ],
       "why": "Screen reader users jump to the h1 to learn what a page is, and search engines read it as the page's subject; none, or several competing, says neither.",
@@ -4739,15 +3985,15 @@
       "where": [
         {
           "url": "https://the-internet.herokuapp.com/challenging_dom",
-          "says": "20 links: <a href=\"#edit\">, <a href=\"#delete\"> and 18 more"
+          "says": "20 links: `<a href=\"#edit\">`, `<a href=\"#delete\">` and 18 more"
         },
         {
           "url": "https://the-internet.herokuapp.com/tables",
-          "says": "16 links: <a href=\"#edit\">, <a href=\"#delete\"> and 14 more"
+          "says": "16 links: `<a href=\"#edit\">`, `<a href=\"#delete\">` and 14 more"
         },
         {
           "url": "https://the-internet.herokuapp.com/floating_menu",
-          "says": "4 links: <a href=\"#home\">, <a href=\"#news\">, <a href=\"#contact\">, <a href=\"#about\">"
+          "says": "4 links: `<a href=\"#home\">`, `<a href=\"#news\">`, `<a href=\"#contact\">`, `<a href=\"#about\">`"
         }
       ],
       "why": "A visitor clicks and nothing happens: the link names a #part no element on the page has.",
@@ -4756,7 +4002,7 @@
     {
       "code": "SITE-17",
       "severity": "minor",
-      "title": "89 pages have no description for search results",
+      "title": "60 pages have no description for search results",
       "where": [
         {
           "url": "https://the-internet.herokuapp.com/",
@@ -4951,18 +4197,6 @@
           "says": "no meta description"
         },
         {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/18",
-          "says": "no meta description"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/19",
-          "says": "no meta description"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/20",
-          "says": "no meta description"
-        },
-        {
           "url": "https://the-internet.herokuapp.com/checkboxes",
           "says": "no meta description"
         },
@@ -5008,110 +4242,6 @@
         },
         {
           "url": "https://the-internet.herokuapp.com/typos",
-          "says": "no meta description"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/21",
-          "says": "no meta description"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/22",
-          "says": "no meta description"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/23",
-          "says": "no meta description"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/24",
-          "says": "no meta description"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/25",
-          "says": "no meta description"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/26",
-          "says": "no meta description"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/27",
-          "says": "no meta description"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/28",
-          "says": "no meta description"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/29",
-          "says": "no meta description"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/30",
-          "says": "no meta description"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/31",
-          "says": "no meta description"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/32",
-          "says": "no meta description"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/33",
-          "says": "no meta description"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/34",
-          "says": "no meta description"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/35",
-          "says": "no meta description"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/36",
-          "says": "no meta description"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/37",
-          "says": "no meta description"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/38",
-          "says": "no meta description"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/39",
-          "says": "no meta description"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/40",
-          "says": "no meta description"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/41",
-          "says": "no meta description"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/42",
-          "says": "no meta description"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/43",
-          "says": "no meta description"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/44",
-          "says": "no meta description"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/45",
-          "says": "no meta description"
-        },
-        {
-          "url": "https://the-internet.herokuapp.com/infinite_scroll/46",
           "says": "no meta description"
         }
       ],

@@ -4,10 +4,10 @@
 # run: its schedule is off), every test, once in each of chromium and firefox. The results and any failure's
 # evidence are kept with each run. Another copy of the site (a staging server): set BASE_URL.
 # No nightly run; for one, a pipeline schedule (Build > Pipeline schedules), at 23 3 * * * UTC say. BASE_URL: a CI/CD variable.
-# Docker's official Maven image on Java 21; the libraries Chrome and Firefox need are installed in it, and Selenium Manager fetches the browser and its driver at the run's start.
+# Docker's official Maven image on Java 17; the libraries Chrome and Firefox need are installed in it, and Selenium Manager fetches the browser and its driver at the run's start.
 default:
   image:
-    name: maven:3.9-eclipse-temurin-21-noble@sha256:99e61abcff91a9b1333463bd8451fb18495d6eba9250ac66a338b518f8278320
+    name: maven:3.9-eclipse-temurin-17-noble@sha256:1a352420f7aba21f5ad08df31bab55f74c013fb491f1ae8ab1dd7ff9ed698584
     entrypoint: ['']
 quick:
   # Judge the commit: a tree with changes fails SR-23 here, where a plain test run only warns.

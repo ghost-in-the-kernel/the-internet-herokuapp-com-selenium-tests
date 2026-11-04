@@ -5,16 +5,19 @@ package com.herokuapp.theinternet.tests.pages.infinitescroll;
 
 import com.herokuapp.theinternet.tests.core.Headings;
 import com.herokuapp.theinternet.tests.core.PageElement;
-import com.herokuapp.theinternet.tests.uri.UrlPaths;
 import org.openqa.selenium.By;
 // ==== YOURS (imports): safe to edit; regenerating keeps what is between these lines ====
 // ==== END YOURS (imports) ====
 
 /**
- * Locators for a family of about 30 pages like /infinite_scroll/18, /infinite_scroll/19, /infinite_scroll/20.
+ * Locators for the page at /infinite_scroll.
  * Steps name each one by label(): SUBMIT_BUTTON is "the submit button"; a link the crawl saw, by its words.
  */
 public enum InfiniteScrollElements implements PageElement {
+    // Section headings the crawled pages of this type share. One a test does not use is harmless.
+    /** Heading "Infinite Scroll": every crawled page of this type showed it. */
+    INFINITE_SCROLL_HEADING(Headings.named("Infinite Scroll")),
+
     // ==== YOURS (elements): safe to edit; regenerating keeps what is between these lines ====
     // This page's own elements (see ai/recipes/add-an-element.md). Selector Grabber's locators
     // paste straight in, e.g.:
@@ -43,16 +46,6 @@ public enum InfiniteScrollElements implements PageElement {
     @Override
     public String label() {
         return label != null ? label : PageElement.super.label();
-    }
-
-    /** A link to InfiniteScrollPage, e.g. /infinite_scroll/19. */
-    public static PageElement getInfiniteScrollLink(String name) {
-        String href = "/infinite_scroll/" + name;
-        // Written encoded ("Mast%20&%20Harbour") or not ("Mast & Harbour"): sites do both.
-        String xpath = "//a[@href=" + Headings.literal(href) + " or @href=" + Headings.literal(UrlPaths.decoded(href))
-                + "]";
-        return PageElement.of("INFINITE_SCROLL_LINK", "the link to the infinite scroll page \"" + name + "\"",
-                By.xpath(xpath));
     }
 
     // ==== YOURS (extras): safe to edit; regenerating keeps what is between these lines ====

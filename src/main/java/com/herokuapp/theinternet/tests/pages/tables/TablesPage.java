@@ -92,7 +92,7 @@ public class TablesPage extends LoadablePage<TablesPage> implements
     /** What the crawl timed of these pages after their load event (core/Timings flags one much slower). */
     @Override
     protected long crawlSettledMs() {
-        return 0;
+        return 200;
     }
 
     @Override

@@ -36,7 +36,6 @@ import com.herokuapp.theinternet.tests.pages.horizontalslider.HorizontalSliderPa
 import com.herokuapp.theinternet.tests.pages.hovers.HoversPage;
 import com.herokuapp.theinternet.tests.pages.iframe.IframePage;
 import com.herokuapp.theinternet.tests.pages.infinitescroll.InfiniteScrollPage;
-import com.herokuapp.theinternet.tests.pages.infinitescrolllist.InfiniteScrollListPage;
 import com.herokuapp.theinternet.tests.pages.inputs.InputsPage;
 import com.herokuapp.theinternet.tests.pages.javascriptalerts.JavascriptAlertsPage;
 import com.herokuapp.theinternet.tests.pages.javascripterror.JavascriptErrorPage;
@@ -366,20 +365,9 @@ abstract class GeneratedSmokeTest extends BaseTest {
     }
 
     @Test
-    @DisplayName("InfiniteScrollListPage loads (/infinite_scroll)")
-    void infiniteScrollListPageLoads() {
-        new InfiniteScrollListPage(driver).open().verify().sectionHeadingsVisible();
-    }
-
-    static java.util.List<String> examplesOfInfiniteScrollPage() {
-        return InfiniteScrollPage.EXAMPLES.stream().limit(3).toList();
-    }
-
-    @ParameterizedTest(name = "[{index}] InfiniteScrollPage loads {0}")
-    @MethodSource("examplesOfInfiniteScrollPage")
-    @DisplayName("InfiniteScrollPage loads (3 of 29 crawled examples)")
-    void infiniteScrollPageLoads(String example) {
-        new InfiniteScrollPage(driver).open(example).verify().isLoaded();
+    @DisplayName("InfiniteScrollPage loads (/infinite_scroll)")
+    void infiniteScrollPageLoads() {
+        new InfiniteScrollPage(driver).open().verify().sectionHeadingsVisible();
     }
 
     @Test
@@ -456,9 +444,9 @@ abstract class GeneratedSmokeTest extends BaseTest {
 
     @Test
     @DisplayName(
-            "TwoFactorPage: the \"Log in with tomsmith and SuperSecretPassword!. Then enter th\" form is there and "
-            + "empty (nothing is sent)")
-    void twoFactorThenEnterThForm() {
+            "TwoFactorPage: the \"Then enter the one-time code shown on the next page.\" form is there and empty "
+            + "(nothing is sent)")
+    void twoFactorThenEnterTheOneTimeCodeShownOnTheNextForm() {
         new TwoFactorPage(driver).open().verify()
                 .isEmpty(TwoFactorElements.USERNAME_INPUT)
                 .isEmpty(TwoFactorElements.PASSWORD_INPUT)

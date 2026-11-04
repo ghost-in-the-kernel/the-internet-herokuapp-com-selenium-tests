@@ -21,7 +21,7 @@ mvn test -Dgroups=navigation           header, footer and page links land on the
 mvn test -Dgroups=menus                links inside dropdown menus
 mvn test -Dgroups=links                every address the crawl requested, asked again: target/link-report.md
                                        (fails on one broken since the crawl; 7 broken then, listed)
-                                       and the 7 links to other sites: target/external-link-report.md
+                                       and the 1 links to other sites: target/external-link-report.md
 mvn test -Dheaded=true                 watch it in a browser
 mvn test -Dbrowser=firefox             in Firefox, or -Dbrowser=edge, or -Dbrowser=safari; Chrome by default
 mvn test -Dgroups=smoke,http           the quick check: every page type opens, every address answers
@@ -81,7 +81,7 @@ prints what happened; a banner it can't accept never fails a test by itself (see
 ## In a pipeline
 
 GitHub, GitLab and Azure: `.github/workflows/suite.yml`, `.gitlab-ci.yml`, `azure-pipelines.yml` (keep yours): `-Dgroups=http,smoke`
-on every push, every test nightly in chromium and firefox. The `Dockerfile` runs the suite anywhere. Delete the ones you
+on every push, every test in chromium and firefox when started by hand (no nightly run: `suite build --nightly` adds one). The `Dockerfile` runs the suite anywhere. Delete the ones you
 don't use: a rebuild leaves them out (an empty file of the same name brings one back).
 
 Every `mvn` run in this folder refuses a download whose checksum is not the repository's (`.mvn/maven.config`:
@@ -92,7 +92,7 @@ options of your own on the command line or in `MAVEN_ARGS`.
 
 Each package's `package-info.java` says what belongs in it: `core/` the library, `uri/` the paths, `pages/` the page types.
 
-Page types found (57):
+Page types found (56):
 
 | Class | Kind | URL |
 | --- | --- | --- |
@@ -139,8 +139,7 @@ Page types found (57):
 | `ShiftingContentMenuPage` | one-off | `/shifting_content/menu` |
 | `DisappearingElementsPage` | one-off | `/disappearing_elements` |
 | `TablesPage` | one-off | `/tables` |
-| `InfiniteScrollListPage` | one-off | `/infinite_scroll` |
-| `InfiniteScrollPage` | family, ~30 pages | `/infinite_scroll/*` |
+| `InfiniteScrollPage` | one-off | `/infinite_scroll` |
 | `CheckboxesPage` | one-off | `/checkboxes` |
 | `RedirectorPage` | one-off | `/redirector` |
 | `GeolocationPage` | one-off | `/geolocation` |
@@ -202,7 +201,7 @@ Left as they are, a rebuild brings the newer crawl's versions; changed, yours ar
 
 ## Write a test
 
-The worked example in this suite is `src/test/java/com/herokuapp/theinternet/tests/cases/TwoFactorFormTest.java`, a test of TwoFactorPage, chosen because its form has the fewest fields of any page's. Open it beside `src/main/java/com/herokuapp/theinternet/tests/pages/twofactor/`: it opens TwoFactorPage, checks the browser will not send its form empty, fills it through `execute().fillThenEnterThForm(...)` with test data you can change, and checks each field holds what was typed. Nothing is sent: what happens after Send is the one thing left, and its YOURS block shows the lines to add.
+The worked example in this suite is `src/test/java/com/herokuapp/theinternet/tests/cases/TwoFactorFormTest.java`, a test of TwoFactorPage, chosen because its form has the fewest fields of any page's. Open it beside `src/main/java/com/herokuapp/theinternet/tests/pages/twofactor/`: it opens TwoFactorPage, fills it through `execute().fillForm(...)` with test data you can change, and checks each field holds what was typed. Nothing is sent: what happens after Send is the one thing left, and its YOURS block shows the lines to add.
 
 A test of your own is a class in `cases/` that extends `BaseTest`, with JUnit's assertions if you
 like. The suite's rules hold it to one thing: it checks something (SUITE-RULES.md).
@@ -233,11 +232,6 @@ folder, then:
 and the pages the story touches, saved from the browser into `saved-pages/`, and ask for the test.
 The crawl this was generated from is in `crawl/`: keep it with the project, and zip the whole
 folder when you hand it on.
-
-## Ownership
-
-This test suite is licensed to the owner of the site it tests, to use, change and share for any
-purpose, commercial use included, apart from Suite Builder's own license: see [LICENSE](LICENSE).
 
 ## Notes
 

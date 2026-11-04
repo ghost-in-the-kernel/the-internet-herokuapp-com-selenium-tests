@@ -40,6 +40,7 @@ Each rule has a **tier**:
 | SR-21 | story | A done story's notes name every criterion, by its number | A criterion's number is its test's name (&lt;id>-&lt;n>): a list edited after its tests were written moves every number after the edit, so a test checks one criterion under another's number, and a criterion left out of the notes is a part of the story nobody checks, or says is unchecked (a list edit renumbers the criteria after it). |
 | SR-22 | hard | One element, one name | Every test then reaches one element two ways, and a locator fixed under one name is still broken under the other; two stories written apart (two branches) each add their own name for the same button and merge without a conflict. |
 | SR-23 | story | A done story's test passed in its latest recorded run of this commit | A story is done when its test has passed, not when its file exists: a story moved to stories/done/ by hand, or whose test has failed since, claims coverage nobody has seen. |
+| SR-24 | hard | Test code does not delete files or run processes | A test only looks at the site: a delete can take a person's files, a process runs with the runner's rights, and the site's text must never reach either. |
 
 Every rule in full (what it checks, exactly, how to fix a failure, a wrong and a right example):
 [ai/rules-in-full.md](ai/rules-in-full.md).

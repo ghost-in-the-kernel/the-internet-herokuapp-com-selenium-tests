@@ -7,7 +7,6 @@ import com.herokuapp.theinternet.tests.pages.infinitescroll.InfiniteScrollPage;
 import com.herokuapp.theinternet.tests.pages.infinitescroll.InfiniteScrollElements;
 import com.herokuapp.theinternet.tests.core.Checks;
 import com.herokuapp.theinternet.tests.core.StepLog;
-import com.herokuapp.theinternet.tests.uri.UrlPaths;
 import org.openqa.selenium.WebDriver;
 // ==== YOURS (imports): safe to edit; regenerating keeps what is between these lines ====
 // ==== END YOURS (imports) ====
@@ -20,7 +19,7 @@ public class InfiniteScrollVerifyActions {
         this.driver = driver;
     }
 
-    /** The page has fully loaded: URL, page load and key elements. */
+    /** The page has fully loaded: URL, page load, title and key elements. */
     public InfiniteScrollVerifyActions isLoaded() {
         InfiniteScrollPage here = new InfiniteScrollPage(driver);
         StepLog.step("Check that " + here.describe() + " has fully loaded");
@@ -28,12 +27,10 @@ public class InfiniteScrollVerifyActions {
         return this;
     }
 
-    /**
-     * It is the page of these arguments, the one open(name) goes to: its address says so.
-     * isLoaded() proves only that it is one of this family's pages.
-     */
-    public InfiniteScrollVerifyActions isThePageOf(String name) {
-        Checks.isOnPath(driver, UrlPaths.infiniteScroll(name));
+    /** Every section heading this page type shares is visible. */
+    public InfiniteScrollVerifyActions sectionHeadingsVisible() {
+        Checks.allShown(driver, "its section headings (\"Infinite Scroll\")",
+                InfiniteScrollElements.INFINITE_SCROLL_HEADING);
         return this;
     }
 

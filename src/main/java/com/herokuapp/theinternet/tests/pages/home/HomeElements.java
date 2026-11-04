@@ -64,7 +64,7 @@ public enum HomeElements implements PageElement {
     /** Link "Nested Frames" (href /nested_frames) to NestedFramesPage, seen by the crawl on /. */
     NESTED_FRAMES_LINK(By.xpath("//a[@href='/nested_frames']"), "\"Nested Frames\""),
     /** Link "Forgot Password" (href /forgot_password) to ForgotPasswordPage, seen by the crawl on /. */
-    ELEMENT_LINK(By.xpath("//a[@href='/forgot_password']"), "\"Forgot Password\""),
+    FORGOT_PASSWORD_LINK(By.xpath("//a[@href='/forgot_password']"), "\"Forgot Password\""),
     /** Link "Subdirectories" (href /subdirectories) to SubdirectoriesPage, seen by the crawl on /. */
     SUBDIRECTORIES_LINK(By.xpath("//a[@href='/subdirectories']"), "\"Subdirectories\""),
     /** Link "JQuery UI Menus" (href /jqueryui/menu) to JqueryuiMenuPage, seen by the crawl on /. */
@@ -97,8 +97,8 @@ public enum HomeElements implements PageElement {
     DISAPPEARING_ELEMENTS_LINK(By.xpath("//a[@href='/disappearing_elements']"), "\"Disappearing Elements\""),
     /** Link "Sortable Data Tables" (href /tables) to TablesPage, seen by the crawl on /. */
     TABLES_LINK(By.xpath("//a[@href='/tables']"), "\"Sortable Data Tables\""),
-    /** Link "Infinite Scroll" (href /infinite_scroll) to InfiniteScrollListPage, seen by the crawl on /. */
-    INFINITE_SCROLL_LIST_LINK(By.xpath("//a[@href='/infinite_scroll']"), "\"Infinite Scroll\""),
+    /** Link "Infinite Scroll" (href /infinite_scroll) to InfiniteScrollPage, seen by the crawl on /. */
+    INFINITE_SCROLL_LINK(By.xpath("//a[@href='/infinite_scroll']"), "\"Infinite Scroll\""),
     /** Link "Checkboxes" (href /checkboxes) to CheckboxesPage, seen by the crawl on /. */
     CHECKBOXES_LINK(By.xpath("//a[@href='/checkboxes']"), "\"Checkboxes\""),
     /** Link "Redirect Link" (href /redirector) to RedirectorPage, seen by the crawl on /. */

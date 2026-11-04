@@ -5,12 +5,10 @@ package com.herokuapp.theinternet.tests.pages.infinitescroll;
 
 import com.herokuapp.theinternet.tests.core.LoadablePage;
 import com.herokuapp.theinternet.tests.core.WaitActions;
-import com.herokuapp.theinternet.tests.core.actions.ClickableAction;
 import com.herokuapp.theinternet.tests.core.actions.NavigableAction;
 import com.herokuapp.theinternet.tests.core.actions.ReadableAction;
 import com.herokuapp.theinternet.tests.core.actions.VerifiableAction;
 import com.herokuapp.theinternet.tests.pages.header.actions.HeaderNavigableActions;
-import com.herokuapp.theinternet.tests.pages.infinitescroll.actions.InfiniteScrollClickActions;
 import com.herokuapp.theinternet.tests.pages.infinitescroll.actions.InfiniteScrollReadActions;
 import com.herokuapp.theinternet.tests.pages.infinitescroll.actions.InfiniteScrollVerifyActions;
 import com.herokuapp.theinternet.tests.uri.UrlPaths;
@@ -22,98 +20,56 @@ import java.util.List;
 
 /**
  * <pre>
- * What it is:       one page of a family of about 30 pages, like /infinite_scroll/18,
- *                   /infinite_scroll/19, /infinite_scroll/20.
- * Get here:         new InfiniteScrollPage(driver).open("18")
- *                   from InfiniteScrollListPage: click().goToInfiniteScroll("18")
- * The crawl saw:    29 pages of this type (/infinite_scroll/18, /infinite_scroll/19,
- *                   /infinite_scroll/20, ...).
- * Proven loaded by: its address and title only; add a key element to PROVES_LOADED.
- * As crawled:       crawl/pages/infinite_scroll/18.html, crawl/pages/infinite_scroll/19.html, ...
- *                   (the page's HTML when crawled: check a locator there with suite locate).
+ * What it is:       the page at /infinite_scroll.
+ * Stories call it:  "Infinite Scroll" (the links that lead here).
+ * Get here:         new InfiniteScrollPage(driver).open()
+ *                   from HomePage: click().goToInfiniteScroll()
+ * The crawl saw:    1 page of this type (/infinite_scroll); it showed "Infinite Scroll".
+ * Proven loaded by: the heading "Infinite Scroll".
+ * As crawled:       crawl/pages/infinite_scroll.html (the page's HTML when crawled: check a locator
+ *                   there with suite locate).
  * Not seen:         anything behind a login, a button or a sent form; save such a page to
  *                   saved-pages/InfiniteScrollPage/.
  * </pre>
  */
 public class InfiniteScrollPage extends LoadablePage<InfiniteScrollPage> implements
-        ClickableAction<InfiniteScrollClickActions>,
         ReadableAction<InfiniteScrollReadActions>,
         VerifiableAction<InfiniteScrollVerifyActions>,
         NavigableAction<HeaderNavigableActions> {
 
-    // The crawled pages of this type had different titles, so the title is not checked.
+    /** The title from the crawl. */
+    public static final String TITLE = "The Internet";
 
-    /** URL shapes of this page type (from the crawl): "*" is one path segment, "{n}" a number. */
-    public static final List<String> URL_SHAPES = List.of("/infinite_scroll/*");
-
-    /**
-     * Pages of this type, for open() and the smoke test: the crawl's, until you choose others (a rebuild keeps your
-     * list).
-     */
-    // ==== YOURS (examples): safe to edit; kept once you change it, updated until then ==== default 1cf915b6
-    public static final List<String> EXAMPLES = List.of(
-            "18",
-            "19",
-            "20",
-            "21",
-            "22",
-            "23",
-            "24",
-            "25",
-            "26",
-            "27",
-            "28",
-            "29",
-            "30",
-            "31",
-            "32",
-            "33",
-            "34",
-            "35",
-            "36",
-            "37",
-            "38",
-            "39",
-            "40",
-            "41",
-            "42",
-            "43",
-            "44",
-            "45",
-            "46");
-    // ==== END YOURS (examples) ====
-
-    /** What must be visible before the page counts as loaded: the crawl found nothing every page shares, so add one. */
-    // ==== YOURS (load-proof): safe to edit; kept once you change it, updated until then ==== default 6d55da42
-    static final List<InfiniteScrollElements> PROVES_LOADED = List.of();
+    /** What must be visible before the page counts as loaded. Remove any that come and go. */
+    // ==== YOURS (load-proof): safe to edit; kept once you change it, updated until then ==== default c12321d3
+    static final List<InfiniteScrollElements> PROVES_LOADED = List.of(
+            InfiniteScrollElements.INFINITE_SCROLL_HEADING);
     // ==== END YOURS (load-proof) ====
-
-    /** The exact page open() asked for; null when a click brought the browser here. */
-    private String expectedPath;
 
     public InfiniteScrollPage(WebDriver driver) {
         super(driver);
     }
 
-    /** Goes to this page and waits until it has fully loaded. */
-    public InfiniteScrollPage open(String name) {
-        expectedPath = UrlPaths.infiniteScroll(name);
-        navigate(expectedPath);
+    /** Goes to /infinite_scroll and waits until it has fully loaded. */
+    public InfiniteScrollPage open() {
+        navigate(UrlPaths.INFINITE_SCROLL);
         return get();
     }
 
     @Override
     protected void isLoaded() throws Error {
-        boolean urlIsCorrect = expectedPath != null
-                ? WaitActions.waitForUrl(driver, expectedPath)
-                : WaitActions.waitForUrlShape(driver, URL_SHAPES);
+        boolean urlIsCorrect = WaitActions.waitForUrl(driver, UrlPaths.INFINITE_SCROLL);
         // Wrong page: fail now rather than wait for it to load.
         if (!urlIsCorrect) {
             throw new AssertionError(name() + " did not load! URL was " + driver.getCurrentUrl() + ", expected "
-                    + (expectedPath != null ? expectedPath : String.join(" or ", URL_SHAPES)));
+                    + UrlPaths.INFINITE_SCROLL);
         }
         boolean pageLoaded = WaitActions.waitForPageLoad(driver);
 
+        if (!WaitActions.waitForTitle(driver, TITLE)) {
+            throw new AssertionError(name() + " did not load! Title was \"" + driver.getTitle() + "\", expected \""
+                    + TITLE + "\"");
+        }
 
         for (InfiniteScrollElements element : PROVES_LOADED) {
             if (!WaitActions.waitForVisibilityOf(driver, element)) {
@@ -134,12 +90,7 @@ public class InfiniteScrollPage extends LoadablePage<InfiniteScrollPage> impleme
     /** What the crawl timed of these pages after their load event (core/Timings flags one much slower). */
     @Override
     protected long crawlSettledMs() {
-        return 0;
-    }
-
-    @Override
-    public InfiniteScrollClickActions click() {
-        return new InfiniteScrollClickActions(driver);
+        return 400;
     }
 
     @Override
