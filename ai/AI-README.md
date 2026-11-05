@@ -62,6 +62,8 @@ You do not need to read everything. Context sits next to what it describes:
 - **crawl/** holds the crawl itself (the-internet.herokuapp.com.crawl.json, the-internet.herokuapp.com.templates.json) for details no class has.
   **crawl/pages/** has each page read, as the crawl saw it (its HTML: find elements there, and check
   a locator with `suite locate the-internet-herokuapp-com-selenium-tests <page> "<locator>"` where Suite Builder is installed).
+- **File names are plain ASCII on purpose** (A-Z a-z 0-9 . _ - =), a page's as crawled too: the suite is zipped and
+  unzipped on Windows, whose zip refuses some names. Name a file you add the same way: `pack` stops on one that is not.
 
 ## From a story to a test
 

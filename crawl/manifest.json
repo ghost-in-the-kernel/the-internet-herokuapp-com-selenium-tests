@@ -2,11 +2,11 @@
   "tool": "suite-builder",
   "version": "1.39.0",
   "build": {
-    "commit": "2d8d5db572198732e04fad507a614e622eae2f6b",
+    "commit": "1481bc99cc179dd7d9c57151a46a5d27f17520df",
     "branch": "main"
   },
   "framework": "selenium",
-  "generatedAt": "2026-11-04T22:37:40.741Z",
+  "generatedAt": "2026-11-05T13:26:33.689Z",
   "command": "suite-builder build the-internet-herokuapp-com-selenium-tests --force",
   "templates": "crawl/the-internet.herokuapp.com.templates.json",
   "crawl": "crawl/the-internet.herokuapp.com.crawl.json",

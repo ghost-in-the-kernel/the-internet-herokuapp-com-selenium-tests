@@ -8,6 +8,7 @@ import java.io.OutputStream;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.text.Normalizer;
 import java.time.Duration;
 import java.time.Instant;
 import java.time.LocalDate;
@@ -79,8 +80,8 @@ public final class Pack {
         int blanked = 0;
         int packed = 0;
         String longest = "";
-        try (ZipOutputStream out = new ZipOutputStream(Files.newOutputStream(zip));
-                Stream<Path> walk = Files.walk(suite)) {
+        List<Path> taken = new ArrayList<>();
+        try (Stream<Path> walk = Files.walk(suite)) {
             for (Path file : walk.filter(Files::isRegularFile).sorted().toList()) {
                 String rel = suite.relativize(file).toString().replace('\\', '/');
                 String reason = run ? runLeftOut(rel, trace) : null;
@@ -93,6 +94,39 @@ public final class Pack {
                     why.put(group, reason);
                     continue;
                 }
+                taken.add(file);
+            }
+        }
+        // Every name checked before anything is written: one that is not portable stops the pack, named with the fix. A
+        // run's
+        // evidence, named by the test runner, is not the suite's own and goes in as it is.
+        // Too long a path or name, and one file twice but for case (Windows and macOS keep one), stop it too.
+        List<String> odd = new ArrayList<>();
+        Map<String, String> byCase = new TreeMap<>();
+        for (Path file : taken) {
+            String rel = suite.relativize(file).toString().replace('\\', '/');
+            if (run && runTakes(rel)) continue;
+            String problem = notPortable(rel);
+            if (problem != null) {
+                odd.add("  " + rel + ": " + problem + ". Fix: " + portableFix(rel, suite.getFileName().toString())
+                        + ".");
+                continue;
+            }
+            String tooLong = tooLong(rel);
+            if (tooLong != null) odd.add("  " + rel + ": " + tooLong + ". Fix: shorten it.");
+            String same = byCase.putIfAbsent(rel.toLowerCase(), rel);
+            if (same != null) odd.add("  " + rel + ": the same file as " + same
+                    + " on Windows and macOS. Fix: rename one of the two.");
+        }
+        if (!odd.isEmpty()) {
+            System.out.println("Not packed: " + odd.size() + " name" + (odd.size() == 1 ? "" : "s")
+                    + " would stop this zip on Windows, which takes only A-Z a-z 0-9 . _ - = in a suite's names:");
+            odd.forEach(System.out::println);
+            System.exit(1);
+        }
+        try (ZipOutputStream out = new ZipOutputStream(Files.newOutputStream(zip))) {
+            for (Path file : taken) {
+                String rel = suite.relativize(file).toString().replace('\\', '/');
                 String entry = suite.getFileName() + "/" + rel;
                 if (entry.length() > longest.length()) longest = entry;
                 out.putNextEntry(new ZipEntry(entry));
@@ -123,6 +157,52 @@ public final class Pack {
         else System.out.println(
                 "Hand it on as it is; never a copy with a filled account file. The receiver fills in secrets/ "
                 + "(secrets/README.md).");
+    }
+
+    /**
+     * Why a name in the suite would stop its zip on Windows, or null: a character outside A-Z a-z 0-9 . _ - =, a name
+     * Windows
+     * keeps for a device, a trailing dot or space. Suite Builder names every file so; a suite built before it did can
+     * hold one.
+     */
+    static String notPortable(String rel) {
+        for (String piece : rel.split("/")) {
+            for (int i = 0; i < piece.length(); i = piece.offsetByCodePoints(i, 1)) {
+                int c = piece.codePointAt(i);
+                boolean plain = (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || (c >= '0' && c <= '9') || c == '.'
+                        || c == '_' || c == '=' || c == '-';
+                if (!plain) return "\"" + new String(Character.toChars(c)) + "\" (U+" + String.format("%04X", c) + ")";
+            }
+            if (piece.matches("(?i)(con|prn|aux|nul|com[1-9]|lpt[1-9])(\\..*)?")) return "\"" + piece
+                    + "\" is a name Windows keeps for a device";
+            if (piece.endsWith(".") || piece.endsWith(" ")) return "\"" + piece
+                    + "\" ends in a dot or a space, which Windows drops";
+        }
+        return null;
+    }
+
+    /**
+     * Why a name is too long for Windows once unzipped, or null: a path over LONGEST_PATH, a file or folder name over
+     * 100.
+     */
+    static String tooLong(String rel) {
+        if (rel.length() > LONGEST_PATH) return rel.length() + " characters, more than " + LONGEST_PATH
+                + " (Windows' 260, less room for the folder it is unzipped in)";
+        for (String piece : rel.split("/")) if (piece.length() > 100) return "\"" + piece + "\" is " + piece.length()
+                + " characters, more than 100";
+        return null;
+    }
+
+    /**
+     * The one line that fixes a name that is not portable: the pages as crawled are renamed by a rebuild; any other is
+     * renamed by hand.
+     */
+    static String portableFix(String rel, String folder) {
+        if (rel.startsWith("crawl/pages/")) return "rebuild the suite (suite build " + folder
+                + "): it renames the pages as crawled";
+        String plain = Normalizer.normalize(rel, Normalizer.Form.NFKD).replaceAll("\\p{M}", "")
+                .replaceAll("[^A-Za-z0-9._=/-]", "_");
+        return "rename it to " + plain;
     }
 
     /** Why a file stays out of the zip; null when it goes in. */
